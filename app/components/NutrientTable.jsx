@@ -25,7 +25,7 @@ export default function NutrientTable({ nutritionData }) {
           "text-sm",
           theme === 'dark' ? "text-gray-400" : "text-gray-600"
         )}>
-          No nutrition data available
+          {t('noData')}
         </p>
       </div>
     );
@@ -145,12 +145,12 @@ export default function NutrientTable({ nutritionData }) {
       )}>
         <div className="text-3xl font-bold mb-1">
           {Math.round(nutritionData.calories)}
-          <span className="text-lg ml-1 opacity-70">kcal</span>
+          <span className="text-lg ml-1 opacity-70">{t('units.kcal')}</span>
         </div>
         <div className={cn(
           "text-sm",
           theme === 'dark' ? "text-gray-400" : "text-gray-600"
-        )}>Total Calories</div>
+        )}>{t('totalCalories')}</div>
       </div>
 
       {/* Nutrient Categories */}

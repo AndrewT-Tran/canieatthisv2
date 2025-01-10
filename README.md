@@ -10,6 +10,7 @@
 CanIEatThis? simplifies dietary choices for diabetics by providing instant nutritional analysis and clear recommendations, making it accessible even for non-native English speakers.
 
 ---
+![alt text](public/canieatthiscn.png)![alt text](public/canieatthisen.png)
 
 ## Features  
 

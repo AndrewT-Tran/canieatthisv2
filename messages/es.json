@@ -80,6 +80,114 @@
             "riboflavin": "Riboflavina",
             "niacin": "Niacina",
             "folicAcid": "Ácido Fólico"
+        },
+        "noData": "No hay datos nutricionales disponibles",
+        "noDataDescription": "Esto podría deberse a un nombre de ingrediente no válido o datos faltantes en nuestra base de datos.",
+        "specifyQuantity": "Por favor, especifica una cantidad",
+        "quantityExample": "Intenta buscar con una cantidad específica (ej: \"1 manzana\" o \"100g de manzanas\")",
+        "showMore": "Mostrar Más Detalles",
+        "showLess": "Mostrar Menos",
+        "totalCalories": "Calorías Totales",
+        "analysis": {
+            "title": "Análisis Nutricional"
+        },
+        "units": {
+            "kcal": "kcal",
+            "g": "g",
+            "mg": "mg",
+            "µg": "µg",
+            "grams": "g",
+            "IU": "UI"
+        },
+        "status": {
+            "high": "Alto",
+            "good": "Bueno",
+            "low": "Bajo",
+            "neutral": "Neutral"
+        },
+        "recommendation": {
+            "safe": "Este alimento es generalmente seguro para diabéticos",
+            "unsafe": "Este alimento puede no ser adecuado para diabéticos"
+        },
+        "netCarbs": "Carbohidratos Netos",
+        "sugars": "Azúcares",
+        "calories": "Calorías",
+        "close": "Cerrar",
+        "sections": {
+            "macronutrients": "Macronutrientes",
+            "vitamins": "Vitaminas",
+            "minerals": "Minerales"
+        },
+        "protein": "Proteína",
+        "fat": {
+            "total": "Grasa Total",
+            "saturated": "Grasa Saturada",
+            "trans": "Grasa Trans",
+            "monounsaturated": "Grasa Monoinsaturada",
+            "polyunsaturated": "Grasa Poliinsaturada"
+        },
+        "carbs": "Carbohidratos",
+        "fiber": "Fibra Dietética",
+        "sugar": "Azúcar",
+        "minerals": {
+            "calcium": "Calcio",
+            "iron": "Hierro",
+            "magnesium": "Magnesio",
+            "phosphorus": "Fósforo",
+            "potassium": "Potasio",
+            "sodium": "Sodio",
+            "zinc": "Zinc",
+            "copper": "Cobre",
+            "manganese": "Manganeso",
+            "selenium": "Selenio"
+        },
+        "vitamins": {
+            "a": "Vitamina A",
+            "c": "Vitamina C",
+            "d": "Vitamina D",
+            "b6": "Vitamina B6",
+            "b12": "Vitamina B12",
+            "k": "Vitamina K",
+            "thiamin": "Tiamina (B1)",
+            "riboflavin": "Riboflavina (B2)",
+            "niacin": "Niacina (B3)",
+            "folicAcid": "Ácido Fólico"
+        },
+        "nutrients": {
+            "ENERC_KCAL": "Calorías",
+            "PROCNT": "Proteína",
+            "FAT": "Grasa Total",
+            "FASAT": "Grasa Saturada",
+            "FATRN": "Grasa Trans",
+            "FAMS": "Grasa Monoinsaturada",
+            "FAPU": "Grasa Poliinsaturada",
+            "CHOCDF": "Carbohidratos",
+            "FIBTG": "Fibra Dietética",
+            "SUGAR": "Azúcar",
+            "WATER": "Agua",
+            "TOCPHA": "Vitamina E",
+            "CA": "Calcio",
+            "FE": "Hierro",
+            "MG": "Magnesio",
+            "P": "Fósforo",
+            "K": "Potasio",
+            "NA": "Sodio",
+            "ZN": "Zinc",
+            "CU": "Cobre",
+            "MN": "Manganeso",
+            "SE": "Selenio",
+            "VITA_RAE": "Vitamina A",
+            "VITC": "Vitamina C",
+            "VITD": "Vitamina D",
+            "VITB6A": "Vitamina B6",
+            "VITB12": "Vitamina B12",
+            "VITK1": "Vitamina K",
+            "THIA": "Tiamina",
+            "RIBF": "Riboflavina",
+            "NIA": "Niacina",
+            "FOLAC": "Ácido Fólico",
+            "FOLDFE": "Equivalentes de Folato Dietético",
+            "FOLFD": "Folato de Alimentos"
         }
     }
 }

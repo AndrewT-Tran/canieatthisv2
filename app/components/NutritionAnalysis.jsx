@@ -2,10 +2,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { IoClose, IoNutrition, IoWarning, IoCheckmarkCircle } from 'react-icons/io5';
 import { Dialog } from '@headlessui/react';
 import { useTheme } from '../context/ThemeContext';
+import { useTranslations } from 'next-intl';
 import { cn } from '../utils/cn';
 
 export default function NutritionAnalysis({ isOpen, onClose, nutritionData }) {
     const { theme } = useTheme();
+    const t = useTranslations('nutrition');
 
     if (!nutritionData) return null;
 
@@ -73,7 +75,7 @@ export default function NutritionAnalysis({ isOpen, onClose, nutritionData }) {
                                 "w-6 h-6",
                                 theme === 'dark' ? "text-emerald-400" : "text-orange-web"
                             )} />
-                            Nutritional Analysis
+                            {t('analysis.title')}
                         </Dialog.Title>
                         <button
                             onClick={onClose}
@@ -83,6 +85,7 @@ export default function NutritionAnalysis({ isOpen, onClose, nutritionData }) {
                                     ? "hover:bg-gray-800 text-gray-400 hover:text-white"
                                     : "hover:bg-gray-100 text-gray-500 hover:text-gray-700"
                             )}
+                            aria-label={t('close')}
                         >
                             <IoClose className="w-6 h-6" />
                         </button>
@@ -100,10 +103,10 @@ export default function NutritionAnalysis({ isOpen, onClose, nutritionData }) {
                             {/* Calories */}
                             <motion.div variants={itemVariants} className="flex items-center justify-between">
                                 <div className="flex items-center gap-2">
-                                    <span className="text-lg font-semibold">Total Calories:</span>
+                                    <span className="text-lg font-semibold">{t('totalCalories')}:</span>
                                 </div>
                                 <span className="text-2xl font-bold text-orange-web">
-                                    {Math.round(nutritionData.calories)} kcal
+                                    {Math.round(nutritionData.calories)} {t('units.kcal')}
                                 </span>
                             </motion.div>
 
@@ -121,16 +124,16 @@ export default function NutritionAnalysis({ isOpen, onClose, nutritionData }) {
                                         )}
                                     >
                                         <div className="flex items-center justify-between">
-                                            <span className="font-medium">{nutrient.label}</span>
+                                            <span className="font-medium">{t(`nutrients.${key}`)}</span>
                                             <div className="flex items-center gap-2">
                                                 <span>
-                                                    {Math.round(nutrient.quantity)}{nutrient.unit}
+                                                    {Math.round(nutrient.quantity)}{t(`units.${nutrient.unit}`)}
                                                 </span>
                                                 {getNutrientStatus(nutrient) === 'high' && (
-                                                    <IoWarning className="text-orange-web" />
+                                                    <IoWarning className="text-orange-web" title={t('status.high')} />
                                                 )}
                                                 {getNutrientStatus(nutrient) === 'good' && (
-                                                    <IoCheckmarkCircle className="text-emerald-400" />
+                                                    <IoCheckmarkCircle className="text-emerald-400" title={t('status.good')} />
                                                 )}
                                             </div>
                                         </div>

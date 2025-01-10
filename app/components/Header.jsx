@@ -110,7 +110,7 @@ export default function Header() {
 
     return (
         <motion.div
-            className="relative w-full py-12 sm:py-16 md:py-20"
+            className="relative w-full py-fluid-12"
             initial="hidden"
             animate="visible"
             variants={variants.container}
@@ -118,7 +118,7 @@ export default function Header() {
             {/* Title */}
             <div className="relative">
                 <motion.div
-                    className="flex justify-center mb-8 sm:mb-10 md:mb-12"
+                    className="flex justify-center mb-fluid-8"
                     initial={{ scale: 0, rotate: -180 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{
@@ -171,12 +171,12 @@ export default function Header() {
                     </div>
                 </motion.div>
                 <motion.h1
-                    className="text-center font-bold text-4xl sm:text-5xl md:text-6xl px-4"
+                    className="text-center font-bold text-fluid-4xl px-fluid-4"
                     variants={variants.title}
                 >
-                    <div className="flex items-center justify-center gap-2 sm:gap-3 font-climate-crisis whitespace-nowrap">
+                    <div className="flex items-center justify-center gap-fluid-base font-climate-crisis whitespace-nowrap">
                         <div className="relative flex items-center">
-                            <div className="flex gap-2 sm:gap-3 relative z-0">
+                            <div className="flex gap-fluid-base relative z-0">
                                 <motion.span
                                     className={styles.text}
                                     variants={variants.letter}
@@ -192,7 +192,7 @@ export default function Header() {
                             </div>
                             {/* Animated gradient underline */}
                             <motion.div
-                                className="absolute -bottom-1 left-0 right-0 mx-auto h-4 overflow-hidden z-10"
+                                className="absolute -bottom-1 left-0 right-0 mx-auto h-fluid-4 overflow-hidden z-10"
                                 initial={{ width: 0 }}
                                 animate={{ width: "100%" }}
                                 transition={{
@@ -221,7 +221,10 @@ export default function Header() {
 
                 {/* Subtitle */}
                 <motion.p
-                    className={styles.subtitle}
+                    className={cn(
+                        "mt-fluid-6 text-center font-light text-fluid-lg max-w-lg mx-auto px-fluid-4",
+                        theme === 'dark' ? "text-emerald-200/90" : "text-gray-600"
+                    )}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{

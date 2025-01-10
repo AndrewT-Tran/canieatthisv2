@@ -213,13 +213,13 @@ export default function NutritionAnalysisDialog({
                                             "font-medium",
                                             theme === 'dark' ? "text-amber-300" : "text-amber-700"
                                         )}>
-                                            Please specify a quantity
+                                            {t('specifyQuantity')}
                                         </p>
                                         <p className={cn(
                                             "text-sm mt-1",
                                             theme === 'dark' ? "text-amber-300/70" : "text-amber-600"
                                         )}>
-                                            Try searching with a specific amount (e.g., &quot;1 apple&quot; or &quot;100g apples&quot;)
+                                            {t('quantityExample')}
                                         </p>
                                     </div>
                                 </div>
@@ -268,7 +268,7 @@ export default function NutritionAnalysisDialog({
                                         )}
                                     >
                                         {nutritionData.calories || 0}
-                                        <span className="text-3xl ml-2 font-normal text-gray-500">kcal</span>
+                                        <span className="text-3xl ml-2 font-normal text-gray-500">{t('units.kcal')}</span>
                                     </motion.div>
                                 </motion.div>
 
@@ -340,7 +340,7 @@ export default function NutritionAnalysisDialog({
                                             : "bg-gray-100 hover:bg-gray-200 text-gray-700"
                                     )}
                                 >
-                                    <span>{showDetails ? 'Show Less' : 'Show More Details'}</span>
+                                    <span>{showDetails ? t('showLess') : t('showMore')}</span>
                                     <IoChevronDown className={cn(
                                         "w-5 h-5 transition-transform duration-300",
                                         showDetails ? "rotate-180" : ""
@@ -391,14 +391,62 @@ export default function NutritionAnalysisDialog({
                                     "text-center mb-2 font-medium",
                                     theme === 'dark' ? "text-white" : "text-gray-900"
                                 )}>
-                                    No nutrition data available
+                                    {t('noData')}
                                 </p>
                                 <p className={cn(
                                     "text-center text-sm",
                                     theme === 'dark' ? "text-gray-400" : "text-gray-600"
                                 )}>
-                                    This could be due to an invalid ingredient name or missing data in our database.
+                                    {t('noDataDescription')}
                                 </p>
+
+                                {/* Missing Quantity Message */}
+                                <p className={cn(
+                                    "font-medium",
+                                    theme === 'dark' ? "text-amber-300" : "text-amber-700"
+                                )}>
+                                    {t('specifyQuantity')}
+                                </p>
+                                <p className={cn(
+                                    "text-sm mt-1",
+                                    theme === 'dark' ? "text-amber-300/70" : "text-amber-600"
+                                )}>
+                                    {t('quantityExample')}
+                                </p>
+
+                                {/* Show More Button */}
+                                <span>{showDetails ? t('showLess') : t('showMore')}</span>
+
+                                {/* Recommendation Messages */}
+                                <p className={cn(
+                                    "text-sm font-medium",
+                                    theme === 'dark'
+                                        ? isSafe ? "text-emerald-300" : "text-red-300"
+                                        : isSafe ? "text-emerald-700" : "text-red-700"
+                                )}>
+                                    {isSafe ? t('recommendation.safe') : t('recommendation.unsafe')}
+                                </p>
+
+                                {/* Net Carbs and Sugars Labels */}
+                                <div className="text-sm text-gray-500 mb-1">{t('netCarbs')}</div>
+                                <div className="text-sm text-gray-500 mb-1">{t('sugars')}</div>
+
+                                {/* Weight Display */}
+                                <span className={cn(
+                                    "text-sm",
+                                    theme === 'dark' ? "text-gray-400" : "text-gray-500"
+                                )}>
+                                    {Math.round(nutritionData.totalWeight || 0)}{t('units.grams')}
+                                </span>
+
+                                {/* Calories Display */}
+                                <span className={cn(
+                                    "text-xl font-medium",
+                                    theme === 'dark' ? "text-gray-300" : "text-gray-600"
+                                )}>
+                                    {t('calories')}
+                                </span>
+                                <span className="text-3xl ml-2 font-normal text-gray-500">{t('units.kcal')}</span>
                             </motion.div>
                         )}
                     </Dialog.Panel>

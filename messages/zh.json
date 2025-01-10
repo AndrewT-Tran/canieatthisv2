@@ -80,6 +80,114 @@
             "riboflavin": "核黄素",
             "niacin": "烟酰胺",
             "folicAcid": "叶酸"
+        },
+        "noData": "无营养数据",
+        "noDataDescription": "这可能是由于无效的食材名称或数据库中缺少数据。",
+        "specifyQuantity": "请指定数量",
+        "quantityExample": "尝试搜索特定数量（例如：\"1个苹果\"或\"100克苹果\"）",
+        "showMore": "显示更多详情",
+        "showLess": "显示更少",
+        "totalCalories": "总热量",
+        "analysis": {
+            "title": "营养分析"
+        },
+        "units": {
+            "kcal": "千卡",
+            "g": "克",
+            "mg": "毫克",
+            "µg": "微克",
+            "grams": "克",
+            "IU": "国际单位"
+        },
+        "status": {
+            "high": "偏高",
+            "good": "适中",
+            "low": "偏低",
+            "neutral": "中性"
+        },
+        "recommendation": {
+            "safe": "这种食物通常对糖尿病患者安全",
+            "unsafe": "这种食物可能不适合糖尿病患者"
+        },
+        "netCarbs": "净碳水化合物",
+        "sugars": "糖分",
+        "calories": "热量",
+        "close": "关闭",
+        "sections": {
+            "macronutrients": "宏量营养素",
+            "vitamins": "维生素",
+            "minerals": "矿物质"
+        },
+        "protein": "蛋白质",
+        "fat": {
+            "total": "总脂肪",
+            "saturated": "饱和脂肪",
+            "trans": "反式脂肪",
+            "monounsaturated": "单不饱和脂肪",
+            "polyunsaturated": "多不饱和脂肪"
+        },
+        "carbs": "碳水化合物",
+        "fiber": "膳食纤维",
+        "sugar": "糖",
+        "minerals": {
+            "calcium": "钙",
+            "iron": "铁",
+            "magnesium": "镁",
+            "phosphorus": "磷",
+            "potassium": "钾",
+            "sodium": "钠",
+            "zinc": "锌",
+            "copper": "铜",
+            "manganese": "锰",
+            "selenium": "硒"
+        },
+        "vitamins": {
+            "a": "维生素A",
+            "c": "维生素C",
+            "d": "维生素D",
+            "b6": "维生素B6",
+            "b12": "维生素B12",
+            "k": "维生素K",
+            "thiamin": "硫胺素(B1)",
+            "riboflavin": "核黄素(B2)",
+            "niacin": "烟酰胺(B3)",
+            "folicAcid": "叶酸"
+        },
+        "nutrients": {
+            "ENERC_KCAL": "热量",
+            "PROCNT": "蛋白质",
+            "FAT": "总脂肪",
+            "FASAT": "饱和脂肪",
+            "FATRN": "反式脂肪",
+            "FAMS": "单不饱和脂肪",
+            "FAPU": "多不饱和脂肪",
+            "CHOCDF": "碳水化合物",
+            "FIBTG": "膳食纤维",
+            "SUGAR": "糖",
+            "WATER": "水分",
+            "TOCPHA": "维生素E",
+            "CA": "钙",
+            "FE": "铁",
+            "MG": "镁",
+            "P": "磷",
+            "K": "钾",
+            "NA": "钠",
+            "ZN": "锌",
+            "CU": "铜",
+            "MN": "锰",
+            "SE": "硒",
+            "VITA_RAE": "维生素A",
+            "VITC": "维生素C",
+            "VITD": "维生素D",
+            "VITB6A": "维生素B6",
+            "VITB12": "维生素B12",
+            "VITK1": "维生素K",
+            "THIA": "硫胺素",
+            "RIBF": "核黄素",
+            "NIA": "烟酰胺",
+            "FOLAC": "叶酸",
+            "FOLDFE": "膳食叶酸当量",
+            "FOLFD": "食物叶酸"
         }
     }
 }

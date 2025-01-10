@@ -148,7 +148,7 @@ body,
 
 /* Toast Customization */
 .Toastify__toast {
-  @apply rounded-lg bg-white/90 font-light text-outer-space backdrop-blur-sm dark:bg-outer-space/90 dark:text-white;
+  @apply rounded-lg bg-white/90 font-light text-gray-800 backdrop-blur-sm dark:bg-gray-800/90 dark:text-white;
 }
 
 .Toastify__close-button {

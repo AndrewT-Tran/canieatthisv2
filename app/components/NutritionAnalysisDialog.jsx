@@ -3,10 +3,11 @@
 import { Dialog } from '@headlessui/react';
 import { useTheme } from '../context/ThemeContext';
 import { cn } from '../utils/cn';
-import { IoNutrition, IoClose, IoCheckmarkCircle, IoWarning, IoFlame, IoScale, IoRestaurant, IoChevronDown } from "react-icons/io5";
+import { IoNutrition, IoClose, IoCheckmarkCircle, IoWarning, IoFlame, IoScale, IoRestaurant, IoChevronDown, IoInformation } from "react-icons/io5";
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import DisclaimerDialog from './DisclaimerDialog';
 
 export default function NutritionAnalysisDialog({
     isOpen = false,
@@ -17,6 +18,7 @@ export default function NutritionAnalysisDialog({
     const { theme } = useTheme();
     const t = useTranslations('nutrition');
     const [showDetails, setShowDetails] = useState(false);
+    const [showDisclaimer, setShowDisclaimer] = useState(false);
 
     if (!nutritionData) return null;
 
@@ -204,6 +206,20 @@ export default function NutritionAnalysisDialog({
 
                         {/* Scrollable Content */}
                         <div className="flex-1 overflow-y-auto px-8 py-6">
+                            {/* Disclaimer Button */}
+                            <button
+                                onClick={() => setShowDisclaimer(true)}
+                                className={cn(
+                                    "w-full mb-4 py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm",
+                                    theme === 'dark'
+                                        ? "bg-gray-800/80 hover:bg-gray-800 text-gray-300"
+                                        : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                                )}
+                            >
+                                <IoInformation className="w-4 h-4" />
+                                <span>View Important Information About These Results</span>
+                            </button>
+
                             {/* Error Message for Missing Quantity */}
                             {hasMissingQuantity && (
                                 <motion.div
@@ -460,6 +476,12 @@ export default function NutritionAnalysisDialog({
                                     <span className="text-3xl ml-2 font-normal text-gray-500">{t('units.kcal')}</span>
                                 </motion.div>
                             )}
+
+                            {/* Disclaimer Dialog */}
+                            <DisclaimerDialog
+                                isOpen={showDisclaimer}
+                                onClose={() => setShowDisclaimer(false)}
+                            />
                         </div>
                     </Dialog.Panel>
                 </motion.div>

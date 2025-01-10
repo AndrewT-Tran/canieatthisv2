@@ -23,7 +23,8 @@
     },
     "common": {
         "close": "关闭",
-        "error": "错误"
+        "error": "错误",
+        "language": "语言"
     },
     "nutrition": {
         "title": "营养分析",

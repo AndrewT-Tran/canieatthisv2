@@ -15,18 +15,18 @@ export default function LanguageSwitcher() {
     const pathnameWithoutLocale = pathname.replace(`/${locale}`, '');
 
     return (
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-1">
             {languages.map((lang) => (
-                <Link
-                    key={lang.code}
-                    href={`/${lang.code}${pathnameWithoutLocale}`}
-                    className={`px-2 py-1 rounded-md text-sm ${locale === lang.code
-                        ? 'bg-primary text-white'
-                        : 'hover:bg-gray-100 dark:hover:bg-gray-800'
-                        }`}
-                >
-                    {lang.name}
-                </Link>
+                lang.code !== locale && (
+                    <Link
+                        key={lang.code}
+                        href={`/${lang.code}${pathnameWithoutLocale}`}
+                        className="px-1.5 py-0.5 rounded text-sm hover:bg-white/10 dark:hover:bg-gray-700/50 
+                            transition-colors duration-200"
+                    >
+                        {lang.code.toUpperCase()}
+                    </Link>
+                )
             ))}
         </div>
     );

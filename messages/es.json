@@ -23,7 +23,8 @@
     },
     "common": {
         "close": "Cerrar",
-        "error": "Error"
+        "error": "Error",
+        "language": "Idioma"
     },
     "nutrition": {
         "title": "Análisis Nutricional",

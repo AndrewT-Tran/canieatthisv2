@@ -62,7 +62,7 @@ export default function SearchHistory({ history, onSelect, onClear }) {
     };
 
     return (
-        <div className="w-full">
+        <div className="w-full p-10">
             <div className="relative p-6 rounded-xl backdrop-blur-md
                 dark:bg-gray-900/30 bg-white/70
                 dark:border-white/10 border-gray-200/50 border

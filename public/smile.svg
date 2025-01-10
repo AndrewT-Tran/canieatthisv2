@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 24 24">
+    <style>
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-2px); }
+        }
+        @keyframes blink {
+            0%, 100% { transform: scaleY(1); }
+            45% { transform: scaleY(1); }
+            50% { transform: scaleY(0.1); }
+            55% { transform: scaleY(1); }
+        }
+        @keyframes smile {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .face { animation: bounce 2s ease-in-out infinite; }
+        .eye { animation: blink 3s ease-in-out infinite; }
+        .smile { animation: smile 2s ease-in-out infinite; }
+    </style>
+    <g fill="none" class="face">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+        <path 
+            class="smile"
+            stroke="currentColor" 
+            stroke-linecap="round" 
+            stroke-width="1.5" 
+            d="M8.913 15.934c1.258.315 2.685.315 4.122-.07c1.437-.385 2.673-1.099 3.605-2.001"
+        />
+        <g class="eye">
+            <ellipse 
+                cx="14.509" 
+                cy="9.774" 
+                fill="currentColor" 
+                rx="1" 
+                ry="1.5" 
+                transform="rotate(-15 14.51 9.774)"
+            />
+            <ellipse 
+                cx="8.714" 
+                cy="11.328" 
+                fill="currentColor" 
+                rx="1" 
+                ry="1.5" 
+                transform="rotate(-15 8.714 11.328)"
+            />
+        </g>
+        <path 
+            class="smile"
+            stroke="currentColor" 
+            stroke-width="1.5" 
+            d="m13 16l.478.974a1.5 1.5 0 1 0 2.693-1.322l-.46-.935"
+        />
+    </g>
+</svg>

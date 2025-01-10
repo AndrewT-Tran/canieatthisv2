@@ -23,7 +23,8 @@
     },
     "common": {
         "close": "Close",
-        "error": "Error"
+        "error": "Error",
+        "language": "Language"
     },
     "nutrition": {
         "title": "Nutrition Analysis",

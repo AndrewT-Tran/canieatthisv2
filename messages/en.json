@@ -1,0 +1,81 @@
+{
+    "header": {
+        "title": {
+            "can": "Can I",
+            "eat": "Eat",
+            "this": "This?"
+        },
+        "subtitle": "Discover the nutritional content of any food or meal"
+    },
+    "navigation": {
+        "home": "Home",
+        "search": "Search"
+    },
+    "search": {
+        "placeholder": "Enter food or meal...",
+        "button": "Search",
+        "history": "Search History",
+        "clear": "Clear History",
+        "loading": "Searching...",
+        "error": {
+            "api": "Failed to fetch nutrition data"
+        }
+    },
+    "common": {
+        "close": "Close",
+        "error": "Error"
+    },
+    "nutrition": {
+        "title": "Nutrition Analysis",
+        "close": "Close",
+        "netCarbs": "Net Carbs",
+        "sugars": "Sugars",
+        "recommendation": {
+            "safe": "Yes, you can eat this!",
+            "unsafe": "Be careful with this food",
+            "safeDescription": "This food has acceptable levels of carbohydrates and sugars.",
+            "unsafeDescription": "This food has high levels of carbohydrates or sugars. Consider reducing portion size or finding alternatives."
+        },
+        "sections": {
+            "macronutrients": "Macronutrients",
+            "vitamins": "Vitamins",
+            "minerals": "Minerals"
+        },
+        "calories": "Calories",
+        "protein": "Protein",
+        "fat": {
+            "total": "Total Fat",
+            "saturated": "Saturated Fat",
+            "trans": "Trans Fat",
+            "monounsaturated": "Monounsaturated Fat",
+            "polyunsaturated": "Polyunsaturated Fat"
+        },
+        "carbs": "Total Carbohydrates",
+        "fiber": "Dietary Fiber",
+        "sugar": "Sugars",
+        "minerals": {
+            "calcium": "Calcium",
+            "iron": "Iron",
+            "magnesium": "Magnesium",
+            "phosphorus": "Phosphorus",
+            "potassium": "Potassium",
+            "sodium": "Sodium",
+            "zinc": "Zinc",
+            "copper": "Copper",
+            "manganese": "Manganese",
+            "selenium": "Selenium"
+        },
+        "vitamins": {
+            "a": "Vitamin A",
+            "c": "Vitamin C",
+            "d": "Vitamin D",
+            "b6": "Vitamin B6",
+            "b12": "Vitamin B12",
+            "k": "Vitamin K",
+            "thiamin": "Thiamin",
+            "riboflavin": "Riboflavin",
+            "niacin": "Niacin",
+            "folicAcid": "Folic Acid"
+        }
+    }
+}

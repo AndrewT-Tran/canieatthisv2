@@ -2,32 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-climate-crisis: 'Climate Crisis', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+
+    /* Light mode colors */
+    --color-white: #fcfcfc;
+    --color-outer-space: #4a5759;
+    --color-orange-web: #ffa400;
+    --color-celestial-blue: #009ffd;
+    --color-asparagus: #6cae75;
+  }
+
+  body {
+    @apply text-gray-800 antialiased dark:text-white;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .btn {
+    @apply font-light;
+  }
+
+  .loading {
+    @apply animate-spin;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-celestial-blue to-asparagus bg-clip-text text-transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 200% auto;
+  }
+
+  .text-clip-animate {
+    animation: textClip 4s ease-in-out infinite;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .scrollbar-thin {
+    scrollbar-width: thin;
   }
+
+  .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+    border-radius: 0.25rem;
+  }
+}
+
+/* Custom Animations */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes textClip {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+}
+
+.animate-shimmer-slide {
+  animation: shimmer 2s linear infinite;
+}
+
+/* Toast Customization */
+.Toastify__toast {
+  @apply rounded-lg bg-white/90 font-light text-outer-space backdrop-blur-sm dark:bg-outer-space/90 dark:text-white;
+}
+
+.Toastify__close-button {
+  @apply text-outer-space/70 hover:text-outer-space dark:text-white/70 dark:hover:text-white;
+}
+
+.Toastify__progress-bar {
+  @apply bg-celestial-blue/50;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.font-climate-crisis {
+  font-family: var(--font-climate-crisis);
 }

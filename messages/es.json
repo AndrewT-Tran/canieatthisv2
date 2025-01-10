@@ -1,0 +1,81 @@
+{
+    "header": {
+        "title": {
+            "can": "¿Puedo",
+            "eat": "Comer",
+            "this": "Esto?"
+        },
+        "subtitle": "Descubre el contenido nutricional de cualquier alimento o comida"
+    },
+    "navigation": {
+        "home": "Inicio",
+        "search": "Buscar"
+    },
+    "search": {
+        "placeholder": "Ingresa un alimento o comida...",
+        "button": "Buscar",
+        "history": "Historial de búsqueda",
+        "clear": "Borrar historial",
+        "loading": "Buscando...",
+        "error": {
+            "api": "Error al obtener datos nutricionales"
+        }
+    },
+    "common": {
+        "close": "Cerrar",
+        "error": "Error"
+    },
+    "nutrition": {
+        "title": "Análisis Nutricional",
+        "close": "Cerrar",
+        "netCarbs": "Carbohidratos Netos",
+        "sugars": "Azúcares",
+        "recommendation": {
+            "safe": "¡Sí, puedes comer esto!",
+            "unsafe": "Ten cuidado con este alimento",
+            "safeDescription": "Este alimento tiene niveles aceptables de carbohidratos y azúcares.",
+            "unsafeDescription": "Este alimento tiene altos niveles de carbohidratos o azúcares. Considera reducir la porción o buscar alternativas."
+        },
+        "sections": {
+            "macronutrients": "Macronutrientes",
+            "vitamins": "Vitaminas",
+            "minerals": "Minerales"
+        },
+        "calories": "Calorías",
+        "protein": "Proteína",
+        "fat": {
+            "total": "Grasa Total",
+            "saturated": "Grasa Saturada",
+            "trans": "Grasa Trans",
+            "monounsaturated": "Grasa Monoinsaturada",
+            "polyunsaturated": "Grasa Poliinsaturada"
+        },
+        "carbs": "Carbohidratos Totales",
+        "fiber": "Fibra Dietética",
+        "sugar": "Azúcares",
+        "minerals": {
+            "calcium": "Calcio",
+            "iron": "Hierro",
+            "magnesium": "Magnesio",
+            "phosphorus": "Fósforo",
+            "potassium": "Potasio",
+            "sodium": "Sodio",
+            "zinc": "Zinc",
+            "copper": "Cobre",
+            "manganese": "Manganeso",
+            "selenium": "Selenio"
+        },
+        "vitamins": {
+            "a": "Vitamina A",
+            "c": "Vitamina C",
+            "d": "Vitamina D",
+            "b6": "Vitamina B6",
+            "b12": "Vitamina B12",
+            "k": "Vitamina K",
+            "thiamin": "Tiamina",
+            "riboflavin": "Riboflavina",
+            "niacin": "Niacina",
+            "folicAcid": "Ácido Fólico"
+        }
+    }
+}

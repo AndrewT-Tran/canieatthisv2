@@ -1,0 +1,81 @@
+{
+    "header": {
+        "title": {
+            "can": "我可以",
+            "eat": "吃",
+            "this": "这个吗？"
+        },
+        "subtitle": "探索任何食物的营养成分"
+    },
+    "navigation": {
+        "home": "首页",
+        "search": "搜索"
+    },
+    "search": {
+        "placeholder": "输入食物或餐点...",
+        "button": "搜索",
+        "history": "搜索历史",
+        "clear": "清除历史",
+        "loading": "搜索中...",
+        "error": {
+            "api": "获取营养数据失败"
+        }
+    },
+    "common": {
+        "close": "关闭",
+        "error": "错误"
+    },
+    "nutrition": {
+        "title": "营养分析",
+        "close": "关闭",
+        "netCarbs": "净碳水化合物",
+        "sugars": "糖分",
+        "recommendation": {
+            "safe": "是的，可以吃！",
+            "unsafe": "食用需谨慎",
+            "safeDescription": "这种食物的碳水化合物和糖分含量在可接受范围内。",
+            "unsafeDescription": "这种食物的碳水化合物或糖分含量较高。建议减少食用量或寻找替代品。"
+        },
+        "sections": {
+            "macronutrients": "宏量营养素",
+            "vitamins": "维生素",
+            "minerals": "矿物质"
+        },
+        "calories": "热量",
+        "protein": "蛋白质",
+        "fat": {
+            "total": "总脂肪",
+            "saturated": "饱和脂肪",
+            "trans": "反式脂肪",
+            "monounsaturated": "单不饱和脂肪",
+            "polyunsaturated": "多不饱和脂肪"
+        },
+        "carbs": "总碳水化合物",
+        "fiber": "膳食纤维",
+        "sugar": "糖",
+        "minerals": {
+            "calcium": "钙",
+            "iron": "铁",
+            "magnesium": "镁",
+            "phosphorus": "磷",
+            "potassium": "钾",
+            "sodium": "钠",
+            "zinc": "锌",
+            "copper": "铜",
+            "manganese": "锰",
+            "selenium": "硒"
+        },
+        "vitamins": {
+            "a": "维生素A",
+            "c": "维生素C",
+            "d": "维生素D",
+            "b6": "维生素B6",
+            "b12": "维生素B12",
+            "k": "维生素K",
+            "thiamin": "硫胺素",
+            "riboflavin": "核黄素",
+            "niacin": "烟酰胺",
+            "folicAcid": "叶酸"
+        }
+    }
+}

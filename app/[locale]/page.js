@@ -5,10 +5,12 @@ import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import SearchHistory from '../components/SearchHistory';
 import SettingsButtons from '../components/SettingsButtons';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { cn } from '../utils/cn';
 
 export default function Home() {
     const t = useTranslations();
+    const locale = useLocale();
     const [searchHistory, setSearchHistory] = useState([]);
 
     useEffect(() => {
@@ -66,8 +68,11 @@ export default function Home() {
             </div>
 
             {/* Main content */}
-            <main className="relative w-full min-h-screen pt-32 pb-12">
-                <div className="container max-w-4xl mx-auto px-4 space-y-8">
+            <main className={cn(
+                "flex min-h-screen flex-col items-center p-4 sm:p-8",
+                locale === 'zh' && 'font-noto-sans-sc'
+            )}>
+                <div className="container max-w-4xl mx-auto space-y-8">
                     <Header />
                     <div className="space-y-6 w-full p-6">
                         <SearchBar

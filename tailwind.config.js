@@ -96,6 +96,7 @@ module.exports = {
       },
       fontFamily: {
         'climate-crisis': ['var(--font-climate-crisis)'],
+        'noto-sans-sc': ['var(--font-noto-sans-sc)', 'sans-serif'],
       },
     },
   },

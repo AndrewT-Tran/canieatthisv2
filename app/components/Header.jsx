@@ -174,9 +174,9 @@ export default function Header() {
                     className="text-center font-bold text-fluid-4xl px-fluid-4"
                     variants={variants.title}
                 >
-                    <div className="flex items-center justify-center gap-fluid-base font-climate-crisis whitespace-nowrap">
+                    <div className="flex items-center justify-center gap-fluid-sm tracking-tight font-climate-crisis whitespace-nowrap">
                         <div className="relative flex items-center">
-                            <div className="flex gap-fluid-base relative z-0">
+                            <div className="flex gap-fluid-sm relative z-0">
                                 <motion.span
                                     className={styles.text}
                                     variants={variants.letter}
@@ -184,7 +184,7 @@ export default function Header() {
                                     {t('header.title.can')}
                                 </motion.span>
                                 <motion.span
-                                    className={styles.text}
+                                    className={cn(styles.text, "-ml-1")}
                                     variants={variants.letter}
                                 >
                                     {t('header.title.i')}
@@ -205,13 +205,13 @@ export default function Header() {
                             </motion.div>
                         </div>
                         <motion.span
-                            className={styles.text}
+                            className={cn(styles.text, "-ml-1")}
                             variants={variants.letter}
                         >
                             {t('header.title.eat')}
                         </motion.span>
                         <motion.span
-                            className={cn(styles.text, "not-italic")}
+                            className={cn(styles.text, "not-italic -ml-1")}
                             variants={variants.letter}
                         >
                             {t('header.title.this')}
@@ -223,7 +223,7 @@ export default function Header() {
                 <motion.p
                     className={cn(
                         "mt-fluid-6 text-center font-light text-fluid-lg max-w-lg mx-auto px-fluid-4",
-                        theme === 'dark' ? "text-emerald-200/90" : "text-gray-600"
+                        theme === 'dark' ? "text-emerald-200/90" : "text-gray-200"
                     )}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

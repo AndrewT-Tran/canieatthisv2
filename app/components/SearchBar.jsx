@@ -150,7 +150,7 @@ export default function SearchBar({ onSearch }) {
               >
                 <span className="hidden sm:inline">{isLoading ? t('search.loading') : t('search.button')}</span>
                 <span className="sm:hidden">
-                  {isLoading ? t('search.loading') : t('search.button.short')}
+                  {isLoading ? t('search.loading') : t('search.buttonShort')}
                 </span>
               </button>
             </div>

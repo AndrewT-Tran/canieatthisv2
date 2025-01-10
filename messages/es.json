@@ -15,6 +15,7 @@
     "search": {
         "placeholder": "Ingresa un alimento o comida...",
         "button": "Buscar",
+        "buttonShort": "Ir",
         "history": "Historial de búsqueda",
         "clear": "Borrar historial",
         "loading": "Buscando...",

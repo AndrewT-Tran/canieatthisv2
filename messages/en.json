@@ -15,6 +15,7 @@
     "search": {
         "placeholder": "Enter food or meal...",
         "button": "Search",
+        "buttonShort": "Go",
         "history": "Search History",
         "clear": "Clear History",
         "loading": "Searching...",

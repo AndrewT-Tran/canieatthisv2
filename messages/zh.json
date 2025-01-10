@@ -15,6 +15,7 @@
     "search": {
         "placeholder": "输入食物或餐点...",
         "button": "搜索",
+        "buttonShort": "搜",
         "history": "搜索历史",
         "clear": "清除历史",
         "loading": "搜索中...",

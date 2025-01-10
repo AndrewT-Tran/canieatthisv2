@@ -46,30 +46,30 @@ export default function Home() {
     };
 
     return (
-        <div className="min-h-screen w-full">
+        <div className="relative min-h-screen w-full">
             {/* Settings Buttons */}
-            <div className="relative z-50">
+            <div className="fixed top-0 right-0 z-50 p-4">
                 <SettingsButtons />
             </div>
 
             {/* Animated background effects */}
-            <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+            <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none">
                 {/* Animated blobs */}
                 <div className="absolute inset-0">
-                    <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-orange-200/30 dark:bg-emerald-500/10 rounded-full blur-3xl animate-blob" />
-                    <div className="absolute top-1/3 -right-1/4 w-96 h-96 bg-orange-300/20 dark:bg-lime-500/10 rounded-full blur-3xl animate-blob animation-delay-2000" />
-                    <div className="absolute -bottom-32 left-1/2 w-96 h-96 bg-orange-100/40 dark:bg-emerald-500/10 rounded-full blur-3xl animate-blob animation-delay-4000" />
+                    <div className="absolute top-0 -left-1/3 w-[80vw] h-[80vw] bg-orange-200/20 dark:bg-emerald-500/10 rounded-full blur-3xl animate-blob" />
+                    <div className="absolute top-1/4 -right-1/3 w-[80vw] h-[80vw] bg-orange-300/20 dark:bg-lime-500/10 rounded-full blur-3xl animate-blob animation-delay-2000" />
+                    <div className="absolute -bottom-1/4 left-1/4 w-[80vw] h-[80vw] bg-orange-100/30 dark:bg-emerald-500/10 rounded-full blur-3xl animate-blob animation-delay-4000" />
                 </div>
 
                 {/* Grain effect overlay */}
-                <div className="absolute inset-0 opacity-5 dark:opacity-20 bg-[url('/noise.png')] pointer-events-none" />
+                <div className="absolute inset-0 opacity-10 dark:opacity-30 bg-[url('/noise.png')] mix-blend-overlay" />
             </div>
 
             {/* Main content */}
-            <div className="relative w-full min-h-screen pt-20 pb-8 z-10">
-                <div className="w-full max-w-2xl mx-auto flex flex-col items-center space-y-8 px-4">
+            <main className="relative w-full min-h-screen pt-32 pb-12">
+                <div className="container max-w-2xl mx-auto px-4 space-y-8">
                     <Header />
-                    <div className="w-full space-y-6">
+                    <div className="space-y-6">
                         <SearchBar
                             placeholder={t('search.placeholder')}
                             buttonText={t('search.button')}
@@ -82,7 +82,7 @@ export default function Home() {
                         />
                     </div>
                 </div>
-            </div>
+            </main>
         </div>
     );
 } 

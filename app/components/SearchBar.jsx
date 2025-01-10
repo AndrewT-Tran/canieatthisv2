@@ -80,8 +80,8 @@ export default function SearchBar({ onSearch, placeholder = 'Search...', buttonT
             "relative flex items-center w-full overflow-hidden rounded-2xl shadow-lg",
             "transition duration-300",
             theme === 'dark'
-              ? "bg-gray-900/30 hover:bg-gray-900/50 backdrop-blur-xl"
-              : "bg-white/70 hover:bg-white/90 backdrop-blur-xl",
+              ? "bg-gray-900/40 hover:bg-gray-900/60 backdrop-blur-xl"
+              : "bg-white/60 hover:bg-white/80 backdrop-blur-xl",
             "border",
             theme === 'dark'
               ? "border-white/10 hover:border-white/20"
@@ -90,7 +90,7 @@ export default function SearchBar({ onSearch, placeholder = 'Search...', buttonT
             {/* Search Icon */}
             <div className={cn(
               "absolute left-4",
-              theme === 'dark' ? "text-white/50" : "text-gray-400"
+              theme === 'dark' ? "text-white/60" : "text-gray-400"
             )}>
               <IoSearch className="w-5 h-5" />
             </div>
@@ -106,8 +106,8 @@ export default function SearchBar({ onSearch, placeholder = 'Search...', buttonT
                 "w-full py-4 pl-12 pr-32 bg-transparent",
                 "placeholder:text-gray-400",
                 theme === 'dark'
-                  ? "text-white/90 placeholder:text-white/50"
-                  : "text-gray-900 placeholder:text-gray-500",
+                  ? "text-white placeholder:text-white/40"
+                  : "text-gray-900 placeholder:text-gray-500/70",
                 "focus:outline-none focus:ring-0"
               )}
             />
@@ -121,8 +121,8 @@ export default function SearchBar({ onSearch, placeholder = 'Search...', buttonT
                   "absolute right-24 p-1.5 rounded-full",
                   "transition-colors duration-200",
                   theme === 'dark'
-                    ? "text-white/50 hover:text-white/80 hover:bg-white/10"
-                    : "text-gray-400 hover:text-gray-600 hover:bg-gray-100"
+                    ? "text-white/40 hover:text-white/90 hover:bg-white/10"
+                    : "text-gray-400 hover:text-gray-600 hover:bg-gray-100/50"
                 )}
               >
                 <IoClose className="w-5 h-5" />
@@ -140,7 +140,7 @@ export default function SearchBar({ onSearch, placeholder = 'Search...', buttonT
                   "disabled:opacity-50 disabled:cursor-not-allowed",
                   theme === 'dark'
                     ? "bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30"
-                    : "bg-orange-web/10 text-orange-web hover:bg-orange-web/20"
+                    : "bg-orange-web/20 text-orange-web hover:bg-orange-web/30"
                 )}
               >
                 {isLoading ? t('search.loading') : buttonText}

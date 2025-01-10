@@ -49,7 +49,7 @@ export default function Header() {
             variants={containerVariants}
         >
             {/* Title */}
-            <div className="relative">
+            <div className="relative p-4">
                 <motion.div
                     className="flex justify-center mb-4 pt-8 sm:pt-10 md:pt-12"
                     initial={{ scale: 0, rotate: -180 }}

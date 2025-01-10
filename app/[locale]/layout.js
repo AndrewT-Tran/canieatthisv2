@@ -38,20 +38,22 @@ export default async function RootLayout({ children, params }) {
             <body suppressHydrationWarning className={cn(
                 inter.className,
                 climateCrisis.variable,
-                "min-h-screen w-full overflow-x-hidden transition-colors duration-300",
-                "bg-gradient-to-b from-orange-50 via-orange-50/50 to-white",
-                "dark:from-gray-900 dark:via-gray-850 dark:to-gray-800"
+                "min-h-screen w-full overflow-x-hidden",
+                "bg-gradient-to-b from-orange-50/80 via-orange-50/30 to-white/80",
+                "dark:from-gray-900 dark:via-gray-900/80 dark:to-gray-800/90"
             )}>
                 <NextIntlClientProvider messages={messages} locale={locale}>
                     <ThemeProvider>
                         <ThemeWrapper>
                             {/* Background gradient overlay */}
-                            <div className="fixed inset-0 -z-10 bg-gradient-to-b from-transparent via-orange-100/20 to-orange-100/10 dark:via-black/5 dark:to-black/10 pointer-events-none" />
+                            <div className="fixed inset-0 w-full h-full bg-gradient-to-b from-transparent via-orange-100/10 to-orange-100/5 dark:via-black/20 dark:to-black/30 pointer-events-none" />
 
-                            {/* Main content */}
-                            <main className="relative min-h-screen w-full z-10">
-                                {children}
-                            </main>
+                            {/* Main content container */}
+                            <div className="relative min-h-screen w-full">
+                                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                    {children}
+                                </div>
+                            </div>
                         </ThemeWrapper>
                     </ThemeProvider>
                 </NextIntlClientProvider>

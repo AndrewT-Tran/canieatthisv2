@@ -88,23 +88,23 @@ export default function SearchHistory({ history, onSelect, onClear }) {
     };
 
     return (
-        <div className="w-full p-10">
-            <div className="relative p-6 rounded-xl backdrop-blur-md
-                dark:bg-gray-900/30 bg-white/70
+        <div className="w-full p-6">
+            <div className="relative p-6 rounded-2xl backdrop-blur-md
+                dark:bg-gray-900/40 bg-white/60
                 dark:border-white/10 border-gray-200/50 border
-                shadow-xl">
+                shadow-lg">
                 {/* Header */}
-                <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-2 dark:text-white/70 text-gray-800">
+                <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2 dark:text-white/80 text-gray-800">
                         <div className="relative w-4 h-4">
-                            <div className="absolute inset-0 bg-gradient-to-r from-celestial-blue to-asparagus rounded-full opacity-50" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-celestial-blue to-asparagus rounded-full opacity-60" />
                             <IoTimeOutline className="relative w-full h-full" />
                         </div>
                         <span className="text-sm font-medium">Recent Searches</span>
                     </div>
                     <button
                         onClick={handleClearClick}
-                        className="text-xs dark:text-white/50 text-gray-500 dark:hover:text-white/70 hover:text-gray-700 transition-colors flex items-center gap-1"
+                        className="text-xs dark:text-white/40 text-gray-500 dark:hover:text-white/90 hover:text-gray-700 transition-colors flex items-center gap-1"
                     >
                         <IoClose className="w-3.5 h-3.5" />
                         <span>Clear</span>
@@ -113,20 +113,20 @@ export default function SearchHistory({ history, onSelect, onClear }) {
 
                 {/* History List */}
                 <div className="space-y-2">
-                    {displayedHistory.map((item, index) => (
+                    {displayedHistory.map((item) => (
                         <div
                             key={item.timestamp}
                             onClick={() => handleItemClick(item)}
-                            className="w-full group relative flex items-center gap-3 px-4 py-2.5 rounded-lg 
-                                dark:hover:bg-white/5 hover:bg-black/5
-                                transition-colors duration-200 cursor-pointer"
+                            className="w-full group relative flex items-center gap-3 px-4 py-2.5 rounded-xl 
+                                dark:hover:bg-white/10 hover:bg-black/5
+                                transition-all duration-200 cursor-pointer"
                         >
                             <div className="flex-1 min-w-0">
                                 <div className="flex items-center gap-2">
-                                    <span className="font-medium truncate">
+                                    <span className="font-medium truncate dark:text-white/90 text-gray-900">
                                         {item.query}
                                     </span>
-                                    <span className="text-xs opacity-50">
+                                    <span className="text-xs dark:text-white/40 text-gray-500">
                                         {formatTimestamp(item.timestamp)}
                                     </span>
                                 </div>
@@ -136,22 +136,22 @@ export default function SearchHistory({ history, onSelect, onClear }) {
                                 <button
                                     onClick={(e) => handleViewTable(e, item)}
                                     className="relative p-2 rounded-lg
-                                        dark:bg-white/10 bg-white/50
+                                        dark:bg-white/10 bg-white/60
                                         dark:hover:bg-white/20 hover:bg-white/80
-                                        transition-colors duration-200"
+                                        transition-all duration-200"
                                     title={t('search.viewAsTable')}
                                 >
-                                    <IoGrid className="w-4 h-4" />
+                                    <IoGrid className="w-4 h-4 dark:text-white/80" />
                                 </button>
                                 <button
                                     onClick={(e) => handleViewNutrition(e, item)}
                                     className="relative p-2 rounded-lg
-                                        dark:bg-white/10 bg-white/50
+                                        dark:bg-white/10 bg-white/60
                                         dark:hover:bg-white/20 hover:bg-white/80
-                                        transition-colors duration-200"
+                                        transition-all duration-200"
                                     title={t('search.viewNutrition')}
                                 >
-                                    <IoNutrition className="w-4 h-4" />
+                                    <IoNutrition className="w-4 h-4 dark:text-white/80" />
                                 </button>
                             </div>
                         </div>

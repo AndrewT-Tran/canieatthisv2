@@ -11,12 +11,9 @@ const messages = {
     zh
 };
 
-export default getRequestConfig(async ({ locale }) => {
-    return {
-        locale,
-        messages: messages[locale],
-        timeZone: 'UTC'
-    };
-});
+export default getRequestConfig(async ({ locale }) => ({
+    messages: messages[locale] || messages[defaultLocale],
+    timeZone: 'UTC'
+}));
 
 export const { Link, redirect, usePathname, useRouter } = createSharedPathnamesNavigation({ locales }); 

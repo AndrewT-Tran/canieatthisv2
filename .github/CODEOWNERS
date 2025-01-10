@@ -1,0 +1,38 @@
+# These owners will be the default owners for everything in the repo
+* @atmbp
+
+# App core files
+/app/* @atmbp
+/app/[locale]/* @atmbp
+/app/api/* @atmbp
+/app/context/* @atmbp
+/app/hooks/* @atmbp
+/app/utils/* @atmbp
+
+# Components
+/app/components/* @atmbp
+
+# Translations and i18n
+/messages/* @atmbp
+/app/i18n/* @atmbp
+
+# Configuration files
+*.config.js @atmbp
+*.config.mjs @atmbp
+*.config.ts @atmbp
+next.config.* @atmbp
+tailwind.config.* @atmbp
+postcss.config.* @atmbp
+tsconfig.json @atmbp
+package.json @atmbp
+package-lock.json @atmbp
+
+# GitHub specific files
+/.github/* @atmbp
+
+# Type definitions
+*.d.ts @atmbp
+
+# Styles
+/app/globals.css @atmbp
+*.css @atmbp 

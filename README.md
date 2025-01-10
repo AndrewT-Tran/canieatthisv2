@@ -1,201 +1,109 @@
-# CanIEatThis? - Simplifying Dietary Choices for Diabetics
 
-## Overview
+# CanIEatThis?  
 
-CanIEatThis? is an intuitive web application designed to help diabetics, particularly non-native English speakers, make informed decisions about their food choices. The app provides instant nutritional analysis and clear recommendations based on a food item's carbohydrate and sugar content.
+## Simplifying Dietary Choices for Diabetics
 
-## Features
+---
 
-### 🔍 Smart Food Analysis
+## Overview  
 
-- Instant nutritional information lookup using the Edamam Food Database API
-- Clear "Yes/No" recommendations based on diabetic-friendly thresholds
-- Detailed breakdown of carbohydrates, sugars, and other nutrients
-- Real-time analysis of food items and meals
-- Support for natural language queries (e.g., "2 slices of whole wheat bread")
+CanIEatThis? simplifies dietary choices for diabetics by providing instant nutritional analysis and clear recommendations, making it accessible even for non-native English speakers.
 
-### 📊 Nutritional Information
+---
 
-- Comprehensive nutrient analysis including:
-  - Total calories and macronutrients
-  - Net carbohydrates calculation (total carbs minus fiber)
-  - Detailed sugar content analysis
-  - Complete vitamin and mineral breakdown
-  - Protein and fat composition
-- Visual presentation of nutritional data
-- Diabetic-friendly thresholds:
-  - Net carbs: 20g per serving
-  - Sugars: 10g per serving
+## Features  
 
-### 🌐 Multilingual Support
+- **Instant Food Analysis:** Real-time nutritional breakdown with clear "Yes/No" recommendations for diabetic-friendly choices.  
+- **Comprehensive Nutritional Data:** Calories, net carbs, sugars, proteins, fats, and vitamins.  
+- **Multilingual Support:** Available in English, Spanish, and Chinese with seamless language switching.  
+- **Modern UI:** Responsive, intuitive design with dark/light modes, animated transitions, and interactive elements.
 
-- Available in multiple languages:
-  - English (en)
-  - Spanish (es)
-  - Chinese (zh)
-- Real-time language switching
-- Consistent translations across all features
-- Language-specific formatting for numbers and units
+---
 
-### 💫 Modern User Experience
+## Technical Implementation  
 
-- Clean, intuitive interface with:
-  - Animated transitions and interactions
-  - Responsive design for all devices
-  - Dark/Light theme support with smooth transitions
-  - Frosted glass effects and modern aesthetics
-- Interactive elements:
-  - Animated smile logo
-  - Floating action buttons
-  - Responsive modals and dialogs
-- Search history with:
-  - Quick resubmission of previous queries
-  - Visual history timeline
-  - Local storage persistence
+### **Frontend:**  
 
-## Technical Implementation
+- Built with Next.js 15 and React Server Components.  
+- Client-side features: Theme toggling, internationalization, and search history management.
 
-### Frontend Architecture
+### **Styling & Animations:**  
 
-- Built with Next.js 13 App Router
-- React Server Components
-- Client-side features:
-  - Theme context for dark/light mode
-  - Internationalization context
-  - Search history management
-  - Local storage integration
+- Tailwind CSS for responsive styling and dark mode support.  
+- Framer Motion for smooth animations and micro-interactions.
 
-### Styling and Animations
+### **Internationalization:**  
 
-- Tailwind CSS for styling:
-  - Custom color scheme
-  - Responsive utilities
-  - Dark mode support
-  - Container queries
-- Framer Motion for animations:
-  - Page transitions
-  - Component animations
-  - Micro-interactions
-  - SVG animations
-- Custom design elements:
-  - Animated background blobs
-  - Grain texture overlay
-  - Custom SVG illustrations
-  - Responsive typography
+- Implemented using `next-intl` with SEO-friendly routes and fallback language support.
 
-### Internationalization
+### **API Integration:**  
 
-- next-intl integration
-- Features:
-  - Route-based language switching
-  - SEO-friendly URLs
-  - Fallback language support
-  - Translation management
-- Supported languages:
-  - English (en)
-  - Spanish (es)
-  - Chinese (zh)
+- Edamam Food Database API for real-time nutritional analysis and natural language parsing.
 
-### API Integration
+---
 
-- Edamam Food Database API:
-  - Real-time nutritional analysis
-  - Natural language parsing
-  - Error handling and fallbacks
-  - Rate limiting management
-- Features:
-  - Automatic unit conversion
-  - Portion size handling
-  - Ingredient parsing
-  - Nutritional calculation
+## Getting Started  
 
-## Getting Started
-
-1. Clone the repository:
+### **Clone the Repository:**  
 
 ```bash
-git clone https://github.com/yourusername/canieatthis.git
-cd canieatthis
+git clone https://github.com/yourusername/canieatthis.git  
+cd canieatthis  
 ```
 
-2. Install dependencies:
+### **Install Dependencies:**  
 
 ```bash
-npm install
+npm install  
 ```
 
-3. Set up environment variables:
+### **Set Environment Variables:**  
 
-```bash
-cp .env.example .env
-```
-
-Edit `.env` with your Edamam API credentials:
+Copy `.env.example` to `.env` and add your Edamam API credentials:  
 
 ```env
-NEXT_PUBLIC_EDAMAM_APP_ID=your_app_id
-NEXT_PUBLIC_EDAMAM_APP_KEY=your_app_key
+NEXT_PUBLIC_EDAMAM_APP_ID=your_app_id  
+NEXT_PUBLIC_EDAMAM_APP_KEY=your_app_key  
 ```
 
-4. Run the development server:
+### **Run the App:**  
 
 ```bash
-npm run dev
+npm run dev  
 ```
 
-5. Build for production:
+---
 
-```bash
-npm run build
-npm start
-```
+## Contributing  
 
-## Environment Setup
+We welcome contributions!  
 
-### Edamam API Credentials
+1. Fork the repository.  
+2. Create a feature branch:  
 
-1. Sign up at [Edamam Developer Portal](https://developer.edamam.com/)
-2. Create a new application under "Food Database API"
-3. Copy your Application ID and Application Key
-4. Add them to your `.env` file
+   ```bash
+   git checkout -b feature/your-feature  
+   ```  
 
-### Development Tools
+3. Commit your changes:  
 
-- Node.js 18+ required
-- npm or yarn for package management
-- Git for version control
-- VS Code recommended with extensions:
-  - Tailwind CSS IntelliSense
-  - ESLint
-  - Prettier
+   ```bash
+   git commit -m "Add your feature"  
+   ```  
 
-## Browser Support
+4. Push your branch and open a Pull Request.
 
-- Modern browsers:
-  - Chrome (latest)
-  - Firefox (latest)
-  - Safari (latest)
-  - Edge (latest)
-- Mobile browsers:
-  - iOS Safari
-  - Android Chrome
-  - Samsung Internet
+---
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
-## License
+## License  
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+---
 
-- [Edamam](https://www.edamam.com/) for their comprehensive nutrition database
-- [Next.js](https://nextjs.org/) team for the amazing framework
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Framer Motion](https://www.framer.com/motion/) for the animation library
+## Acknowledgments  
+
+- [Edamam](https://www.edamam.com/) for their comprehensive nutrition database.  
+- [Next.js](https://nextjs.org/) for their amazing framework.  
+- [Tailwind CSS](https://tailwindcss.com/) for their utility-first CSS framework.  
+- [Framer Motion](https://www.framer.com/motion/) for the animation library.  

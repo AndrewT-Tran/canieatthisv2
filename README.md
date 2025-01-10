@@ -11,138 +11,163 @@ CanIEatThis? is an intuitive web application designed to help diabetics, particu
 - Instant nutritional information lookup using the Edamam Food Database API
 - Clear "Yes/No" recommendations based on diabetic-friendly thresholds
 - Detailed breakdown of carbohydrates, sugars, and other nutrients
+- Real-time analysis of food items and meals
+- Support for natural language queries (e.g., "2 slices of whole wheat bread")
 
 ### 📊 Nutritional Information
 
 - Comprehensive nutrient analysis including:
-  - Total calories
-  - Net carbohydrates (total carbs minus fiber)
-  - Sugar content
-  - Detailed vitamin and mineral content
-  - Protein and fat breakdown
+  - Total calories and macronutrients
+  - Net carbohydrates calculation (total carbs minus fiber)
+  - Detailed sugar content analysis
+  - Complete vitamin and mineral breakdown
+  - Protein and fat composition
+- Visual presentation of nutritional data
+- Diabetic-friendly thresholds:
+  - Net carbs: 20g per serving
+  - Sugars: 10g per serving
 
 ### 🌐 Multilingual Support
 
 - Available in multiple languages:
-  - English
-  - Spanish
-  - French
-  - Chinese
-- Ensures accessibility for non-native English speakers
+  - English (en)
+  - Spanish (es)
+  - Chinese (zh)
+- Real-time language switching
+- Consistent translations across all features
+- Language-specific formatting for numbers and units
 
 ### 💫 Modern User Experience
 
-- Clean, intuitive interface
-- Dark/Light theme support
-- Responsive design for all devices
-- Animated transitions and interactions
-- Search history tracking
+- Clean, intuitive interface with:
+  - Animated transitions and interactions
+  - Responsive design for all devices
+  - Dark/Light theme support with smooth transitions
+  - Frosted glass effects and modern aesthetics
+- Interactive elements:
+  - Animated smile logo
+  - Floating action buttons
+  - Responsive modals and dialogs
+- Search history with:
+  - Quick resubmission of previous queries
+  - Visual history timeline
+  - Local storage persistence
 
 ## Technical Implementation
 
-### Frontend
+### Frontend Architecture
 
-- Built with Next.js 13 and React
-- Styled using Tailwind CSS
+- Built with Next.js 13 App Router
+- React Server Components
+- Client-side features:
+  - Theme context for dark/light mode
+  - Internationalization context
+  - Search history management
+  - Local storage integration
+
+### Styling and Animations
+
+- Tailwind CSS for styling:
+  - Custom color scheme
   - Responsive utilities
-  - Custom breakpoints
+  - Dark mode support
   - Container queries
-  - Fluid typography
-- Smooth animations with Framer Motion
-- Internationalization using next-intl
-- Theme management with Context API
+- Framer Motion for animations:
+  - Page transitions
+  - Component animations
+  - Micro-interactions
+  - SVG animations
+- Custom design elements:
+  - Animated background blobs
+  - Grain texture overlay
+  - Custom SVG illustrations
+  - Responsive typography
 
-### Responsive Components
+### Internationalization
 
-- Smart component architecture:
-  - Mobile-first approach
-  - Conditional rendering based on screen size
-  - Dynamic layout adjustments
-  - Optimized performance
-- Flexible containers:
-  - Auto-adjusting grids
-  - Responsive spacing
-  - Dynamic padding and margins
-- Optimized images:
-  - Automatic sizing
-  - Lazy loading
-  - WebP format support
-- Interactive elements:
-  - Touch-friendly buttons
-  - Responsive modals
-  - Adaptive navigation
-
-### Edamam Nutrition Database Integration
-
-- Leverages the powerful Edamam Food and Nutrition Database
+- next-intl integration
 - Features:
-  - Extensive database of over 900,000 food items
+  - Route-based language switching
+  - SEO-friendly URLs
+  - Fallback language support
+  - Translation management
+- Supported languages:
+  - English (en)
+  - Spanish (es)
+  - Chinese (zh)
+
+### API Integration
+
+- Edamam Food Database API:
   - Real-time nutritional analysis
-  - Accurate portion and measurement handling
-  - Comprehensive nutrient breakdown
-  - Support for natural language queries
-- API Integration:
-  - RESTful API endpoints
-  - JSON response parsing
+  - Natural language parsing
   - Error handling and fallbacks
   - Rate limiting management
-  - Caching for improved performance
-
-### Features
-
-- Real-time nutritional analysis
-- Smart recommendations based on:
-  - Net carbs (threshold: 20g)
-  - Sugar content (threshold: 10g)
-- Search history management
-- Responsive modals and dialogs
-- Accessibility considerations
-
-### Data Processing
-
-- Intelligent parsing of food quantities and units
-- Accurate calculation of net carbohydrates
-- Clear presentation of nutritional data
-- Error handling for missing or invalid data
-
-## Impact
-
-CanIEatThis? bridges an important gap in dietary management tools by:
-
-- Providing instant, clear guidance for diabetic-friendly food choices
-- Breaking down language barriers in nutritional information
-- Simplifying complex nutritional data into actionable recommendations
-- Supporting elderly users with an accessible, easy-to-use interface
+- Features:
+  - Automatic unit conversion
+  - Portion size handling
+  - Ingredient parsing
+  - Nutritional calculation
 
 ## Getting Started
 
+1. Clone the repository:
+
 ```bash
-# Install dependencies
-npm install
-
-# Run the development server
-npm run dev
-
-# Build for production
-npm run build
+git clone https://github.com/yourusername/canieatthis.git
+cd canieatthis
 ```
 
-## Environment Variables
+2. Install dependencies:
 
-Create a `.env` file in the root directory with the following variables:
+```bash
+npm install
+```
+
+3. Set up environment variables:
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` with your Edamam API credentials:
 
 ```env
-# Edamam API Credentials
 NEXT_PUBLIC_EDAMAM_APP_ID=your_app_id
 NEXT_PUBLIC_EDAMAM_APP_KEY=your_app_key
 ```
 
-To obtain API credentials:
+4. Run the development server:
+
+```bash
+npm run dev
+```
+
+5. Build for production:
+
+```bash
+npm run build
+npm start
+```
+
+## Environment Setup
+
+### Edamam API Credentials
 
 1. Sign up at [Edamam Developer Portal](https://developer.edamam.com/)
-2. Create a new application under the "Food Database API"
+2. Create a new application under "Food Database API"
 3. Copy your Application ID and Application Key
 4. Add them to your `.env` file
+
+### Development Tools
+
+- Node.js 18+ required
+- npm or yarn for package management
+- Git for version control
+- VS Code recommended with extensions:
+  - Tailwind CSS IntelliSense
+  - ESLint
+  - Prettier
 
 ## Browser Support
 
@@ -158,4 +183,19 @@ To obtain API credentials:
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Edamam](https://www.edamam.com/) for their comprehensive nutrition database
+- [Next.js](https://nextjs.org/) team for the amazing framework
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [Framer Motion](https://www.framer.com/motion/) for the animation library

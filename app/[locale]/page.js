@@ -56,20 +56,20 @@ export default function Home() {
             <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none">
                 {/* Animated blobs */}
                 <div className="absolute inset-0">
-                    <div className="absolute top-0 -left-1/3 w-[80vw] h-[80vw] bg-orange-200/20 dark:bg-emerald-500/10 rounded-full blur-3xl animate-blob" />
-                    <div className="absolute top-1/4 -right-1/3 w-[80vw] h-[80vw] bg-orange-300/20 dark:bg-lime-500/10 rounded-full blur-3xl animate-blob animation-delay-2000" />
-                    <div className="absolute -bottom-1/4 left-1/4 w-[80vw] h-[80vw] bg-orange-100/30 dark:bg-emerald-500/10 rounded-full blur-3xl animate-blob animation-delay-4000" />
+                    <div className="absolute top-0 -left-1/3 w-[80vw] h-[80vw]bg-gradient-to-r from-teal-400 to-yellow-200 rounded-full blur-3xl animate-blob" />
+                    <div className="absolute top-1/4 -right-1/3 w-[80vw] h-[80vw] bg-gradient-to-r from-amber-500/10 to-pink-500/20 rounded-full blur-2xl animate-blob animation-delay-2000" />
+                    <div className="absolute -bottom-1/4 left-1/4 w-[80vw] h-[80vw] bg-gradient-to-r from-blue-200/10 to-cyan-200/20 rounded-full blur-3xl animate-blob animation-delay-4000" />
                 </div>
 
                 {/* Grain effect overlay */}
-                <div className="absolute inset-0 opacity-10 dark:opacity-30 bg-[url('/noise.png')] mix-blend-overlay" />
+                <div className="absolute inset-0 opacity-10 dark:opacity-30 ] mix-blend-overlay" />
             </div>
 
             {/* Main content */}
             <main className="relative w-full min-h-screen pt-32 pb-12">
-                <div className="container max-w-2xl mx-auto px-4 space-y-8">
+                <div className="container max-w-4xl mx-auto px-4 space-y-8">
                     <Header />
-                    <div className="space-y-6">
+                    <div className="space-y-6 w-full p-6">
                         <SearchBar
                             placeholder={t('search.placeholder')}
                             buttonText={t('search.button')}

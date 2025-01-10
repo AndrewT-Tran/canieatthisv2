@@ -7,6 +7,7 @@ import { cn } from '../utils/cn';
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { locales } from '../i18n/settings';
+import AnimatedBackground from '../components/AnimatedBackground';
 
 const inter = Inter({ subsets: ['latin'] });
 const climateCrisis = Climate_Crisis({
@@ -39,14 +40,14 @@ export default async function RootLayout({ children, params }) {
                 inter.className,
                 climateCrisis.variable,
                 "min-h-screen w-full overflow-x-hidden",
-                "bg-gradient-to-b from-orange-50/80 via-orange-50/30 to-white/80",
-                "dark:from-gray-900 dark:via-gray-900/80 dark:to-gray-800/90"
+                "bg-gradient-to-b from-orange-50/40 via-transparent to-white/60",
+                "dark:from-gray-900/80 dark:via-transparent dark:to-gray-800/70"
             )}>
                 <NextIntlClientProvider messages={messages} locale={locale}>
                     <ThemeProvider>
                         <ThemeWrapper>
-                            {/* Background gradient overlay */}
-                            <div className="fixed inset-0 w-full h-full bg-gradient-to-b from-transparent via-orange-100/10 to-orange-100/5 dark:via-black/20 dark:to-black/30 pointer-events-none" />
+                            {/* Background with animated blobs */}
+                            <AnimatedBackground />
 
                             {/* Main content container */}
                             <div className="relative min-h-screen w-full">

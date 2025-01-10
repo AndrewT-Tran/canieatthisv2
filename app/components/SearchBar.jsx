@@ -74,14 +74,17 @@ export default function SearchBar({ onSearch, placeholder = 'Search...', buttonT
 
   return (
     <>
-      <div className="w-full">
+      <div className="w-full p-6 rounded-2xl backdrop-blur-md
+        dark:bg-gray-900/40 bg-white/60
+        dark:border-white/10 border-gray-200/50 border
+        shadow-lg">
         <form onSubmit={handleSubmit} className="relative w-full">
           <div className={cn(
-            "relative flex items-center w-full overflow-hidden rounded-2xl shadow-lg",
+            "relative flex items-center w-full overflow-hidden rounded-xl",
             "transition duration-300",
             theme === 'dark'
-              ? "bg-gray-900/40 hover:bg-gray-900/60 backdrop-blur-xl"
-              : "bg-white/60 hover:bg-white/80 backdrop-blur-xl",
+              ? "bg-gray-900/40 hover:bg-gray-900/60"
+              : "bg-white/60 hover:bg-white/80",
             "border",
             theme === 'dark'
               ? "border-white/10 hover:border-white/20"
@@ -139,8 +142,8 @@ export default function SearchBar({ onSearch, placeholder = 'Search...', buttonT
                   "transition-all duration-200",
                   "disabled:opacity-50 disabled:cursor-not-allowed",
                   theme === 'dark'
-                    ? "bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30"
-                    : "bg-orange-web/20 text-orange-web hover:bg-orange-web/30"
+                    ? "bg-emerald-500/20 text-light hover:bg-emerald-500/30"
+                    : "bg-orange-web/20 text-dark hover:bg-orange-web/30"
                 )}
               >
                 {isLoading ? t('search.loading') : buttonText}

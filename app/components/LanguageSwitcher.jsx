@@ -7,7 +7,7 @@ import { cn } from '../utils/cn';
 const languages = [
     { code: 'en', name: 'English' },
     { code: 'es', name: 'Español' },
-    { code: 'zh', name: '中文' },
+    { code: 'cn', name: '中文' },
 ];
 
 export default function LanguageSwitcher() {

@@ -65,6 +65,9 @@ body,
     --font-climate-crisis: 'Climate Crisis', sans-serif;
     --font-inter: 'Inter', sans-serif;
     --font-roboto: 'Roboto', sans-serif;
+    --font-climate-crisis: '';
+    --font-noto-sans-sc: '';
+    --font-ma-shan-zheng: '';
 
     /* Light mode colors */
     --color-white: #fcfcfc;
@@ -86,6 +89,22 @@ body,
 
   body {
     @apply text-gray-800 antialiased dark:text-white;
+  }
+
+  .font-climate-crisis {
+    font-family: var(--font-climate-crisis);
+  }
+
+  .font-noto-sans-sc {
+    font-family: var(--font-noto-sans-sc);
+  }
+
+  .font-ma-shan-zheng {
+    font-family: var(--font-ma-shan-zheng);
+  }
+
+  .font-poppins {
+    font-family: var(--font-poppins);
   }
 }
 
@@ -132,6 +151,7 @@ body,
 }
 
 @keyframes textClip {
+
   0%,
   100% {
     background-position: 0% center;
@@ -168,6 +188,7 @@ body,
 }
 
 @keyframes gradient {
+
   0%,
   100% {
     background-position: 0% 50%;
@@ -176,8 +197,4 @@ body,
   50% {
     background-position: 100% 50%;
   }
-}
-
-.font-climate-crisis {
-  font-family: var(--font-climate-crisis);
 }

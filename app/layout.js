@@ -1,5 +1,5 @@
 import './globals.css';
-import { Inter, Climate_Crisis, Noto_Sans_SC } from 'next/font/google';
+import { Inter, Climate_Crisis, Noto_Sans_SC, Ma_Shan_Zheng, Poppins } from 'next/font/google';
 import { ThemeProvider } from './context/ThemeContext';
 import { cn } from './utils/cn';
 
@@ -16,6 +16,21 @@ const notoSansSC = Noto_Sans_SC({
   subsets: ['latin'],
   variable: '--font-noto-sans-sc',
   preload: true,
+  display: 'swap',
+});
+
+const maShanZheng = Ma_Shan_Zheng({
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: '--font-ma-shan-zheng',
+  preload: true,
+  display: 'swap',
+});
+
+const poppins = Poppins({
+  weight: ['300', '400', '500', '600'],
+  subsets: ['latin'],
+  variable: '--font-poppins',
   display: 'swap',
 });
 
@@ -90,6 +105,8 @@ export default function RootLayout({ children }) {
         inter.className,
         climateCrisis.variable,
         notoSansSC.variable,
+        maShanZheng.variable,
+        poppins.variable,
         'antialiased'
       )}>
         <ThemeProvider>

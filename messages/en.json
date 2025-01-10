@@ -190,5 +190,24 @@
             "FOLDFE": "Dietary Folate Equivalents",
             "FOLFD": "Food Folate"
         }
+    },
+    "disclaimer": {
+        "title": "Important Information",
+        "calculation": {
+            "title": "Calculation Method",
+            "description": "The nutritional information provided is calculated using data from the USDA Food Database and other reliable sources. Values are estimates and may vary based on factors such as food preparation, portion size, and ingredient variations."
+        },
+        "medical": {
+            "title": "Medical Disclaimer",
+            "description": "This app is for informational purposes only and is not intended to be a substitute for professional medical advice, diagnosis, or treatment.",
+            "advice": "Always seek the advice of your physician or other qualified health provider regarding:",
+            "items": {
+                "condition": "Any questions about your medical condition",
+                "restrictions": "Dietary restrictions or requirements",
+                "changes": "Changes to your diet or exercise routine",
+                "management": "Management of diabetes or other health conditions"
+            }
+        },
+        "button": "I Understand"
     }
 }

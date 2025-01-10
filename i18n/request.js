@@ -3,12 +3,12 @@ import { getRequestConfig } from 'next-intl/server';
 import { locales, defaultLocale } from './config';
 import en from '../messages/en.json';
 import es from '../messages/es.json';
-import zh from '../messages/zh.json';
+import cn from '../messages/cn.json';
 
 const messages = {
     en,
     es,
-    zh
+    cn
 };
 
 export default getRequestConfig(async ({ locale }) => ({

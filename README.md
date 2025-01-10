@@ -48,8 +48,8 @@ CanIEatThis? simplifies dietary choices for diabetics by providing instant nutri
 ### **Clone the Repository:**  
 
 ```bash
-git clone https://github.com/yourusername/canieatthis.git  
-cd canieatthis  
+git clone https://github.com/AndrewT-Tran/canieatthisv2  
+cd canieatthisv2  
 ```
 
 ### **Install Dependencies:**  

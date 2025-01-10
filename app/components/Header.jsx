@@ -47,32 +47,32 @@ export default function Header() {
     const styles = useMemo(() => ({
         icon: cn(
             "w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28",
-            theme === 'dark' ? "text-emerald-400" : "text-orange-web"
+            theme === 'dark' ? "text-sage" : "text-orange-web"
         ),
         text: cn(
             "font-climate-crisis italic inline-block",
-            theme === 'dark' ? "text-white" : "text-gray-900"
+            theme === 'dark' ? "text-ivory" : "text-gray-900"
         ),
         gradient: cn(
             "w-full h-full bg-gradient-to-r animate-gradient rounded-full opacity-60",
             theme === 'dark'
-                ? "from-teal-200 via-teal-400 to-teal-200"
+                ? "from-sage via-ivory to-sage"
                 : "from-amber-500 via-yellow-500 to-amber-500"
         ),
         subtitle: cn(
-            "mt-6 sm:mt-8 text-center font-light text-lg sm:text-xl max-w-lg mx-auto px-4",
-            theme === 'dark' ? "text-emerald-200/90" : "text-gray-600"
+            "mt-6 sm:mt-8 text-center font-light text-lg sm:text-xl max-w-lg mx-auto px-4 font-poppins",
+            theme === 'dark' ? "text-sage/90" : "text-gray-600"
         ),
         border: cn(
             "absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-transparent via-opacity-50 to-transparent",
             theme === 'dark'
-                ? "via-emerald-400/40"
+                ? "via-sage/40"
                 : "via-amber-500/30"
         ),
         borderGlow: cn(
             "absolute inset-0 bg-gradient-to-r blur-sm",
             theme === 'dark'
-                ? "via-emerald-400/20"
+                ? "via-sage/20"
                 : "via-amber-500/20"
         )
     }), [theme]);
@@ -110,7 +110,7 @@ export default function Header() {
 
     return (
         <motion.div
-            className="relative w-full py-fluid-12"
+            className="relative w-full py-fluid-8"
             initial="hidden"
             animate="visible"
             variants={variants.container}
@@ -118,7 +118,7 @@ export default function Header() {
             {/* Title */}
             <div className="relative">
                 <motion.div
-                    className="flex justify-center mb-fluid-8"
+                    className="flex justify-center mb-fluid-6"
                     initial={{ scale: 0, rotate: -180 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{
@@ -171,12 +171,12 @@ export default function Header() {
                     </div>
                 </motion.div>
                 <motion.h1
-                    className="text-center font-bold text-fluid-4xl px-fluid-4"
+                    className="text-center font-bold text-fluid-4xl px-fluid-4 mb-fluid-6"
                     variants={variants.title}
                 >
-                    <div className="flex items-center justify-center gap-fluid-sm tracking-tight font-climate-crisis whitespace-nowrap">
+                    <div className="flex items-center justify-center gap-fluid-2 tracking-tight font-climate-crisis whitespace-nowrap">
                         <div className="relative flex items-center">
-                            <div className="flex gap-fluid-sm relative z-0">
+                            <div className="flex gap-fluid-2 relative z-0">
                                 <motion.span
                                     className={styles.text}
                                     variants={variants.letter}
@@ -184,7 +184,7 @@ export default function Header() {
                                     {t('header.title.can')}
                                 </motion.span>
                                 <motion.span
-                                    className={cn(styles.text, "-ml-1")}
+                                    className={cn(styles.text)}
                                     variants={variants.letter}
                                 >
                                     {t('header.title.i')}
@@ -192,7 +192,7 @@ export default function Header() {
                             </div>
                             {/* Animated gradient underline */}
                             <motion.div
-                                className="absolute -bottom-1 left-0 right-0 mx-auto h-fluid-4 overflow-hidden z-10"
+                                className="absolute -bottom-1 left-0 right-0 mx-auto h-fluid-1 overflow-hidden z-10"
                                 initial={{ width: 0 }}
                                 animate={{ width: "100%" }}
                                 transition={{
@@ -205,13 +205,13 @@ export default function Header() {
                             </motion.div>
                         </div>
                         <motion.span
-                            className={cn(styles.text, "-ml-1")}
+                            className={styles.text}
                             variants={variants.letter}
                         >
                             {t('header.title.eat')}
                         </motion.span>
                         <motion.span
-                            className={cn(styles.text, "not-italic -ml-1")}
+                            className={cn(styles.text, "not-italic")}
                             variants={variants.letter}
                         >
                             {t('header.title.this')}
@@ -222,8 +222,8 @@ export default function Header() {
                 {/* Subtitle */}
                 <motion.p
                     className={cn(
-                        "mt-fluid-6 text-center font-light text-fluid-lg max-w-lg mx-auto px-fluid-4",
-                        theme === 'dark' ? "text-emerald-800/90" : "text-gray-600"
+                        "text-center text-fluid-lg max-w-lg mx-auto px-fluid-4 font-poppins tracking-wide",
+                        theme === 'dark' ? "text-slate-600/90" : "text-gray-600"
                     )}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

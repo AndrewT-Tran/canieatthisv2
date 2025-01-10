@@ -93,6 +93,11 @@ module.exports = {
         'celestial-blue': '#009FFD',
         'asparagus': '#87A878',
         'outer-space': '#2D383A',
+        'dark-slate-gray': '#36453b',
+        'dim-gray': '#596869',
+        'ebony': '#515751',
+        'ivory': '#f5f9e9',
+        'sage': '#c2c1a5',
       },
       fontFamily: {
         'climate-crisis': ['var(--font-climate-crisis)'],

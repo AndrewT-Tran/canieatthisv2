@@ -18,7 +18,6 @@ export default function NutritionAnalysisDialog({
     const { theme } = useTheme();
     const t = useTranslations('nutrition');
     const [showDetails, setShowDetails] = useState(false);
-    const [showDisclaimer, setShowDisclaimer] = useState(false);
 
     if (!nutritionData) return null;
 
@@ -189,18 +188,7 @@ export default function NutritionAnalysisDialog({
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <button
-                                            onClick={() => setShowDisclaimer(true)}
-                                            className={cn(
-                                                "p-2 rounded-full transition-colors",
-                                                theme === 'dark'
-                                                    ? "hover:bg-gray-800 text-gray-400 hover:text-white"
-                                                    : "hover:bg-gray-100 text-gray-500 hover:text-gray-700"
-                                            )}
-                                            aria-label="View Important Information"
-                                        >
-                                            <IoInformation className="w-6 h-6" />
-                                        </button>
+                                        <DisclaimerDialog triggerIcon={true} />
                                         <button
                                             onClick={onClose}
                                             className={cn(
@@ -477,11 +465,6 @@ export default function NutritionAnalysisDialog({
                                 </motion.div>
                             )}
 
-                            {/* Disclaimer Dialog */}
-                            <DisclaimerDialog
-                                isOpen={showDisclaimer}
-                                onClose={() => setShowDisclaimer(false)}
-                            />
                         </div>
                     </Dialog.Panel>
                 </motion.div>

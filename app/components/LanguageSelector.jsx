@@ -10,7 +10,7 @@ import { cn } from '../utils/cn';
 const languages = [
     { code: 'en', label: 'English' },
     { code: 'es', label: 'Español' },
-    { code: 'zh', label: '中文', className: 'font-noto-sans-sc' }
+    { code: 'cn', label: '中文', className: 'font-ma-shan-zheng' }
 ];
 
 export default function LanguageSelector() {
@@ -37,7 +37,7 @@ export default function LanguageSelector() {
                 )}
             >
                 <span className={cn(
-                    locale === 'zh' && 'font-noto-sans-sc'
+                    locale === 'cn' && 'font-ma-shan-zheng'
                 )}>
                     {languages.find(lang => lang.code === locale)?.label}
                 </span>

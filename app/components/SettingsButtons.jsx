@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 const localeNames = {
     en: 'English',
     es: 'Español',
-    zh: '中文'
+    cn: '中文'
 };
 
 export default function SettingsButtons() {

@@ -141,24 +141,46 @@ export default function Header() {
                     variants={titleVariants}
                 >
                     <div className="flex items-center justify-center gap-2 sm:gap-3 font-climate-crisis whitespace-nowrap">
-                        <motion.span
-                            className={cn(
-                                "font-climate-crisis italic inline-block",
-                                theme === 'dark' ? "text-white" : "text-gray-900"
-                            )}
-                            variants={letterVariants}
-                        >
-                            {t('header.title.can')}
-                        </motion.span>
-                        <motion.span
-                            className={cn(
-                                "font-climate-crisis italic inline-block",
-                                theme === 'dark' ? "text-white" : "text-gray-900"
-                            )}
-                            variants={letterVariants}
-                        >
-                            {t('header.title.i')}
-                        </motion.span>
+                        <div className="relative flex items-center">
+                            <div className="flex gap-2 sm:gap-3 relative z-0">
+                                <motion.span
+                                    className={cn(
+                                        "font-climate-crisis italic inline-block",
+                                        theme === 'dark' ? "text-white" : "text-gray-900"
+                                    )}
+                                    variants={letterVariants}
+                                >
+                                    {t('header.title.can')}
+                                </motion.span>
+                                <motion.span
+                                    className={cn(
+                                        "font-climate-crisis italic inline-block",
+                                        theme === 'dark' ? "text-white" : "text-gray-900"
+                                    )}
+                                    variants={letterVariants}
+                                >
+                                    {t('header.title.i')}
+                                </motion.span>
+                            </div>
+                            {/* Animated gradient underline */}
+                            <motion.div
+                                className="absolute -bottom-1 left-0 right-0 mx-auto h-4 overflow-hidden z-10"
+                                initial={{ width: 0 }}
+                                animate={{ width: "100%" }}
+                                transition={{
+                                    delay: 0.8,
+                                    duration: 0.6,
+                                    ease: "easeOut"
+                                }}
+                            >
+                                <div className={cn(
+                                    "w-full h-full bg-gradient-to-r animate-gradient rounded-full opacity-60",
+                                    theme === 'dark'
+                                        ? "from-teal-200 via-teal-400 to-teal-200"
+                                        : "from-amber-500 via-yellow-500 to-amber-500"
+                                )} />
+                            </motion.div>
+                        </div>
                         <motion.span
                             className={cn(
                                 "font-climate-crisis italic inline-block",

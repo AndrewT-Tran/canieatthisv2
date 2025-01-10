@@ -9,7 +9,7 @@ import NutritionAnalysisDialog from './NutritionAnalysisDialog';
 import Alert from './Alert';
 import { useTranslations } from 'next-intl';
 
-export default function SearchBar({ onSearch, placeholder = 'Search...', buttonText = 'Search' }) {
+export default function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -104,7 +104,7 @@ export default function SearchBar({ onSearch, placeholder = 'Search...', buttonT
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder={placeholder}
+              placeholder={t('search.placeholder')}
               className={cn(
                 "w-full py-3 sm:py-4 pl-10 sm:pl-14 pr-24 sm:pr-32 bg-transparent",
                 "text-base sm:text-lg",
@@ -148,7 +148,7 @@ export default function SearchBar({ onSearch, placeholder = 'Search...', buttonT
                     : "bg-orange-web/20 text-dark hover:bg-orange-web/30"
                 )}
               >
-                <span className="hidden sm:inline">{isLoading ? t('search.loading') : buttonText}</span>
+                <span className="hidden sm:inline">{isLoading ? t('search.loading') : t('search.button')}</span>
                 <span className="sm:hidden">
                   {isLoading ? t('search.loading') : t('search.button.short')}
                 </span>

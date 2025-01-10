@@ -23,13 +23,19 @@ export const metadata = {
   title: 'Can I Eat This?',
   description: 'Discover the nutritional content of any food or meal',
   manifest: '/manifest.json',
-  themeColor: '#FCA311',
-  viewport: 'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
     title: 'Can I Eat This?',
   },
+};
+
+export const viewport = {
+  themeColor: '#FCA311',
+  width: 'device-width',
+  initialScale: 1,
+  minimumScale: 1,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({ children }) {
@@ -53,6 +59,32 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content="Can I Eat This?" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover" />
+
+        {/* Remove unwanted attributes */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const html = document.documentElement;
+                const removeAttrs = [
+                  'data-extension-installed',
+                  'data-new-gr-c-s-check-loaded',
+                  'data-gr-ext-installed'
+                ];
+                removeAttrs.forEach(attr => {
+                  html.removeAttribute(attr);
+                  const observer = new MutationObserver(() => {
+                    html.removeAttribute(attr);
+                  });
+                  observer.observe(html, {
+                    attributes: true,
+                    attributeFilter: [attr]
+                  });
+                });
+              })();
+            `,
+          }}
+        />
       </head>
       <body className={cn(
         inter.className,

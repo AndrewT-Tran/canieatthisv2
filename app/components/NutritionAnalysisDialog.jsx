@@ -188,38 +188,38 @@ export default function NutritionAnalysisDialog({
                                             )}
                                         </div>
                                     </div>
-                                    <button
-                                        onClick={onClose}
-                                        className={cn(
-                                            "p-2 rounded-full transition-colors",
-                                            theme === 'dark'
-                                                ? "hover:bg-gray-800 text-gray-400 hover:text-white"
-                                                : "hover:bg-gray-100 text-gray-500 hover:text-gray-700"
-                                        )}
-                                        aria-label={t('close')}
-                                    >
-                                        <IoClose className="w-6 h-6" />
-                                    </button>
+                                    <div className="flex items-center gap-2">
+                                        <button
+                                            onClick={() => setShowDisclaimer(true)}
+                                            className={cn(
+                                                "p-2 rounded-full transition-colors",
+                                                theme === 'dark'
+                                                    ? "hover:bg-gray-800 text-gray-400 hover:text-white"
+                                                    : "hover:bg-gray-100 text-gray-500 hover:text-gray-700"
+                                            )}
+                                            aria-label="View Important Information"
+                                        >
+                                            <IoInformation className="w-6 h-6" />
+                                        </button>
+                                        <button
+                                            onClick={onClose}
+                                            className={cn(
+                                                "p-2 rounded-full transition-colors",
+                                                theme === 'dark'
+                                                    ? "hover:bg-gray-800 text-gray-400 hover:text-white"
+                                                    : "hover:bg-gray-100 text-gray-500 hover:text-gray-700"
+                                            )}
+                                            aria-label={t('close')}
+                                        >
+                                            <IoClose className="w-6 h-6" />
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* Scrollable Content */}
                         <div className="flex-1 overflow-y-auto px-8 py-6">
-                            {/* Disclaimer Button */}
-                            <button
-                                onClick={() => setShowDisclaimer(true)}
-                                className={cn(
-                                    "w-full mb-4 py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm",
-                                    theme === 'dark'
-                                        ? "bg-gray-800/80 hover:bg-gray-800 text-gray-300"
-                                        : "bg-gray-100 hover:bg-gray-200 text-gray-700"
-                                )}
-                            >
-                                <IoInformation className="w-4 h-4" />
-                                <span>View Important Information About These Results</span>
-                            </button>
-
                             {/* Error Message for Missing Quantity */}
                             {hasMissingQuantity && (
                                 <motion.div

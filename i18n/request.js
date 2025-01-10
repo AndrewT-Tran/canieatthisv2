@@ -1,6 +1,22 @@
+import { createSharedPathnamesNavigation } from 'next-intl/navigation';
 import { getRequestConfig } from 'next-intl/server';
-import { locales } from './config';
+import { locales, defaultLocale } from './config';
+import en from '../messages/en.json';
+import es from '../messages/es.json';
+import zh from '../messages/zh.json';
 
-export default getRequestConfig(async ({ locale }) => ({
-    messages: (await import(`../messages/${locale}.json`)).default
-})); 
+const messages = {
+    en,
+    es,
+    zh
+};
+
+export default getRequestConfig(async ({ locale }) => {
+    return {
+        locale,
+        messages: messages[locale],
+        timeZone: 'UTC'
+    };
+});
+
+export const { Link, redirect, usePathname, useRouter } = createSharedPathnamesNavigation({ locales }); 

@@ -223,7 +223,7 @@ export default function Header() {
                 <motion.p
                     className={cn(
                         "mt-fluid-6 text-center font-light text-fluid-lg max-w-lg mx-auto px-fluid-4",
-                        theme === 'dark' ? "text-emerald-200/90" : "text-gray-200"
+                        theme === 'dark' ? "text-emerald-800/90" : "text-gray-600"
                     )}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

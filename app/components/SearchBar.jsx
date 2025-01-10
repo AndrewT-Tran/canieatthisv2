@@ -74,7 +74,7 @@ export default function SearchBar({ onSearch, placeholder = 'Search...', buttonT
 
   return (
     <>
-      <div className="w-full p-fluid-4 sm:p-fluid-6 rounded-xl sm:rounded-2xl backdrop-blur-md
+      <div className="w-full p-4 sm:p-6 rounded-xl sm:rounded-2xl backdrop-blur-md
         dark:bg-gray-900/40 bg-white/60
         dark:border-white/10 border-gray-200/50 border
         shadow-lg">
@@ -92,10 +92,10 @@ export default function SearchBar({ onSearch, placeholder = 'Search...', buttonT
           )}>
             {/* Search Icon */}
             <div className={cn(
-              "absolute left-fluid-3 sm:left-fluid-4",
+              "absolute left-3 sm:left-4",
               theme === 'dark' ? "text-white/60" : "text-gray-400"
             )}>
-              <IoSearch className="w-fluid-4 sm:w-fluid-5 h-fluid-4 sm:h-fluid-5" />
+              <IoSearch className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
 
             {/* Input */}
@@ -106,8 +106,8 @@ export default function SearchBar({ onSearch, placeholder = 'Search...', buttonT
               onChange={(e) => setQuery(e.target.value)}
               placeholder={placeholder}
               className={cn(
-                "w-full py-fluid-3 sm:py-fluid-4 pl-fluid-10 sm:pl-fluid-12 pr-[5.5rem] sm:pr-fluid-32 bg-transparent",
-                "text-fluid-sm sm:text-fluid-base",
+                "w-full py-3 sm:py-4 pl-10 sm:pl-14 pr-24 sm:pr-32 bg-transparent",
+                "text-base sm:text-lg",
                 "placeholder:text-gray-400",
                 theme === 'dark'
                   ? "text-white placeholder:text-white/40"
@@ -122,25 +122,25 @@ export default function SearchBar({ onSearch, placeholder = 'Search...', buttonT
                 type="button"
                 onClick={handleClear}
                 className={cn(
-                  "absolute right-[4.5rem] sm:right-fluid-24 p-fluid-1 sm:p-fluid-1.5 rounded-full",
+                  "absolute right-20 sm:right-24 p-1.5 rounded-full",
                   "transition-colors duration-200",
                   theme === 'dark'
                     ? "text-white/40 hover:text-white/90 hover:bg-white/10"
                     : "text-gray-400 hover:text-gray-600 hover:bg-gray-100/50"
                 )}
               >
-                <IoClose className="w-fluid-4 sm:w-fluid-5 h-fluid-4 sm:h-fluid-5" />
+                <IoClose className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             )}
 
             {/* Search button */}
-            <div className="absolute right-fluid-2 sm:right-fluid-3">
+            <div className="absolute right-2 sm:right-3">
               <button
                 type="submit"
                 disabled={isLoading || !query.trim()}
                 className={cn(
-                  "px-fluid-3 sm:px-fluid-4 py-fluid-1 sm:py-fluid-1.5 rounded-lg sm:rounded-xl",
-                  "text-fluid-xs sm:text-fluid-sm font-medium",
+                  "px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl",
+                  "text-sm sm:text-base font-medium",
                   "transition-all duration-200",
                   "disabled:opacity-50 disabled:cursor-not-allowed",
                   theme === 'dark'

@@ -9,8 +9,33 @@ import { cn } from '../utils/cn';
 import useNutritionData from '../hooks/useNutritionData';
 import { motion } from 'framer-motion';
 import NutritionAnalysis from './NutritionAnalysis';
+import { useTranslations } from 'next-intl';
 
 const ITEMS_PER_PAGE = 5;
+
+// Format timestamp to relative time (e.g., "2 hours ago", "just now", etc.)
+const formatTimestamp = (timestamp) => {
+    const date = new Date(timestamp);
+    const now = new Date();
+    const diffInSeconds = Math.floor((now - date) / 1000);
+    const diffInMinutes = Math.floor(diffInSeconds / 60);
+    const diffInHours = Math.floor(diffInMinutes / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+
+    if (diffInSeconds < 60) {
+        return 'just now';
+    } else if (diffInMinutes < 60) {
+        return `${diffInMinutes}m ago`;
+    } else if (diffInHours < 24) {
+        return `${diffInHours}h ago`;
+    } else if (diffInDays === 1) {
+        return 'yesterday';
+    } else if (diffInDays < 7) {
+        return `${diffInDays}d ago`;
+    } else {
+        return date.toLocaleDateString();
+    }
+};
 
 export default function SearchHistory({ history, onSelect, onClear }) {
     const [showAll, setShowAll] = useState(false);
@@ -19,9 +44,9 @@ export default function SearchHistory({ history, onSelect, onClear }) {
     const [showTable, setShowTable] = useState(false);
     const { theme } = useTheme();
     const { analysisResult } = useNutritionData();
+    const t = useTranslations();
 
-    const handleItemClick = useCallback((item, e) => {
-        e.preventDefault();
+    const handleItemClick = useCallback((item) => {
         onSelect(item);
     }, [onSelect]);
 
@@ -30,15 +55,13 @@ export default function SearchHistory({ history, onSelect, onClear }) {
         onClear();
     }, [onClear]);
 
-    const handleShowNutrition = useCallback((item, e) => {
-        e.preventDefault();
+    const handleViewNutrition = useCallback((e, item) => {
         e.stopPropagation();
         setSelectedItem(item);
         setShowNutrition(true);
     }, []);
 
-    const handleShowTable = useCallback((item, e) => {
-        e.preventDefault();
+    const handleViewTable = useCallback((e, item) => {
         e.stopPropagation();
         setSelectedItem(item);
         setShowTable(true);
@@ -91,58 +114,47 @@ export default function SearchHistory({ history, onSelect, onClear }) {
                 {/* History List */}
                 <div className="space-y-2">
                     {displayedHistory.map((item, index) => (
-                        <button
-                            key={index}
-                            onClick={(e) => handleItemClick(item, e)}
+                        <div
+                            key={item.timestamp}
+                            onClick={() => handleItemClick(item)}
                             className="w-full group relative flex items-center gap-3 px-4 py-2.5 rounded-lg 
-                                dark:bg-white/5 bg-white/80 dark:hover:bg-white/10 hover:bg-white
-                                dark:border-white/10 border-gray-200/50 dark:hover:border-lime-400/30 hover:border-celestial-blue/30
-                                backdrop-blur-sm
-                                shadow-sm hover:shadow-md
-                                transition-all duration-200"
+                                dark:hover:bg-white/5 hover:bg-black/5
+                                transition-colors duration-200 cursor-pointer"
                         >
-                            {/* Gradient Hover Effect */}
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300
-                                bg-gradient-to-r from-celestial-blue/5 via-asparagus/5 to-celestial-blue/5 rounded-lg" />
-
-                            {/* Content */}
-                            <div className="relative flex-1 text-left">
-                                <p className="text-sm dark:text-white/80 text-gray-700 dark:group-hover:text-white group-hover:text-gray-900 transition-colors">
-                                    {getDisplayText(item)}
-                                </p>
-                                {item.timestamp && (
-                                    <p className="text-xs dark:text-white/40 text-gray-400 mt-1">
-                                        {new Date(item.timestamp).toLocaleDateString()}
-                                    </p>
-                                )}
+                            <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2">
+                                    <span className="font-medium truncate">
+                                        {item.query}
+                                    </span>
+                                    <span className="text-xs opacity-50">
+                                        {formatTimestamp(item.timestamp)}
+                                    </span>
+                                </div>
                             </div>
 
-                            {/* Action Buttons */}
-                            {item.nutritionData && !hasNoNutrients(item.nutritionData) && (
-                                <div className="flex items-center gap-2">
-                                    {/* Table View Button */}
-                                    <button
-                                        onClick={(e) => handleShowTable(item, e)}
-                                        className="relative p-2 rounded-lg dark:bg-white/10 bg-white/50 
-                                            dark:hover:bg-white/20 hover:bg-white/80
-                                            transition-all duration-200"
-                                        title="View as table"
-                                    >
-                                        <IoGrid className="w-4 h-4 dark:text-white/70 text-gray-600" />
-                                    </button>
-                                    {/* Nutrition Button */}
-                                    <button
-                                        onClick={(e) => handleShowNutrition(item, e)}
-                                        className="relative p-2 rounded-lg dark:bg-white/10 bg-white/50 
-                                            dark:hover:bg-white/20 hover:bg-white/80
-                                            transition-all duration-200"
-                                        title="View nutrition details"
-                                    >
-                                        <IoNutrition className="w-4 h-4 dark:text-white/70 text-gray-600" />
-                                    </button>
-                                </div>
-                            )}
-                        </button>
+                            <div className="flex items-center gap-2">
+                                <button
+                                    onClick={(e) => handleViewTable(e, item)}
+                                    className="relative p-2 rounded-lg
+                                        dark:bg-white/10 bg-white/50
+                                        dark:hover:bg-white/20 hover:bg-white/80
+                                        transition-colors duration-200"
+                                    title={t('search.viewAsTable')}
+                                >
+                                    <IoGrid className="w-4 h-4" />
+                                </button>
+                                <button
+                                    onClick={(e) => handleViewNutrition(e, item)}
+                                    className="relative p-2 rounded-lg
+                                        dark:bg-white/10 bg-white/50
+                                        dark:hover:bg-white/20 hover:bg-white/80
+                                        transition-colors duration-200"
+                                    title={t('search.viewNutrition')}
+                                >
+                                    <IoNutrition className="w-4 h-4" />
+                                </button>
+                            </div>
+                        </div>
                     ))}
 
                     {/* Show More Button */}

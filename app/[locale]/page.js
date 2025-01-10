@@ -48,10 +48,12 @@ export default function Home() {
     return (
         <div className="min-h-screen w-full">
             {/* Settings Buttons */}
-            <SettingsButtons />
+            <div className="relative z-50">
+                <SettingsButtons />
+            </div>
 
             {/* Animated background effects */}
-            <div className="fixed inset-0 overflow-hidden pointer-events-none">
+            <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
                 {/* Animated blobs */}
                 <div className="absolute inset-0">
                     <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-orange-200/30 dark:bg-emerald-500/10 rounded-full blur-3xl animate-blob" />
@@ -64,7 +66,7 @@ export default function Home() {
             </div>
 
             {/* Main content */}
-            <div className="relative w-full min-h-screen pt-20 pb-8">
+            <div className="relative w-full min-h-screen pt-20 pb-8 z-10">
                 <div className="w-full max-w-2xl mx-auto flex flex-col items-center space-y-8 px-4">
                     <Header />
                     <div className="w-full space-y-6">

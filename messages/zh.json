@@ -19,7 +19,9 @@
         "loading": "搜索中...",
         "error": {
             "api": "获取营养数据失败"
-        }
+        },
+        "viewAsTable": "表格视图",
+        "viewNutrition": "查看营养详情"
     },
     "common": {
         "close": "关闭",

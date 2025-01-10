@@ -19,7 +19,9 @@
         "loading": "Searching...",
         "error": {
             "api": "Failed to fetch nutrition data"
-        }
+        },
+        "viewAsTable": "View as table",
+        "viewNutrition": "View nutrition details"
     },
     "common": {
         "close": "Close",

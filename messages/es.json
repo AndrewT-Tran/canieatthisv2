@@ -19,7 +19,9 @@
         "loading": "Buscando...",
         "error": {
             "api": "Error al obtener datos nutricionales"
-        }
+        },
+        "viewAsTable": "Ver como tabla",
+        "viewNutrition": "Ver detalles nutricionales"
     },
     "common": {
         "close": "Cerrar",

@@ -46,10 +46,10 @@ export default async function RootLayout({ children, params }) {
                     <ThemeProvider>
                         <ThemeWrapper>
                             {/* Background gradient overlay */}
-                            <div className="fixed inset-0 bg-gradient-to-b from-transparent via-orange-100/20 to-orange-100/10 dark:via-black/5 dark:to-black/10 pointer-events-none" />
+                            <div className="fixed inset-0 -z-10 bg-gradient-to-b from-transparent via-orange-100/20 to-orange-100/10 dark:via-black/5 dark:to-black/10 pointer-events-none" />
 
                             {/* Main content */}
-                            <main className="relative min-h-screen w-full">
+                            <main className="relative min-h-screen w-full z-10">
                                 {children}
                             </main>
                         </ThemeWrapper>

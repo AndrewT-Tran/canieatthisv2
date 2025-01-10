@@ -8,12 +8,14 @@ import { useTheme } from '../context/ThemeContext';
 import { cn } from '../utils/cn';
 import useNutritionData from '../hooks/useNutritionData';
 import { motion } from 'framer-motion';
+import NutritionAnalysis from './NutritionAnalysis';
 
 const ITEMS_PER_PAGE = 5;
 
 export default function SearchHistory({ history, onSelect, onClear }) {
     const [showAll, setShowAll] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
+    const [showNutrition, setShowNutrition] = useState(false);
     const [showTable, setShowTable] = useState(false);
     const { theme } = useTheme();
     const { analysisResult } = useNutritionData();
@@ -32,6 +34,7 @@ export default function SearchHistory({ history, onSelect, onClear }) {
         e.preventDefault();
         e.stopPropagation();
         setSelectedItem(item);
+        setShowNutrition(true);
     }, []);
 
     const handleShowTable = useCallback((item, e) => {
@@ -158,6 +161,13 @@ export default function SearchHistory({ history, onSelect, onClear }) {
                     )}
                 </div>
             </div>
+
+            {/* Nutrition Analysis Modal */}
+            <NutritionAnalysis
+                isOpen={showNutrition}
+                onClose={() => setShowNutrition(false)}
+                nutritionData={selectedItem?.nutritionData}
+            />
 
             {/* Table View Modal */}
             <Dialog

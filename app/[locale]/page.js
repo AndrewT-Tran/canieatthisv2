@@ -46,26 +46,26 @@ export default function Home() {
     };
 
     return (
-        <div className="relative">
+        <div className="min-h-screen w-full">
             {/* Settings Buttons */}
             <SettingsButtons />
 
             {/* Animated background effects */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="fixed inset-0 overflow-hidden pointer-events-none">
                 {/* Animated blobs */}
                 <div className="absolute inset-0">
-                    <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-blob" />
-                    <div className="absolute top-1/3 -right-1/4 w-96 h-96 bg-lime-500/10 rounded-full blur-3xl animate-blob animation-delay-2000" />
-                    <div className="absolute -bottom-32 left-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-blob animation-delay-4000" />
+                    <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-orange-200/30 dark:bg-emerald-500/10 rounded-full blur-3xl animate-blob" />
+                    <div className="absolute top-1/3 -right-1/4 w-96 h-96 bg-orange-300/20 dark:bg-lime-500/10 rounded-full blur-3xl animate-blob animation-delay-2000" />
+                    <div className="absolute -bottom-32 left-1/2 w-96 h-96 bg-orange-100/40 dark:bg-emerald-500/10 rounded-full blur-3xl animate-blob animation-delay-4000" />
                 </div>
 
                 {/* Grain effect overlay */}
-                <div className="absolute inset-0 opacity-20 bg-[url('/noise.png')] pointer-events-none" />
+                <div className="absolute inset-0 opacity-5 dark:opacity-20 bg-[url('/noise.png')] pointer-events-none" />
             </div>
 
             {/* Main content */}
-            <div className="w-full">
-                <div className="w-full max-w-2xl mx-auto flex flex-col items-center space-y-8">
+            <div className="relative w-full min-h-screen pt-20 pb-8">
+                <div className="w-full max-w-2xl mx-auto flex flex-col items-center space-y-8 px-4">
                     <Header />
                     <div className="w-full space-y-6">
                         <SearchBar

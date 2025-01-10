@@ -38,20 +38,39 @@ export default async function RootLayout({ children, params }) {
             <body suppressHydrationWarning className={cn(
                 inter.className,
                 climateCrisis.variable,
-                "min-h-screen overflow-x-hidden transition-colors duration-300",
-                "bg-[#fcfcfc] dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800"
+                "min-h-screen w-full overflow-x-hidden transition-colors duration-300",
+                "bg-gradient-to-b from-orange-50 via-orange-50/50 to-white",
+                "dark:from-gray-900 dark:via-gray-850 dark:to-gray-800"
             )}>
                 <NextIntlClientProvider messages={messages} locale={locale}>
                     <ThemeProvider>
                         <ThemeWrapper>
-                            <main className="min-h-screen w-full flex items-center justify-center">
-                                <div className="w-full h-full">
-                                    {children}
-                                </div>
+                            {/* Background gradient overlay */}
+                            <div className="fixed inset-0 bg-gradient-to-b from-transparent via-orange-100/20 to-orange-100/10 dark:via-black/5 dark:to-black/10 pointer-events-none" />
+
+                            {/* Main content */}
+                            <main className="relative min-h-screen w-full">
+                                {children}
                             </main>
                         </ThemeWrapper>
                     </ThemeProvider>
                 </NextIntlClientProvider>
+
+                {/* Script to prevent theme flash */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function() {
+                                function getTheme() {
+                                    const savedTheme = localStorage.getItem('theme');
+                                    if (savedTheme) return savedTheme;
+                                    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                                }
+                                document.documentElement.classList.add(getTheme());
+                            })();
+                        `,
+                    }}
+                />
             </body>
         </html>
     );

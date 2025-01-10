@@ -51,7 +51,7 @@ export default function Header() {
             {/* Title */}
             <div className="relative">
                 <motion.div
-                    className="flex justify-center mb-4"
+                    className="flex justify-center mb-4 pt-8 sm:pt-10 md:pt-12"
                     initial={{ scale: 0, rotate: -180 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{

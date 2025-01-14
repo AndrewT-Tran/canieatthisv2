@@ -13,6 +13,9 @@ export default getRequestConfig(async (params: any) => {
         console.warn('Invalid locale detected, falling back to default:', defaultLocale);
         locale = defaultLocale;
     }
+    if (locale === undefined) {
+        locale = defaultLocale;
+    }
     return {
         messages: await getMessages(locale),
         timeZone: 'UTC',

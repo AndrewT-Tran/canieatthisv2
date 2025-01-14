@@ -1,8 +1,17 @@
-import { getRequestConfig } from 'next-intl/server';
+import { getRequestConfig, requestLocale } from 'next-intl/server';
+import { defaultLocale, locales } from './config';
+import messages from '../../messages';
 
-export default getRequestConfig(async () => {
+const getMessages = async (locale: string) => {
+    return messages[locale] || messages[defaultLocale];
+};
+
+export default getRequestConfig(async ({ request }) => {
+    const locale = await requestLocale(request);
     return {
-        messages: (await import(`../../messages/${process.env.NEXT_LOCALE}.json`)).default,
-        timeZone: 'UTC'
+        messages: await getMessages(locale),
+        timeZone: 'UTC',
+        defaultLocale,
+        locales
     };
 }); 

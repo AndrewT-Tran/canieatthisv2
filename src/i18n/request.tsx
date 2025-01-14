@@ -3,27 +3,31 @@ import { defaultLocale, locales } from './config';
 import messages from '../../messages/index';
 
 const getMessages = async (locale: string) => {
-    return messages[locale] || messages[defaultLocale];
+    return messages[locale] ?? messages[defaultLocale];
 };
 
 export default getRequestConfig(async (params: any) => {
-    // Determine the locale from params or headers
-    let locale = params.req.headers['accept-language']?.split(',')[0];
+    // Check if the request object is available
+    if (params.req) {
+        await setRequestLocale(params.req);
+        const locale = params.req.headers['accept-language']?.split(',')[0];
 
-    // Validate the locale
-    if (!locale || !locales.includes(locale)) {
-        console.warn('Invalid locale detected, falling back to default:', defaultLocale);
-        locale = defaultLocale;
+        if (locale && locales.includes(locale)) {
+            return {
+                messages: await getMessages(locale),
+                timeZone: 'UTC',
+                defaultLocale,
+                locales,
+            };
+        }
     }
 
-    // Set the request locale
-    setRequestLocale(locale);
-
+    // Fallback to default locale
+    console.warn('Request object is missing or invalid, using default locale.');
     return {
-        locale, // Ensure to return the locale
-        messages: await getMessages(locale),
+        messages: await getMessages(defaultLocale),
         timeZone: 'UTC',
         defaultLocale,
-        locales
+        locales,
     };
 });

@@ -160,6 +160,12 @@ export default function SearchBar({ onSearch }) {
           </form>
           <DisclaimerDialog triggerIcon={true} />
         </div>
+        <p className={cn(
+          "text-sm mt-2 px-2",
+          theme === 'dark' ? "text-gray-400" : "text-gray-500"
+        )}>
+          {t('search.quantityExample')}
+        </p>
       </div>
 
       {/* Nutrition Analysis Dialog */}

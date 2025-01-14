@@ -2,13 +2,14 @@
 
 import { cn } from '../utils/cn';
 import { useTheme } from '../context/ThemeContext';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
-import { useMemo } from 'react';
+import { useMemo, useEffect, useState } from 'react';
 
 export default function Header() {
     const { theme } = useTheme();
     const t = useTranslations();
+    const locale = useLocale();
 
     // Memoize animation variants
     const variants = useMemo(() => ({
@@ -108,19 +109,25 @@ export default function Header() {
         }
     `, []);
 
+    // Handle hydration
+    const [isClient, setIsClient] = useState(false);
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
     return (
         <motion.div
-            className="relative w-full py-fluid-8"
-            initial="hidden"
-            animate="visible"
+            className="relative w-full py-fluid-8 px-4 sm:px-6"
+            initial={isClient ? "hidden" : false}
+            animate={isClient ? "visible" : false}
             variants={variants.container}
         >
             {/* Title */}
-            <div className="relative">
+            <div className="relative max-w-4xl mx-auto">
                 <motion.div
                     className="flex justify-center mb-fluid-6"
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
+                    initial={isClient ? { scale: 0, rotate: -180 } : false}
+                    animate={isClient ? { scale: 1, rotate: 0 } : false}
                     transition={{
                         delay: 0.2,
                         duration: 0.6,
@@ -131,6 +138,7 @@ export default function Header() {
                         <svg
                             className={styles.icon}
                             viewBox="0 0 24 24"
+                            suppressHydrationWarning
                         >
                             <style>{keyframeStyles}</style>
                             <g fill="none" className="face">
@@ -173,18 +181,26 @@ export default function Header() {
                 <motion.h1
                     className="text-center font-bold text-fluid-4xl px-fluid-4 mb-fluid-6"
                     variants={variants.title}
+                    initial={isClient ? "hidden" : false}
+                    animate={isClient ? "visible" : false}
                 >
                     <div className="flex items-center justify-center gap-fluid-2 tracking-tight font-climate-crisis whitespace-nowrap">
                         <div className="relative flex items-center">
                             <div className="flex gap-fluid-2 relative z-0">
                                 <motion.span
-                                    className={styles.text}
+                                    className={cn(
+                                        styles.text,
+                                        locale === 'es' && 'text-fluid-2xl'
+                                    )}
                                     variants={variants.letter}
                                 >
                                     {t('header.title.can')}
                                 </motion.span>
                                 <motion.span
-                                    className={cn(styles.text)}
+                                    className={cn(
+                                        styles.text,
+                                        locale === 'es' && 'text-fluid-2xl'
+                                    )}
                                     variants={variants.letter}
                                 >
                                     {t('header.title.i')}
@@ -193,8 +209,8 @@ export default function Header() {
                             {/* Animated gradient underline */}
                             <motion.div
                                 className="absolute -bottom-1 left-0 right-0 mx-auto h-fluid-1 overflow-hidden z-10"
-                                initial={{ width: 0 }}
-                                animate={{ width: "100%" }}
+                                initial={isClient ? { width: 0 } : false}
+                                animate={isClient ? { width: "100%" } : false}
                                 transition={{
                                     delay: 0.8,
                                     duration: 0.6,
@@ -205,13 +221,20 @@ export default function Header() {
                             </motion.div>
                         </div>
                         <motion.span
-                            className={styles.text}
+                            className={cn(
+                                styles.text,
+                                locale === 'es' && 'text-fluid-2xl'
+                            )}
                             variants={variants.letter}
                         >
                             {t('header.title.eat')}
                         </motion.span>
                         <motion.span
-                            className={cn(styles.text, "not-italic")}
+                            className={cn(
+                                styles.text,
+                                "not-italic",
+                                locale === 'es' && 'text-fluid-2xl'
+                            )}
                             variants={variants.letter}
                         >
                             {t('header.title.this')}
@@ -225,8 +248,8 @@ export default function Header() {
                         "text-center text-fluid-lg max-w-lg mx-auto px-fluid-4 font-poppins tracking-wide",
                         theme === 'dark' ? "text-slate-600/90" : "text-gray-600"
                     )}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={isClient ? { opacity: 0, y: 20 } : false}
+                    animate={isClient ? { opacity: 1, y: 0 } : false}
                     transition={{
                         delay: 1,
                         duration: 0.5,
@@ -240,8 +263,8 @@ export default function Header() {
             {/* Bottom Border */}
             <motion.div
                 className={styles.border}
-                initial={{ scaleX: 0, opacity: 0 }}
-                animate={{ scaleX: 1, opacity: 1 }}
+                initial={isClient ? { scaleX: 0, opacity: 0 } : false}
+                animate={isClient ? { scaleX: 1, opacity: 1 } : false}
                 transition={{
                     delay: 1.2,
                     duration: 0.8,

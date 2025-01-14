@@ -140,8 +140,8 @@ const useNutritionData = () => {
         try {
             const response = await axios.get('https://api.edamam.com/api/nutrition-data', {
                 params: {
-                    app_id: 'c01e2d6f',
-                    app_key: 'f5ef2794e70ef81b4ef13e618f574cf2',
+                    app_id: process.env.NEXT_PUBLIC_EDAMAM_APP_ID,
+                    app_key: process.env.NEXT_PUBLIC_EDAMAM_APP_KEY,
                     'nutrition-type': 'logging',
                     ingr: query,
                 },

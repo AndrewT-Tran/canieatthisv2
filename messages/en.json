@@ -23,7 +23,8 @@
             "api": "Failed to fetch nutrition data"
         },
         "viewAsTable": "View as table",
-        "viewNutrition": "View nutrition details"
+        "viewNutrition": "View nutrition details",
+        "quantityExample": "Try searching with a specific amount (e.g., \"1 apple\" or \"100g apples\")"
     },
     "common": {
         "close": "Close",

@@ -6,14 +6,20 @@ import { cn } from '../utils/cn';
 import { IoWarning, IoClose, IoCheckmarkCircle } from 'react-icons/io5';
 import { motion } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { GoInfo } from "react-icons/go";
+import { useOnClickOutside } from '../hooks/useOnClickOutside';
 
 export default function DisclaimerDialog({ triggerIcon = false }) {
     const { theme } = useTheme();
     const t = useTranslations('disclaimer');
     const locale = useLocale();
     const [isOpen, setIsOpen] = useState(false);
+    const dialogRef = useRef(null);
+
+    useOnClickOutside(dialogRef, () => {
+        if (isOpen) handleClose();
+    });
 
     useEffect(() => {
         const hasSeenDisclaimer = localStorage.getItem('hasSeenDisclaimer');
@@ -51,19 +57,23 @@ export default function DisclaimerDialog({ triggerIcon = false }) {
             >
                 <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" aria-hidden="true" />
 
-                <div className="fixed inset-0 flex items-center justify-center p-4">
+                <div className="fixed inset-0 flex items-center justify-center p-4 overflow-y-auto">
                     <motion.div
                         initial={{ scale: 0.95, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.95, opacity: 0 }}
                         transition={{ duration: 0.2 }}
+                        className="w-full max-w-lg min-h-fit max-h-[90vh] flex items-start"
                     >
-                        <Dialog.Panel className={cn(
-                            "mx-auto max-w-lg w-full rounded-2xl shadow-xl p-6",
-                            theme === 'dark' ? "bg-gray-900" : "bg-white"
-                        )}>
+                        <Dialog.Panel
+                            ref={dialogRef}
+                            className={cn(
+                                "mx-auto w-full rounded-2xl shadow-xl p-6 overflow-y-auto",
+                                theme === 'dark' ? "bg-gray-900" : "bg-white"
+                            )}
+                        >
                             {/* Header */}
-                            <div className="flex justify-between items-start mb-4">
+                            <div className="flex justify-between items-start mb-4 sticky top-0 bg-inherit pt-1 pb-2">
                                 <Dialog.Title className={cn(
                                     "text-xl font-bold flex items-center gap-2",
                                     theme === 'dark' ? "text-white" : "text-gray-900",

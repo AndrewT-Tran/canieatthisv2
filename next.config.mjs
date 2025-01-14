@@ -1,18 +1,17 @@
 import createNextIntlPlugin from 'next-intl/plugin';
 
-const withNextIntl = createNextIntlPlugin('./i18n/request.js');
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.tsx');
+
+const withPWA = require('next-pwa')({
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+    disable: process.env.NODE_ENV === 'development'
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ['edamam.com', 'www.edamam.com'],
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: '*.edamam.com',
-            },
-        ],
-    }
+    reactStrictMode: true,
 };
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(withPWA(nextConfig));

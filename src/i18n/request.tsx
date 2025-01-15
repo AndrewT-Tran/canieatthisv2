@@ -2,8 +2,8 @@ import { getRequestConfig, setRequestLocale } from 'next-intl/server';
 import { defaultLocale, locales } from './config';
 import messages from '../../messages/index';
 
-const getMessages = async (locale: string) => {
-    return messages[locale] ?? messages[defaultLocale];
+const getMessages = async (locales: string) => {
+    return messages[locales] ?? messages[defaultLocale];
 };
 
 export default getRequestConfig(async (params: any) => {

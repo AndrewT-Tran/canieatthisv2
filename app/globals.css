@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme transition setup */
 :root {
   --theme-transition-duration: 500ms;
 }
@@ -12,46 +13,22 @@
 .theme-transition *::before,
 .theme-transition *::after {
   transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: var(--theme-transition-duration);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Smooth transitions for common properties */
+/* Smooth background, text, and border transitions */
 body,
 .bg-transition {
-  transition: background-color 500ms ease-in-out;
+  transition: background-color var(--theme-transition-duration) ease-in-out;
 }
 
 .text-transition {
-  transition: color 500ms ease-in-out;
+  transition: color var(--theme-transition-duration) ease-in-out;
 }
 
 .border-transition {
-  transition: border-color 500ms ease-in-out;
-}
-
-.shadow-transition {
-  transition: box-shadow 500ms ease-in-out;
-}
-
-/* Gradient transitions */
-.gradient-transition {
-  transition: background-image 500ms ease-in-out;
-}
-
-/* Transform transitions */
-.transform-transition {
-  transition: transform 200ms ease-in-out;
-}
-
-/* Opacity transitions */
-.opacity-transition {
-  transition: opacity 200ms ease-in-out;
-}
-
-/* Scale transitions */
-.scale-transition {
-  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color var(--theme-transition-duration) ease-in-out;
 }
 
 /* Combined transitions */
@@ -60,76 +37,74 @@ body,
 }
 
 @layer base {
+
+  /* Fonts and global text styles */
   :root {
     --font-poppins: 'Poppins', sans-serif;
-    --font-climate-crisis: 'Climate Crisis', sans-serif;
     --font-inter: 'Inter', sans-serif;
     --font-roboto: 'Roboto', sans-serif;
-    --font-climate-crisis: '';
-    --font-noto-sans-sc: '';
-    --font-ma-shan-zheng: '';
+    --font-noto-sans-sc: 'Noto Sans SC', sans-serif;
 
-    /* Light mode colors */
+    /* Colors */
     --color-white: #fcfcfc;
+    --color-gray-dark: #1e293b;
     --color-outer-space: #4a5759;
     --color-orange-web: #f2d493;
     --color-celestial-blue: #009ffd;
-    --color-asparagus: #6cae75;
-
-    /* Theme transition duration */
-    --theme-transition-duration: 500ms;
-  }
-
-  /* Theme transition styles */
-  .theme-transition * {
-    transition-duration: var(--theme-transition-duration) !important;
-    transition-property: background-color, border-color, color, fill, stroke !important;
-    transition-timing-function: ease-in-out !important;
+    --color-asparagus: #4d9757;
   }
 
   body {
-    @apply text-gray-800 antialiased dark:text-white;
+    @apply text-gray-800 antialiased dark:text-white bg-white dark:bg-gray-900;
   }
 
-  .font-climate-crisis {
-    font-family: var(--font-climate-crisis);
+  /* Font utilities */
+  .font-poppins {
+    font-family: var(--font-poppins);
+  }
+
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+
+  .font-roboto {
+    font-family: var(--font-roboto);
   }
 
   .font-noto-sans-sc {
     font-family: var(--font-noto-sans-sc);
   }
-
-  .font-ma-shan-zheng {
-    font-family: var(--font-ma-shan-zheng);
-  }
-
-  .font-poppins {
-    font-family: var(--font-poppins);
-  }
 }
 
 @layer components {
+
+  /* Button styles */
   .btn {
-    @apply font-light;
+    @apply font-light rounded-md px-4 py-2 bg-gradient-to-r from-celestial-blue to-asparagus text-white;
   }
 
+  /* Loading spinner */
   .loading {
     @apply animate-spin;
   }
 
+  /* Gradient text effect */
   .text-gradient {
     @apply bg-gradient-to-r from-celestial-blue to-asparagus bg-clip-text text-transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
     background-size: 200% auto;
   }
 
-  .text-clip-animate {
-    animation: textClip 4s ease-in-out infinite;
+  /* Shimmer animation effect */
+  .animate-shimmer {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
   }
 }
 
 @layer utilities {
+
+  /* Custom scrollbar */
   .scrollbar-thin {
     scrollbar-width: thin;
   }
@@ -137,9 +112,14 @@ body,
   .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
     border-radius: 0.25rem;
   }
+
+  /* Text clip animation */
+  .text-clip-animate {
+    animation: textClip 4s ease-in-out infinite;
+  }
 }
 
-/* Custom Animations */
+/* Keyframes for shimmer and text clip animations */
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
@@ -162,10 +142,6 @@ body,
   }
 }
 
-.animate-shimmer-slide {
-  animation: shimmer 2s linear infinite;
-}
-
 /* Toast Customization */
 .Toastify__toast {
   @apply rounded-lg bg-white/90 font-light text-gray-800 backdrop-blur-sm dark:bg-gray-800/90 dark:text-white;
@@ -179,6 +155,7 @@ body,
   @apply bg-celestial-blue/50;
 }
 
+/* Utility for animation delays */
 .animation-delay-2000 {
   animation-delay: 2s;
 }

@@ -88,6 +88,44 @@
                 "IU": "IU"
             }
         },
+        "nutrients": {
+            "ENERC_KCAL": "Calo",
+            "PROCNT": "Protein",
+            "FAT": "Tổng chất béo",
+            "FASAT": "Chất béo bão hòa",
+            "FATRN": "Chất béo chuyển hóa",
+            "FAMS": "Chất béo không bão hòa đơn",
+            "FAPU": "Chất béo không bão hòa đa",
+            "CHOCDF": "Carbohydrate",
+            "CHOCDF_KCAL": "Calo từ Carbohydrate",
+            "CHOLE": "Cholesterol",
+            "FIBTG": "Chất xơ",
+            "SUGAR": "Đường",
+            "WATER": "Nước",
+            "TOCPHA": "Vitamin E",
+            "CA": "Canxi",
+            "FE": "Sắt",
+            "MG": "Magiê",
+            "P": "Phốt pho",
+            "K": "Kali",
+            "NA": "Natri",
+            "ZN": "Kẽm",
+            "CU": "Đồng",
+            "MN": "Mangan",
+            "SE": "Selen",
+            "VITA_RAE": "Vitamin A",
+            "VITC": "Vitamin C",
+            "VITD": "Vitamin D",
+            "VITB6A": "Vitamin B6",
+            "VITB12": "Vitamin B12",
+            "VITK1": "Vitamin K",
+            "THIA": "Thiamin (Vitamin B1)",
+            "RIBF": "Riboflavin (Vitamin B2)",
+            "NIA": "Niacin (Vitamin B3)",
+            "FOLAC": "Axit folic",
+            "FOLDFE": "Tương đương Folate trong chế độ ăn",
+            "FOLFD": "Folate trong thực phẩm"
+        },
         "minerals": {
             "title": "Khoáng chất",
             "calcium": "Canxi",
@@ -104,6 +142,6 @@
             "noData": "Không tìm thấy dữ liệu dinh dưỡng cho thành phần này",
             "fetchError": "Không thể lấy dữ liệu dinh dưỡng"
         },
-        "quantityExample": "Thử tìm kiếm với số lượng cụ thể (ví dụ: '1 quả táo' hoặc '100g gạo')"
+        "quantityExample": "Thử tìm kiếm với số lượng cụ thể (ví dụ: \"1 quả táo\" hoặc \"100g gạo\")"
     }
 }

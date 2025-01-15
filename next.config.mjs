@@ -1,17 +1,18 @@
 import createNextIntlPlugin from 'next-intl/plugin';
+import nextPWA from 'next-pwa';
 
-const withNextIntl = createNextIntlPlugin('./src/i18n/request.tsx');
+const withNextIntl = createNextIntlPlugin('./app/i18n/request.tsx');
 
-const withPWA = require('next-pwa')({
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-    disable: process.env.NODE_ENV === 'development'
+const withPWA = nextPWA({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === 'development',
 });
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
+  reactStrictMode: true,
 };
 
 export default withNextIntl(withPWA(nextConfig));

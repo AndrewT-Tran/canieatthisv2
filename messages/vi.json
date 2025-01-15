@@ -1,147 +1,147 @@
 {
-    "header": {
-        "title": {
-            "can": "Tôi",
-            "i": "Có Thể",
-            "eat": "Ăn",
-            "this": "Cái Này?"
-        },
-        "subtitle": "Khám phá giá trị dinh dưỡng của bất kỳ thực phẩm hoặc bữa ăn nào"
+  "header": {
+    "title": {
+      "can": "Tôi",
+      "i": "Có Thể",
+      "eat": "Ăn",
+      "this": "Cái Này?"
     },
-    "navigation": {
-        "home": "Trang chủ",
-        "search": "Tìm kiếm"
+    "subtitle": "Khám phá giá trị dinh dưỡng của bất kỳ thực phẩm hoặc bữa ăn nào"
+  },
+  "navigation": {
+    "home": "Trang chủ",
+    "search": "Tìm kiếm"
+  },
+  "search": {
+    "placeholder": "Nhập tên thực phẩm hoặc món ăn...",
+    "button": "Tìm kiếm",
+    "buttonShort": "Tìm",
+    "history": "Lịch sử tìm kiếm",
+    "clear": "Xóa lịch sử",
+    "loading": "Đang tìm...",
+    "error": {
+      "api": "Không thể lấy dữ liệu dinh dưỡng"
     },
-    "search": {
-        "placeholder": "Nhập tên thực phẩm hoặc món ăn...",
-        "button": "Tìm kiếm",
-        "buttonShort": "Tìm",
-        "history": "Lịch sử tìm kiếm",
-        "clear": "Xóa lịch sử",
-        "loading": "Đang tìm...",
-        "error": {
-            "api": "Không thể lấy dữ liệu dinh dưỡng"
-        },
-        "viewAsTable": "Xem dạng bảng",
-        "viewNutrition": "Xem chi tiết dinh dưỡng",
-        "quantityExample": "Thử tìm kiếm với số lượng cụ thể (ví dụ: \"1 quả táo\" hoặc \"100g táo\")"
+    "viewAsTable": "Xem dạng bảng",
+    "viewNutrition": "Xem chi tiết dinh dưỡng",
+    "quantityExample": "Thử tìm kiếm với số lượng cụ thể (ví dụ: \"1 quả táo\" hoặc \"100g táo\")"
+  },
+  "common": {
+    "close": "Đóng",
+    "error": "Lỗi",
+    "language": "Ngôn ngữ"
+  },
+  "nutrition": {
+    "calories": "Năng lượng",
+    "totalCalories": "Tổng năng lượng",
+    "fat": {
+      "total": "Tổng chất béo",
+      "saturated": "Chất béo bão hòa",
+      "monounsaturated": "Chất béo không bão hòa đơn",
+      "polyunsaturated": "Chất béo không bão hòa đa"
     },
-    "common": {
-        "close": "Đóng",
-        "error": "Lỗi",
-        "language": "Ngôn ngữ"
+    "carbs": "Carbohydrate",
+    "fiber": "Chất xơ",
+    "sugar": "Đường",
+    "protein": "Protein",
+    "units": {
+      "kcal": "kcal",
+      "g": "g",
+      "mg": "mg",
+      "µg": "µg",
+      "percent": "%"
     },
-    "nutrition": {
-        "calories": "Năng lượng",
-        "totalCalories": "Tổng năng lượng",
-        "fat": {
-            "total": "Tổng chất béo",
-            "saturated": "Chất béo bão hòa",
-            "monounsaturated": "Chất béo không bão hòa đơn",
-            "polyunsaturated": "Chất béo không bão hòa đa"
-        },
-        "carbs": "Carbohydrate",
-        "fiber": "Chất xơ",
-        "sugar": "Đường",
-        "protein": "Protein",
-        "units": {
-            "kcal": "kcal",
-            "g": "g",
-            "mg": "mg",
-            "µg": "µg",
-            "percent": "%"
-        },
-        "analysis": {
-            "safe": "✅ Thực phẩm này an toàn để tiêu thụ dựa trên thành phần dinh dưỡng.",
-            "warning": "⚠️ Thực phẩm này cần chú ý do thành phần dinh dưỡng.",
-            "warnings": {
-                "sugar": "Hàm lượng đường cao ({value}g trên 100g)",
-                "carbs": "Hàm lượng carbohydrate cao ({value}g trên 100g)",
-                "fat": "Hàm lượng chất béo cao ({value}g trên 100g)",
-                "saturatedFat": "Hàm lượng chất béo bão hòa cao ({value}g trên 100g)",
-                "sodium": "Hàm lượng natri cao ({value}mg trên 100g)",
-                "cholesterol": "Hàm lượng cholesterol cao ({value}mg trên 100g)"
-            }
-        },
-        "details": {
-            "per100g": "trên 100g",
-            "total": "Tổng",
-            "dailyValue": "Giá trị hàng ngày",
-            "notAvailable": "-"
-        },
-        "vitamins": {
-            "title": "Vitamin",
-            "a": "Vitamin A",
-            "c": "Vitamin C",
-            "d": "Vitamin D",
-            "e": "Vitamin E",
-            "k": "Vitamin K",
-            "b6": "Vitamin B6",
-            "b12": "Vitamin B12",
-            "thiamin": "Thiamin (B1)",
-            "riboflavin": "Riboflavin (B2)",
-            "niacin": "Niacin (B3)",
-            "folate": "Folate (B9)",
-            "units": {
-                "mg": "mg",
-                "µg": "µg",
-                "IU": "IU"
-            }
-        },
-        "nutrients": {
-            "ENERC_KCAL": "Calo",
-            "PROCNT": "Protein",
-            "FAT": "Tổng chất béo",
-            "FASAT": "Chất béo bão hòa",
-            "FATRN": "Chất béo chuyển hóa",
-            "FAMS": "Chất béo không bão hòa đơn",
-            "FAPU": "Chất béo không bão hòa đa",
-            "CHOCDF": "Carbohydrate",
-            "CHOCDF_KCAL": "Calo từ Carbohydrate",
-            "CHOLE": "Cholesterol",
-            "FIBTG": "Chất xơ",
-            "SUGAR": "Đường",
-            "WATER": "Nước",
-            "TOCPHA": "Vitamin E",
-            "CA": "Canxi",
-            "FE": "Sắt",
-            "MG": "Magiê",
-            "P": "Phốt pho",
-            "K": "Kali",
-            "NA": "Natri",
-            "ZN": "Kẽm",
-            "CU": "Đồng",
-            "MN": "Mangan",
-            "SE": "Selen",
-            "VITA_RAE": "Vitamin A",
-            "VITC": "Vitamin C",
-            "VITD": "Vitamin D",
-            "VITB6A": "Vitamin B6",
-            "VITB12": "Vitamin B12",
-            "VITK1": "Vitamin K",
-            "THIA": "Thiamin (Vitamin B1)",
-            "RIBF": "Riboflavin (Vitamin B2)",
-            "NIA": "Niacin (Vitamin B3)",
-            "FOLAC": "Axit folic",
-            "FOLDFE": "Tương đương Folate trong chế độ ăn",
-            "FOLFD": "Folate trong thực phẩm"
-        },
-        "minerals": {
-            "title": "Khoáng chất",
-            "calcium": "Canxi",
-            "iron": "Sắt",
-            "magnesium": "Magiê",
-            "phosphorus": "Phốt pho",
-            "potassium": "Kali",
-            "zinc": "Kẽm"
-        },
-        "errors": {
-            "invalidInput": "Vui lòng nhập thành phần hợp lệ",
-            "tooShort": "Câu tìm kiếm quá ngắn. Vui lòng cụ thể hơn",
-            "invalidQuantity": "Định dạng số lượng không hợp lệ. Ví dụ: \"100g gà\" hoặc \"1 quả táo\"",
-            "noData": "Không tìm thấy dữ liệu dinh dưỡng cho thành phần này",
-            "fetchError": "Không thể lấy dữ liệu dinh dưỡng"
-        },
-        "quantityExample": "Thử tìm kiếm với số lượng cụ thể (ví dụ: \"1 quả táo\" hoặc \"100g gạo\")"
-    }
+    "analysis": {
+      "safe": "✅ Thực phẩm này an toàn để tiêu thụ dựa trên thành phần dinh dưỡng.",
+      "warning": "⚠️ Thực phẩm này cần chú ý do thành phần dinh dưỡng.",
+      "warnings": {
+        "sugar": "Hàm lượng đường cao ({value}g trên 100g)",
+        "carbs": "Hàm lượng carbohydrate cao ({value}g trên 100g)",
+        "fat": "Hàm lượng chất béo cao ({value}g trên 100g)",
+        "saturatedFat": "Hàm lượng chất béo bão hòa cao ({value}g trên 100g)",
+        "sodium": "Hàm lượng natri cao ({value}mg trên 100g)",
+        "cholesterol": "Hàm lượng cholesterol cao ({value}mg trên 100g)"
+      }
+    },
+    "details": {
+      "per100g": "trên 100g",
+      "total": "Tổng",
+      "dailyValue": "Giá trị hàng ngày",
+      "notAvailable": "-"
+    },
+    "vitamins": {
+      "title": "Vitamin",
+      "a": "Vitamin A",
+      "c": "Vitamin C",
+      "d": "Vitamin D",
+      "e": "Vitamin E",
+      "k": "Vitamin K",
+      "b6": "Vitamin B6",
+      "b12": "Vitamin B12",
+      "thiamin": "Thiamin (B1)",
+      "riboflavin": "Riboflavin (B2)",
+      "niacin": "Niacin (B3)",
+      "folate": "Folate (B9)",
+      "units": {
+        "mg": "mg",
+        "µg": "µg",
+        "IU": "IU"
+      }
+    },
+    "nutrients": {
+      "ENERC_KCAL": "Calo",
+      "PROCNT": "Protein",
+      "FAT": "Tổng chất béo",
+      "FASAT": "Chất béo bão hòa",
+      "FATRN": "Chất béo chuyển hóa",
+      "FAMS": "Chất béo không bão hòa đơn",
+      "FAPU": "Chất béo không bão hòa đa",
+      "CHOCDF": "Carbohydrate",
+      "CHOCDF_KCAL": "Calo từ Carbohydrate",
+      "CHOLE": "Cholesterol",
+      "FIBTG": "Chất xơ",
+      "SUGAR": "Đường",
+      "WATER": "Nước",
+      "TOCPHA": "Vitamin E",
+      "CA": "Canxi",
+      "FE": "Sắt",
+      "MG": "Magiê",
+      "P": "Phốt pho",
+      "K": "Kali",
+      "NA": "Natri",
+      "ZN": "Kẽm",
+      "CU": "Đồng",
+      "MN": "Mangan",
+      "SE": "Selen",
+      "VITA_RAE": "Vitamin A",
+      "VITC": "Vitamin C",
+      "VITD": "Vitamin D",
+      "VITB6A": "Vitamin B6",
+      "VITB12": "Vitamin B12",
+      "VITK1": "Vitamin K",
+      "THIA": "Thiamin (Vitamin B1)",
+      "RIBF": "Riboflavin (Vitamin B2)",
+      "NIA": "Niacin (Vitamin B3)",
+      "FOLAC": "Axit folic",
+      "FOLDFE": "Tương đương Folate trong chế độ ăn",
+      "FOLFD": "Folate trong thực phẩm"
+    },
+    "minerals": {
+      "title": "Khoáng chất",
+      "calcium": "Canxi",
+      "iron": "Sắt",
+      "magnesium": "Magiê",
+      "phosphorus": "Phốt pho",
+      "potassium": "Kali",
+      "zinc": "Kẽm"
+    },
+    "errors": {
+      "invalidInput": "Vui lòng nhập thành phần hợp lệ",
+      "tooShort": "Câu tìm kiếm quá ngắn. Vui lòng cụ thể hơn",
+      "invalidQuantity": "Định dạng số lượng không hợp lệ. Ví dụ: \"100g gà\" hoặc \"1 quả táo\"",
+      "noData": "Không tìm thấy dữ liệu dinh dưỡng cho thành phần này",
+      "fetchError": "Không thể lấy dữ liệu dinh dưỡng"
+    },
+    "quantityExample": "Thử tìm kiếm với số lượng cụ thể (ví dụ: \"1 quả táo\" hoặc \"100g gạo\")"
+  }
 }

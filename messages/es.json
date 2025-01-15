@@ -1,172 +1,172 @@
 {
-    "header": {
-        "title": {
-            "can": "¿Puedo",
-            "i": "yo",
-            "eat": "comer",
-            "this": "esto?"
-        },
-        "subtitle": "Descubre el contenido nutricional de cualquier alimento o comida"
+  "header": {
+    "title": {
+      "can": "¿Puedo",
+      "i": "yo",
+      "eat": "comer",
+      "this": "esto?"
     },
-    "navigation": {
-        "home": "Inicio",
-        "search": "Buscar"
+    "subtitle": "Descubre el contenido nutricional de cualquier alimento o comida"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "search": "Buscar"
+  },
+  "search": {
+    "placeholder": "Ingresa un alimento o comida...",
+    "button": "Buscar",
+    "buttonShort": "Ir",
+    "history": "Historial de búsqueda",
+    "clear": "Borrar historial",
+    "loading": "Buscando...",
+    "error": {
+      "api": "Error al obtener datos nutricionales"
     },
-    "search": {
-        "placeholder": "Ingresa un alimento o comida...",
-        "button": "Buscar",
-        "buttonShort": "Ir",
-        "history": "Historial de búsqueda",
-        "clear": "Borrar historial",
-        "loading": "Buscando...",
-        "error": {
-            "api": "Error al obtener datos nutricionales"
-        },
-        "quantityExample": "Intenta buscar con una cantidad específica (ej: \"1 manzana\" o \"100g de manzanas\")",
-        "viewAsTable": "Ver como tabla",
-        "viewNutrition": "Ver detalles nutricionales"
+    "quantityExample": "Intenta buscar con una cantidad específica (ej: \"1 manzana\" o \"100g de manzanas\")",
+    "viewAsTable": "Ver como tabla",
+    "viewNutrition": "Ver detalles nutricionales"
+  },
+  "common": {
+    "close": "Cerrar",
+    "error": "Error",
+    "language": "Idioma"
+  },
+  "nutrition": {
+    "title": "Análisis Nutricional",
+    "close": "Cerrar",
+    "netCarbs": "Carbohidratos Netos",
+    "sugars": "Azúcares",
+    "recommendation": {
+      "safe": "¡Sí, puedes comer esto!",
+      "unsafe": "Ten cuidado con este alimento",
+      "safeDescription": "Este alimento tiene niveles aceptables de carbohidratos y azúcares.",
+      "unsafeDescription": "Este alimento tiene altos niveles de carbohidratos o azúcares. Considera reducir la porción o buscar alternativas."
     },
-    "common": {
-        "close": "Cerrar",
-        "error": "Error",
-        "language": "Idioma"
+    "sections": {
+      "macronutrients": "Macronutrientes",
+      "vitamins": "Vitaminas",
+      "minerals": "Minerales"
     },
-    "nutrition": {
-        "title": "Análisis Nutricional",
-        "close": "Cerrar",
-        "netCarbs": "Carbohidratos Netos",
-        "sugars": "Azúcares",
-        "recommendation": {
-            "safe": "¡Sí, puedes comer esto!",
-            "unsafe": "Ten cuidado con este alimento",
-            "safeDescription": "Este alimento tiene niveles aceptables de carbohidratos y azúcares.",
-            "unsafeDescription": "Este alimento tiene altos niveles de carbohidratos o azúcares. Considera reducir la porción o buscar alternativas."
-        },
-        "sections": {
-            "macronutrients": "Macronutrientes",
-            "vitamins": "Vitaminas",
-            "minerals": "Minerales"
-        },
-        "calories": "Calorías",
-        "protein": "Proteína",
-        "fat": {
-            "total": "Grasa Total",
-            "saturated": "Grasa Saturada",
-            "trans": "Grasa Trans",
-            "monounsaturated": "Grasa Monoinsaturada",
-            "polyunsaturated": "Grasa Poliinsaturada"
-        },
-        "carbs": "Carbohidratos Totales",
-        "fiber": "Fibra Dietética",
-        "sugar": "Azúcares",
-        "minerals": {
-            "calcium": "Calcio",
-            "iron": "Hierro",
-            "magnesium": "Magnesio",
-            "phosphorus": "Fósforo",
-            "potassium": "Potasio",
-            "sodium": "Sodio",
-            "zinc": "Zinc",
-            "copper": "Cobre",
-            "manganese": "Manganeso",
-            "selenium": "Selenio"
-        },
-        "vitamins": {
-            "a": "Vitamina A",
-            "c": "Vitamina C",
-            "d": "Vitamina D",
-            "b6": "Vitamina B6",
-            "b12": "Vitamina B12",
-            "k": "Vitamina K",
-            "thiamin": "Tiamina",
-            "riboflavin": "Riboflavina",
-            "niacin": "Niacina",
-            "folicAcid": "Ácido Fólico"
-        },
-        "nutrients": {
-            "ENERC_KCAL": "Calorías",
-            "PROCNT": "Proteína",
-            "FAT": "Grasa Total",
-            "FASAT": "Grasa Saturada",
-            "FATRN": "Grasa Trans",
-            "FAMS": "Grasa Monoinsaturada",
-            "FAPU": "Grasa Poliinsaturada",
-            "CHOCDF": "Carbohidratos",
-            "CHOCDF_KCAL": "Calorías de los carbohidratos",
-            "CHOLE": "Colesterol",
-            "FIBTG": "Fibra Dietética",
-            "SUGAR": "Azúcar",
-            "WATER": "Agua",
-            "TOCPHA": "Vitamina E",
-            "CA": "Calcio",
-            "FE": "Hierro",
-            "MG": "Magnesio",
-            "P": "Fósforo",
-            "K": "Potasio",
-            "NA": "Sodio",
-            "ZN": "Zinc",
-            "CU": "Cobre",
-            "MN": "Manganeso",
-            "SE": "Selenio",
-            "VITA_RAE": "Vitamina A",
-            "VITC": "Vitamina C",
-            "VITD": "Vitamina D",
-            "VITB6A": "Vitamina B6",
-            "VITB12": "Vitamina B12",
-            "VITK1": "Vitamina K",
-            "THIA": "Tiamina",
-            "RIBF": "Riboflavina",
-            "NIA": "Niacina",
-            "FOLAC": "Ácido Fólico",
-            "FOLDFE": "Equivalentes de Folato Dietético",
-            "FOLFD": "Folato de Alimentos"
-        },
-        "noData": "No hay datos nutricionales disponibles",
-        "noDataDescription": "Esto podría deberse a un nombre de ingrediente no válido o datos faltantes en nuestra base de datos.",
-        "specifyQuantity": "Por favor, especifica una cantidad",
-        "quantityExample": "Intenta buscar con una cantidad específica (ej: \"1 manzana\" o \"100g de manzanas\")",
-        "showMore": "Mostrar Más Detalles",
-        "showLess": "Mostrar Menos",
-        "totalCalories": "Calorías Totales",
-        "analysis": {
-            "title": "Análisis Nutricional"
-        },
-        "units": {
-            "kcal": "kcal",
-            "g": "g",
-            "mg": "mg",
-            "µg": "µg",
-            "grams": "g",
-            "IU": "UI"
-        },
-        "status": {
-            "high": "Alto",
-            "good": "Bueno",
-            "low": "Bajo",
-            "neutral": "Neutral"
-        },
-        "recommendation": {
-            "safe": "Este alimento es generalmente seguro para diabéticos",
-            "unsafe": "Este alimento puede no ser adecuado para diabéticos"
-        }
+    "calories": "Calorías",
+    "protein": "Proteína",
+    "fat": {
+      "total": "Grasa Total",
+      "saturated": "Grasa Saturada",
+      "trans": "Grasa Trans",
+      "monounsaturated": "Grasa Monoinsaturada",
+      "polyunsaturated": "Grasa Poliinsaturada"
     },
-    "disclaimer": {
-        "title": "Información Importante",
-        "calculation": {
-            "title": "Método de Cálculo",
-            "description": "La información nutricional proporcionada se calcula utilizando datos de la Base de Datos de Alimentos del USDA y otras fuentes confiables. Los valores son estimaciones y pueden variar según factores como la preparación de alimentos, el tamaño de la porción y las variaciones de los ingredientes."
-        },
-        "medical": {
-            "title": "Aviso Médico",
-            "description": "Esta aplicación es solo para fines informativos y no pretende ser un sustituto del consejo, diagnóstico o tratamiento médico profesional.",
-            "advice": "Siempre busque el consejo de su médico u otro proveedor de salud calificado con respecto a:",
-            "items": {
-                "condition": "Cualquier pregunta sobre su condición médica",
-                "restrictions": "Restricciones o requisitos dietéticos",
-                "changes": "Cambios en su dieta o rutina de ejercicios",
-                "management": "Manejo de la diabetes u otras condiciones de salud"
-            }
-        },
-        "button": "Entiendo"
+    "carbs": "Carbohidratos Totales",
+    "fiber": "Fibra Dietética",
+    "sugar": "Azúcares",
+    "minerals": {
+      "calcium": "Calcio",
+      "iron": "Hierro",
+      "magnesium": "Magnesio",
+      "phosphorus": "Fósforo",
+      "potassium": "Potasio",
+      "sodium": "Sodio",
+      "zinc": "Zinc",
+      "copper": "Cobre",
+      "manganese": "Manganeso",
+      "selenium": "Selenio"
+    },
+    "vitamins": {
+      "a": "Vitamina A",
+      "c": "Vitamina C",
+      "d": "Vitamina D",
+      "b6": "Vitamina B6",
+      "b12": "Vitamina B12",
+      "k": "Vitamina K",
+      "thiamin": "Tiamina",
+      "riboflavin": "Riboflavina",
+      "niacin": "Niacina",
+      "folicAcid": "Ácido Fólico"
+    },
+    "nutrients": {
+      "ENERC_KCAL": "Calorías",
+      "PROCNT": "Proteína",
+      "FAT": "Grasa Total",
+      "FASAT": "Grasa Saturada",
+      "FATRN": "Grasa Trans",
+      "FAMS": "Grasa Monoinsaturada",
+      "FAPU": "Grasa Poliinsaturada",
+      "CHOCDF": "Carbohidratos",
+      "CHOCDF_KCAL": "Calorías de los carbohidratos",
+      "CHOLE": "Colesterol",
+      "FIBTG": "Fibra Dietética",
+      "SUGAR": "Azúcar",
+      "WATER": "Agua",
+      "TOCPHA": "Vitamina E",
+      "CA": "Calcio",
+      "FE": "Hierro",
+      "MG": "Magnesio",
+      "P": "Fósforo",
+      "K": "Potasio",
+      "NA": "Sodio",
+      "ZN": "Zinc",
+      "CU": "Cobre",
+      "MN": "Manganeso",
+      "SE": "Selenio",
+      "VITA_RAE": "Vitamina A",
+      "VITC": "Vitamina C",
+      "VITD": "Vitamina D",
+      "VITB6A": "Vitamina B6",
+      "VITB12": "Vitamina B12",
+      "VITK1": "Vitamina K",
+      "THIA": "Tiamina",
+      "RIBF": "Riboflavina",
+      "NIA": "Niacina",
+      "FOLAC": "Ácido Fólico",
+      "FOLDFE": "Equivalentes de Folato Dietético",
+      "FOLFD": "Folato de Alimentos"
+    },
+    "noData": "No hay datos nutricionales disponibles",
+    "noDataDescription": "Esto podría deberse a un nombre de ingrediente no válido o datos faltantes en nuestra base de datos.",
+    "specifyQuantity": "Por favor, especifica una cantidad",
+    "quantityExample": "Intenta buscar con una cantidad específica (ej: \"1 manzana\" o \"100g de manzanas\")",
+    "showMore": "Mostrar Más Detalles",
+    "showLess": "Mostrar Menos",
+    "totalCalories": "Calorías Totales",
+    "analysis": {
+      "title": "Análisis Nutricional"
+    },
+    "units": {
+      "kcal": "kcal",
+      "g": "g",
+      "mg": "mg",
+      "µg": "µg",
+      "grams": "g",
+      "IU": "UI"
+    },
+    "status": {
+      "high": "Alto",
+      "good": "Bueno",
+      "low": "Bajo",
+      "neutral": "Neutral"
+    },
+    "recommendation": {
+      "safe": "Este alimento es generalmente seguro para diabéticos",
+      "unsafe": "Este alimento puede no ser adecuado para diabéticos"
     }
+  },
+  "disclaimer": {
+    "title": "Información Importante",
+    "calculation": {
+      "title": "Método de Cálculo",
+      "description": "La información nutricional proporcionada se calcula utilizando datos de la Base de Datos de Alimentos del USDA y otras fuentes confiables. Los valores son estimaciones y pueden variar según factores como la preparación de alimentos, el tamaño de la porción y las variaciones de los ingredientes."
+    },
+    "medical": {
+      "title": "Aviso Médico",
+      "description": "Esta aplicación es solo para fines informativos y no pretende ser un sustituto del consejo, diagnóstico o tratamiento médico profesional.",
+      "advice": "Siempre busque el consejo de su médico u otro proveedor de salud calificado con respecto a:",
+      "items": {
+        "condition": "Cualquier pregunta sobre su condición médica",
+        "restrictions": "Restricciones o requisitos dietéticos",
+        "changes": "Cambios en su dieta o rutina de ejercicios",
+        "management": "Manejo de la diabetes u otras condiciones de salud"
+      }
+    },
+    "button": "Entiendo"
+  }
 }

@@ -2,9 +2,9 @@ import createMiddleware from 'next-intl/middleware';
 import { locales, defaultLocale } from './app/i18n/settings';
 
 export default createMiddleware({
-    locales,
-    defaultLocale,
-    localePrefix: 'always'
+  locales,
+  defaultLocale,
+  localePrefix: 'always',
 });
 
 // Match all pathnames except for
@@ -14,5 +14,5 @@ export default createMiddleware({
 // - /_vercel (Vercel internals)
 // - all root files inside /public (e.g. /favicon.ico)
 export const config = {
-    matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
-}; 
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
+};

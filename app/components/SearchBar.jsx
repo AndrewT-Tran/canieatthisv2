@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useRef } from "react";
-import { useTheme } from "../context/ThemeContext";
-import { cn } from "../utils/cn";
-import { IoSearch, IoClose } from "react-icons/io5";
-import NutritionAnalysisDialog from "./NutritionAnalysisDialog";
-import Alert from "./Alert";
-import { useTranslations } from "next-intl";
-import DisclaimerDialog from "./DisclaimerDialog";
+import { useState, useEffect, useRef } from 'react';
+import { useTheme } from '../context/ThemeContext';
+import { cn } from '../utils/cn';
+import { IoSearch, IoClose } from 'react-icons/io5';
+import NutritionAnalysisDialog from './NutritionAnalysisDialog';
+import Alert from './Alert';
+import { useTranslations } from 'next-intl';
+import DisclaimerDialog from './DisclaimerDialog';
 
 export default function SearchBar({ onSearch }) {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -21,14 +21,14 @@ export default function SearchBar({ onSearch }) {
 
   useEffect(() => {
     const handleKeyPress = (e) => {
-      if (e.key === "Escape" && !isDialogOpen) {
-        setQuery("");
+      if (e.key === 'Escape' && !isDialogOpen) {
+        setQuery('');
         inputRef.current?.focus();
       }
     };
 
-    window.addEventListener("keydown", handleKeyPress);
-    return () => window.removeEventListener("keydown", handleKeyPress);
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
   }, [isDialogOpen]);
 
   const handleSubmit = async (e) => {
@@ -39,16 +39,16 @@ export default function SearchBar({ onSearch }) {
     setError(null);
 
     try {
-      const response = await fetch("/api/nutrition", {
-        method: "POST",
+      const response = await fetch('/api/nutrition', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ query }),
       });
 
       if (!response.ok) {
-        throw new Error(t("search.error.api"));
+        throw new Error(t('search.error.api'));
       }
 
       const data = await response.json();
@@ -68,7 +68,7 @@ export default function SearchBar({ onSearch }) {
   };
 
   const handleClear = () => {
-    setQuery("");
+    setQuery('');
     inputRef.current?.focus();
   };
 
@@ -76,36 +76,36 @@ export default function SearchBar({ onSearch }) {
     <>
       <div
         className={cn(
-          "w-full p-4 sm:p-6 rounded-xl sm:rounded-2xl backdrop-blur-md",
-          "border shadow-lg transition-colors duration-300",
-          theme === "dark"
-            ? "dark:bg-gray-900/40 bg-gray-800 text-white dark:border-white/10"
-            : "bg-white text-gray-900 border-gray-200"
+          'w-full rounded-xl p-4 backdrop-blur-md sm:rounded-2xl sm:p-6',
+          'border shadow-lg transition-colors duration-300',
+          theme === 'dark'
+            ? 'bg-gray-800 text-white dark:border-white/10 dark:bg-gray-900/40'
+            : 'border-gray-200 bg-white text-gray-900'
         )}
       >
         <div className="flex items-center gap-4">
           <form onSubmit={handleSubmit} className="relative flex-1">
             <div
               className={cn(
-                "relative flex items-center w-full overflow-hidden rounded-lg sm:rounded-xl",
-                "transition duration-300",
-                theme === "dark"
-                  ? "bg-gray-900/40 hover:bg-gray-900/60"
-                  : "bg-white/60 hover:bg-white/80",
-                "border",
-                theme === "dark"
-                  ? "border-white/10 hover:border-white/20"
-                  : "border-gray-200/50 hover:border-gray-300/50"
+                'relative flex w-full items-center overflow-hidden rounded-lg sm:rounded-xl',
+                'transition duration-300',
+                theme === 'dark'
+                  ? 'bg-gray-900/40 hover:bg-gray-900/60'
+                  : 'bg-white/60 hover:bg-white/80',
+                'border',
+                theme === 'dark'
+                  ? 'border-white/10 hover:border-white/20'
+                  : 'border-gray-200/50 hover:border-gray-300/50'
               )}
             >
               {/* Search Icon */}
               <div
                 className={cn(
-                  "absolute left-3 sm:left-4",
-                  theme === "dark" ? "text-white/60" : "text-gray-400"
+                  'absolute left-3 sm:left-4',
+                  theme === 'dark' ? 'text-white/60' : 'text-gray-400'
                 )}
               >
-                <IoSearch className="w-5 h-5" />
+                <IoSearch className="h-5 w-5" />
               </div>
 
               {/* Input */}
@@ -114,14 +114,14 @@ export default function SearchBar({ onSearch }) {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder={t("search.placeholder")}
+                placeholder={t('search.placeholder')}
                 className={cn(
-                  "w-full py-3 sm:py-4 pl-10 sm:pl-14 pr-24 sm:pr-32 bg-transparent",
-                  "text-base sm:text-lg",
-                  "placeholder:text-gray-400 focus:outline-none focus:ring-0",
-                  theme === "dark"
-                    ? "text-white placeholder:text-white/40"
-                    : "text-gray-900 placeholder:text-gray-500"
+                  'w-full bg-transparent py-3 pl-10 pr-24 sm:py-4 sm:pl-14 sm:pr-32',
+                  'text-sm sm:text-xs',
+                  'placeholder:text-gray-400 focus:outline-none focus:ring-0',
+                  theme === 'dark'
+                    ? 'text-white placeholder:text-white/40'
+                    : 'text-gray-900 placeholder:text-gray-500'
                 )}
               />
 
@@ -131,14 +131,14 @@ export default function SearchBar({ onSearch }) {
                   type="button"
                   onClick={handleClear}
                   className={cn(
-                    "absolute right-20 sm:right-24 p-1.5 rounded-full",
-                    "transition-colors duration-200",
-                    theme === "dark"
-                      ? "text-white/40 hover:text-white/90 hover:bg-white/10"
-                      : "text-gray-400 hover:text-gray-600 hover:bg-gray-100"
+                    'absolute right-20 rounded-full p-1.5 sm:right-24',
+                    'transition-colors duration-200',
+                    theme === 'dark'
+                      ? 'text-white/40 hover:bg-white/10 hover:text-white/90'
+                      : 'text-gray-400 hover:bg-gray-100 hover:text-gray-600'
                   )}
                 >
-                  <IoClose className="w-5 h-5 sm:w-6 sm:h-6" />
+                  <IoClose className="h-5 w-5 sm:h-6 sm:w-6" />
                 </button>
               )}
 
@@ -148,14 +148,14 @@ export default function SearchBar({ onSearch }) {
                   type="submit"
                   disabled={isLoading || !query.trim()}
                   className={cn(
-                    "px-4 py-2 rounded-lg sm:rounded-xl text-sm sm:text-base font-medium",
-                    "transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed",
-                    theme === "dark"
-                      ? "bg-emerald-500/20 text-white hover:bg-emerald-500/30"
-                      : "bg-orange-500/20 text-gray-900 hover:bg-orange-500/30"
+                    'rounded-lg px-4 py-2 text-sm sm:rounded-xl sm:text-xs',
+                    'transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50',
+                    theme === 'dark'
+                      ? 'bg-emerald-400/20 text-white hover:bg-emerald-500/30'
+                      : 'bg-orange-500/20 text-gray-900 hover:bg-orange-500/30'
                   )}
                 >
-                  {isLoading ? t("search.loading") : t("search.button")}
+                  {isLoading ? t('search.loading') : t('search.button')}
                 </button>
               </div>
             </div>
@@ -165,11 +165,11 @@ export default function SearchBar({ onSearch }) {
 
         <p
           className={cn(
-            "text-sm mt-2 px-2",
-            theme === "dark" ? "text-gray-100" : "text-gray-500"
+            'mt-2 px-2 text-sm',
+            theme === 'dark' ? 'text-gray-100' : 'text-gray-500'
           )}
         >
-          {t("search.quantityExample")}
+          {t('search.quantityExample')}
         </p>
       </div>
 

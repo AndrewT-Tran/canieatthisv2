@@ -46,58 +46,58 @@ module.exports = {
         'gradient-y': {
           '0%, 100%': {
             'background-size': '400% 400%',
-            'background-position': 'center top'
+            'background-position': 'center top',
           },
           '50%': {
             'background-size': '200% 200%',
-            'background-position': 'center center'
-          }
+            'background-position': 'center center',
+          },
         },
         'gradient-x': {
           '0%, 100%': {
             'background-size': '200% 200%',
-            'background-position': 'left center'
+            'background-position': 'left center',
           },
           '50%': {
             'background-size': '200% 200%',
-            'background-position': 'right center'
-          }
+            'background-position': 'right center',
+          },
         },
         'gradient-xy': {
           '0%, 100%': {
             'background-size': '400% 400%',
-            'background-position': 'left center'
+            'background-position': 'left center',
           },
           '50%': {
             'background-size': '200% 200%',
-            'background-position': 'right center'
-          }
+            'background-position': 'right center',
+          },
         },
         blob: {
           '0%': {
-            transform: 'translate(0px, 0px) scale(1)'
+            transform: 'translate(0px, 0px) scale(1)',
           },
           '33%': {
-            transform: 'translate(30px, -50px) scale(1.1)'
+            transform: 'translate(30px, -50px) scale(1.1)',
           },
           '66%': {
-            transform: 'translate(-20px, 20px) scale(0.9)'
+            transform: 'translate(-20px, 20px) scale(0.9)',
           },
           '100%': {
-            transform: 'translate(0px, 0px) scale(1)'
-          }
-        }
+            transform: 'translate(0px, 0px) scale(1)',
+          },
+        },
       },
       colors: {
         'orange-web': '#FCA311',
         'celestial-blue': '#009FFD',
-        'asparagus': '#87A878',
+        asparagus: '#87A878',
         'outer-space': '#2D383A',
         'dark-slate-gray': '#36453b',
         'dim-gray': '#596869',
-        'ebony': '#515751',
-        'ivory': '#f5f9e9',
-        'sage': '#c2c1a5',
+        ebony: '#515751',
+        ivory: '#f5f9e9',
+        sage: '#c2c1a5',
       },
       fontFamily: {
         'climate-crisis': ['var(--font-climate-crisis)'],
@@ -139,7 +139,7 @@ module.exports = {
         '.gap-fluid-lg': {
           gap: 'clamp(1.5rem, 1.375rem + 0.625vw, 2rem)',
         },
-      })
-    })
+      });
+    }),
   ],
-}
+};

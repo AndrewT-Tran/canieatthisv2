@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useTheme } from '../context/ThemeContext';
 import { cn } from '../utils/cn';
@@ -11,20 +11,28 @@ export default function NutrientTable({ nutritionData }) {
   if (!nutritionData) return null;
 
   // Check if nutrition data is empty or has zero values
-  const hasNoNutrients = !nutritionData.totalNutrients ||
+  const hasNoNutrients =
+    !nutritionData.totalNutrients ||
     Object.keys(nutritionData.totalNutrients).length === 0 ||
-    (nutritionData.calories === 0 && Object.values(nutritionData.totalNutrients).every(n => n?.quantity === 0));
+    (nutritionData.calories === 0 &&
+      Object.values(nutritionData.totalNutrients).every(
+        (n) => n?.quantity === 0
+      ));
 
   if (hasNoNutrients) {
     return (
-      <div className={cn(
-        "p-4 rounded-lg text-center",
-        theme === 'dark' ? "bg-gray-800" : "bg-gray-50"
-      )}>
-        <p className={cn(
-          "text-sm",
-          theme === 'dark' ? "text-gray-400" : "text-gray-600"
-        )}>
+      <div
+        className={cn(
+          'rounded-lg p-4 text-center',
+          theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'
+        )}
+      >
+        <p
+          className={cn(
+            'text-sm',
+            theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+          )}
+        >
           {t('noData')}
         </p>
       </div>
@@ -34,9 +42,31 @@ export default function NutrientTable({ nutritionData }) {
   // Group nutrients by category
   const nutrients = nutritionData.totalNutrients;
   const categories = {
-    macronutrients: ['ENERC_KCAL', 'FAT', 'FASAT', 'FATRN', 'FAMS', 'FAPU', 'CHOCDF', 'FIBTG', 'SUGAR', 'PROCNT'],
-    vitamins: ['VITA_RAE', 'VITC', 'VITD', 'VITB6A', 'VITB12', 'VITK1', 'THIA', 'RIBF', 'NIA', 'FOLAC'],
-    minerals: ['CA', 'FE', 'MG', 'P', 'K', 'NA', 'ZN', 'CU', 'MN', 'SE']
+    macronutrients: [
+      'ENERC_KCAL',
+      'FAT',
+      'FASAT',
+      'FATRN',
+      'FAMS',
+      'FAPU',
+      'CHOCDF',
+      'FIBTG',
+      'SUGAR',
+      'PROCNT',
+    ],
+    vitamins: [
+      'VITA_RAE',
+      'VITC',
+      'VITD',
+      'VITB6A',
+      'VITB12',
+      'VITK1',
+      'THIA',
+      'RIBF',
+      'NIA',
+      'FOLAC',
+    ],
+    minerals: ['CA', 'FE', 'MG', 'P', 'K', 'NA', 'ZN', 'CU', 'MN', 'SE'],
   };
 
   const nutrientLabels = {
@@ -69,63 +99,103 @@ export default function NutrientTable({ nutritionData }) {
     THIA: t('vitamins.thiamin'),
     RIBF: t('vitamins.riboflavin'),
     NIA: t('vitamins.niacin'),
-    FOLAC: t('vitamins.folicAcid')
+    FOLAC: t('vitamins.folicAcid'),
   };
 
   const renderNutrientSection = (sectionKey, items) => {
-    const availableNutrients = items.filter(key => nutrients[key] && nutrients[key].quantity > 0);
+    const availableNutrients = items.filter(
+      (key) => nutrients[key] && nutrients[key].quantity > 0
+    );
     if (availableNutrients.length === 0) return null;
 
     return (
       <div className="mb-6">
-        <h3 className={cn(
-          "text-lg font-semibold mb-3 px-4",
-          theme === 'dark' ? "text-emerald-300" : "text-orange-web"
-        )}>{t(`sections.${sectionKey}`)}</h3>
-        <div className={cn(
-          "overflow-hidden rounded-lg",
-          theme === 'dark' ? "bg-gray-800" : "bg-gray-50"
-        )}>
+        <h3
+          className={cn(
+            'mb-3 px-4 text-lg font-semibold',
+            theme === 'dark' ? 'text-emerald-300' : 'text-orange-web'
+          )}
+        >
+          {t(`sections.${sectionKey}`)}
+        </h3>
+        <div
+          className={cn(
+            'overflow-hidden rounded-lg',
+            theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'
+          )}
+        >
           <table className="w-full">
             <thead>
-              <tr className={cn(
-                theme === 'dark' ? "bg-gray-700/50" : "bg-gray-100"
-              )}>
-                <th className={cn(
-                  "px-4 py-2 text-left text-sm font-medium",
-                  theme === 'dark' ? "text-gray-300" : "text-gray-600"
-                )}>Nutrient</th>
-                <th className={cn(
-                  "px-4 py-2 text-right text-sm font-medium",
-                  theme === 'dark' ? "text-gray-300" : "text-gray-600"
-                )}>Amount</th>
-                <th className={cn(
-                  "px-4 py-2 text-right text-sm font-medium",
-                  theme === 'dark' ? "text-gray-300" : "text-gray-600"
-                )}>% Daily Value</th>
+              <tr
+                className={cn(
+                  theme === 'dark' ? 'bg-gray-700/50' : 'bg-gray-100'
+                )}
+              >
+                <th
+                  className={cn(
+                    'px-4 py-2 text-left text-sm font-medium',
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                  )}
+                >
+                  Nutrient
+                </th>
+                <th
+                  className={cn(
+                    'px-4 py-2 text-right text-sm font-medium',
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                  )}
+                >
+                  Amount
+                </th>
+                <th
+                  className={cn(
+                    'px-4 py-2 text-right text-sm font-medium',
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                  )}
+                >
+                  % Daily Value
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-              {availableNutrients.map(nutrientKey => {
+              {availableNutrients.map((nutrientKey) => {
                 const nutrient = nutrients[nutrientKey];
                 const dailyValue = nutritionData.totalDaily[nutrientKey];
                 return (
-                  <tr key={nutrientKey} className={cn(
-                    "transition-colors",
-                    theme === 'dark' ? "hover:bg-gray-700/50" : "hover:bg-gray-100"
-                  )}>
-                    <td className={cn(
-                      "px-4 py-2 text-sm",
-                      theme === 'dark' ? "text-gray-300" : "text-gray-700"
-                    )}>{nutrientLabels[nutrientKey]}</td>
-                    <td className={cn(
-                      "px-4 py-2 text-sm text-right",
-                      theme === 'dark' ? "text-gray-300" : "text-gray-700"
-                    )}>{Math.round(nutrient.quantity * 10) / 10}{nutrient.unit}</td>
-                    <td className={cn(
-                      "px-4 py-2 text-sm text-right",
-                      theme === 'dark' ? "text-gray-400" : "text-gray-500"
-                    )}>{dailyValue ? `${Math.round(dailyValue.quantity)}%` : '-'}</td>
+                  <tr
+                    key={nutrientKey}
+                    className={cn(
+                      'transition-colors',
+                      theme === 'dark'
+                        ? 'hover:bg-gray-700/50'
+                        : 'hover:bg-gray-100'
+                    )}
+                  >
+                    <td
+                      className={cn(
+                        'px-4 py-2 text-sm',
+                        theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                      )}
+                    >
+                      {nutrientLabels[nutrientKey]}
+                    </td>
+                    <td
+                      className={cn(
+                        'px-4 py-2 text-right text-sm',
+                        theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                      )}
+                    >
+                      {Math.round(nutrient.quantity * 10) / 10}
+                      {nutrient.unit}
+                    </td>
+                    <td
+                      className={cn(
+                        'px-4 py-2 text-right text-sm',
+                        theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
+                      )}
+                    >
+                      {dailyValue ? `${Math.round(dailyValue.quantity)}%` : '-'}
+                    </td>
                   </tr>
                 );
               })}
@@ -139,26 +209,30 @@ export default function NutrientTable({ nutritionData }) {
   return (
     <div className="space-y-6">
       {/* Calories Summary */}
-      <div className={cn(
-        "p-4 rounded-lg mb-6 text-center",
-        theme === 'dark' ? "bg-gray-800" : "bg-gray-50"
-      )}>
-        <div className="text-3xl font-bold mb-1">
+      <div
+        className={cn(
+          'mb-6 rounded-lg p-4 text-center',
+          theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'
+        )}
+      >
+        <div className="mb-1 text-3xl font-bold">
           {Math.round(nutritionData.calories)}
-          <span className="text-lg ml-1 opacity-70">{t('units.kcal')}</span>
+          <span className="ml-1 text-lg opacity-70">{t('units.kcal')}</span>
         </div>
-        <div className={cn(
-          "text-sm",
-          theme === 'dark' ? "text-gray-400" : "text-gray-600"
-        )}>{t('totalCalories')}</div>
+        <div
+          className={cn(
+            'text-sm',
+            theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+          )}
+        >
+          {t('totalCalories')}
+        </div>
       </div>
 
       {/* Nutrient Categories */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {Object.entries(categories).map(([category, nutrients]) => (
-          <div key={category}>
-            {renderNutrientSection(category, nutrients)}
-          </div>
+          <div key={category}>{renderNutrientSection(category, nutrients)}</div>
         ))}
       </div>
     </div>

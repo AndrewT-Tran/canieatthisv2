@@ -1,18 +1,18 @@
-# CanIEatThis?  
+# CanIEatThis?
 
-## Simplifying Dietary Choices for Diabetics  
+## Simplifying Dietary Choices for Diabetics
 
-CanIEatThis? is a web application that empowers diabetics to make informed dietary choices through instant nutritional analysis and clear "Yes/No" recommendations. The app is user-friendly and supports multiple languages, making it accessible to non-native English speakers.  
-
----
-
-## Overview  
-
-CanIEatThis? simplifies food decisions for diabetics by analyzing the nutritional content of foods and providing personalized recommendations to help them manage their condition better.  
+CanIEatThis? is a web application that empowers diabetics to make informed dietary choices through instant nutritional analysis and clear "Yes/No" recommendations. The app is user-friendly and supports multiple languages, making it accessible to non-native English speakers.
 
 ---
 
-## Screenshots & Demo  
+## Overview
+
+CanIEatThis? simplifies food decisions for diabetics by analyzing the nutritional content of foods and providing personalized recommendations to help them manage their condition better.
+
+---
+
+## Screenshots & Demo
 
 <p align="center">
   <img src="public/canieatthiscn.png" width="300" alt="Chinese Version" />
@@ -27,64 +27,64 @@ CanIEatThis? simplifies food decisions for diabetics by analyzing the nutritiona
 
 ---
 
-## Features  
+## Features
 
 - **🔍 Instant Food Analysis:**  
-  Provides real-time nutritional breakdown with clear "Yes/No" recommendations for diabetic-friendly choices.  
+  Provides real-time nutritional breakdown with clear "Yes/No" recommendations for diabetic-friendly choices.
 
 - **📊 Comprehensive Nutritional Data:**  
-  Displays key nutritional values such as calories, net carbs, sugars, proteins, fats, and vitamins.  
+  Displays key nutritional values such as calories, net carbs, sugars, proteins, fats, and vitamins.
 
 - **🌐 Multilingual Support:**  
-  Available in **English**, **Spanish**, and **Chinese**, with seamless language switching.  
+  Available in **English**, **Spanish**, and **Chinese**, with seamless language switching.
 
 - **🎨 Modern UI:**  
-  Responsive and intuitive design with **dark/light modes**, **animated transitions**, and **interactive elements**.  
+  Responsive and intuitive design with **dark/light modes**, **animated transitions**, and **interactive elements**.
 
 - **🆕 Enhanced Search Functionality:**  
   The new search bar allows users to input food items and receive detailed nutritional analysis, including error handling and loading states.
 
 ---
 
-## Technical Implementation  
+## Technical Implementation
 
-### Frontend  
+### Frontend
 
-- Built with **[Next.js 15](https://nextjs.org/)** using **React Server Components**.  
-- Client-side features include:  
-  - Theme toggling  
-  - Internationalization (i18n)  
-  - Search history management  
-  - New search functionality with real-time feedback  
+- Built with **[Next.js 15](https://nextjs.org/)** using **React Server Components**.
+- Client-side features include:
+  - Theme toggling
+  - Internationalization (i18n)
+  - Search history management
+  - New search functionality with real-time feedback
 
-### Styling & Animations  
+### Styling & Animations
 
-- **[Tailwind CSS](https://tailwindcss.com/)** for responsive styling, including **dark mode support**.  
-- **[Framer Motion](https://www.framer.com/motion/)** for smooth animations and micro-interactions to enhance user experience.  
+- **[Tailwind CSS](https://tailwindcss.com/)** for responsive styling, including **dark mode support**.
+- **[Framer Motion](https://www.framer.com/motion/)** for smooth animations and micro-interactions to enhance user experience.
 
-### Internationalization  
+### Internationalization
 
-- Implemented using **`next-intl`** for **SEO-friendly routes** and **fallback language support**.  
+- Implemented using **`next-intl`** for **SEO-friendly routes** and **fallback language support**.
 
-### API Integration  
+### API Integration
 
-- Uses the **[Edamam Food Database API](https://developer.edamam.com/)** for real-time nutritional analysis and natural language parsing.  
+- Uses the **[Edamam Food Database API](https://developer.edamam.com/)** for real-time nutritional analysis and natural language parsing.
 
 ---
 
-## Getting Started  
+## Getting Started
 
-### Clone the Repository  
+### Clone the Repository
 
-```bash  
-git clone https://github.com/AndrewT-Tran/canieatthisv2  
-cd canieatthisv2  
+```bash
+git clone https://github.com/AndrewT-Tran/canieatthisv2
+cd canieatthisv2
 ```
 
 Install Dependencies
 
-```bash  
-npm install  
+```bash
+npm install
 ```
 
 Set Environment Variables
@@ -92,14 +92,14 @@ Set Environment Variables
 Copy .env.example to .env and add your Edamam API credentials:
 
 ```
-NEXT_PUBLIC_EDAMAM_APP_ID=your_app_id  
-NEXT_PUBLIC_EDAMAM_APP_KEY=your_app_key  
+NEXT_PUBLIC_EDAMAM_APP_ID=your_app_id
+NEXT_PUBLIC_EDAMAM_APP_KEY=your_app_key
 ```
 
 Run the App
 
-```bash  
-npm run dev  
+```bash
+npm run dev
 ```
 
 Contributing
@@ -108,20 +108,20 @@ We welcome contributions to improve CanIEatThis!
 
 Steps to Contribute:
 
- 1. Fork the repository.
- 2. Create a feature branch:
+1.  Fork the repository.
+2.  Create a feature branch:
 
 ```bash
-git checkout -b feature/your-feature  
+git checkout -b feature/your-feature
 ```
 
 3. Commit your changes:
 
 ```bash
-git commit -m "Add your feature"  
+git commit -m "Add your feature"
 ```
 
- 4. Push your branch and open a Pull Request.
+4.  Push your branch and open a Pull Request.
 
 ## 📜 License
 

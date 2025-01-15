@@ -12,7 +12,8 @@
 .theme-transition *,
 .theme-transition *::before,
 .theme-transition *::after {
-  transition-property: background-color, border-color, color, fill, stroke;
+  transition-property: background-color, border-color, color, fill, stroke,
+    box-shadow;
   transition-duration: var(--theme-transition-duration);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -37,7 +38,6 @@ body,
 }
 
 @layer base {
-
   /* Fonts and global text styles */
   :root {
     --font-poppins: 'Poppins', sans-serif;
@@ -55,7 +55,7 @@ body,
   }
 
   body {
-    @apply text-gray-800 antialiased dark:text-white bg-white dark:bg-gray-900;
+    @apply bg-white text-gray-800 antialiased dark:bg-gray-900 dark:text-white;
   }
 
   /* Font utilities */
@@ -77,10 +77,15 @@ body,
 }
 
 @layer components {
-
   /* Button styles */
   .btn {
-    @apply font-light rounded-md px-4 py-2 bg-gradient-to-r from-celestial-blue to-asparagus text-white;
+    @apply rounded-md bg-gradient-to-r from-celestial-blue to-asparagus px-4 py-2 font-light text-white;
+    transition: background-position 0.4s ease-in-out;
+    background-size: 200% auto;
+  }
+
+  .btn:hover {
+    background-position: right center;
   }
 
   /* Loading spinner */
@@ -96,14 +101,18 @@ body,
 
   /* Shimmer animation effect */
   .animate-shimmer {
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 75%);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0.1) 75%
+    );
     background-size: 200% 100%;
     animation: shimmer 2s linear infinite;
   }
 }
 
 @layer utilities {
-
   /* Custom scrollbar */
   .scrollbar-thin {
     scrollbar-width: thin;
@@ -116,6 +125,18 @@ body,
   /* Text clip animation */
   .text-clip-animate {
     animation: textClip 4s ease-in-out infinite;
+  }
+
+  /* Hover shimmer animation */
+  .hover-shimmer:hover {
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+    background-size: 200% auto;
+    animation: shimmer 2s linear infinite;
   }
 }
 
@@ -131,7 +152,6 @@ body,
 }
 
 @keyframes textClip {
-
   0%,
   100% {
     background-position: 0% center;
@@ -165,7 +185,6 @@ body,
 }
 
 @keyframes gradient {
-
   0%,
   100% {
     background-position: 0% 50%;

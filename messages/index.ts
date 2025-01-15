@@ -7,8 +7,8 @@ import vi from './vi.json';
 export { en, es, cn, vi };
 
 export default {
-    en,
-    es,
-    cn,
-    vi
+  en,
+  es,
+  cn,
+  vi,
 };

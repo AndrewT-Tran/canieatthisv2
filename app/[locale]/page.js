@@ -9,85 +9,83 @@ import { useTranslations, useLocale } from 'next-intl';
 import { cn } from '../utils/cn';
 
 export default function Home() {
-    const t = useTranslations();
-    const locale = useLocale();
-    const [searchHistory, setSearchHistory] = useState([]);
+  const t = useTranslations();
+  const locale = useLocale();
+  const [searchHistory, setSearchHistory] = useState([]);
 
-    useEffect(() => {
-        // Load search history from localStorage
-        const savedHistory = localStorage.getItem('searchHistory');
-        if (savedHistory) {
-            setSearchHistory(JSON.parse(savedHistory));
-        }
-    }, []);
+  useEffect(() => {
+    // Load search history from localStorage
+    const savedHistory = localStorage.getItem('searchHistory');
+    if (savedHistory) {
+      setSearchHistory(JSON.parse(savedHistory));
+    }
+  }, []);
 
-    const handleSearch = (query, nutritionData) => {
-        const newHistory = [
-            {
-                query,
-                nutritionData,
-                timestamp: new Date().toISOString()
-            },
-            ...searchHistory.filter(item => item.query !== query)
-        ].slice(0, 10); // Keep only last 10 searches
+  const handleSearch = (query, nutritionData) => {
+    const newHistory = [
+      {
+        query,
+        nutritionData,
+        timestamp: new Date().toISOString(),
+      },
+      ...searchHistory.filter((item) => item.query !== query),
+    ].slice(0, 10); // Keep only last 10 searches
 
-        setSearchHistory(newHistory);
-        localStorage.setItem('searchHistory', JSON.stringify(newHistory));
-    };
+    setSearchHistory(newHistory);
+    localStorage.setItem('searchHistory', JSON.stringify(newHistory));
+  };
 
-    const handleClearHistory = () => {
-        setSearchHistory([]);
-        localStorage.removeItem('searchHistory');
-    };
+  const handleClearHistory = () => {
+    setSearchHistory([]);
+    localStorage.removeItem('searchHistory');
+  };
 
-    const handleHistorySelect = (item) => {
-        // Re-search the query
-        if (item.nutritionData) {
-            handleSearch(item.query, item.nutritionData);
-        }
-    };
+  const handleHistorySelect = (item) => {
+    if (item.nutritionData) {
+      handleSearch(item.query, item.nutritionData);
+    }
+  };
 
-    return (
-        <div className="relative min-h-screen w-full">
-            {/* Settings Buttons */}
-            <div className="fixed top-0 right-0 z-50 p-4">
-                <SettingsButtons />
-            </div>
+  return (
+    <div className="relative min-h-screen w-full overflow-hidden bg-gray-50 dark:bg-gray-900">
+      {/* Settings Buttons */}
+      <div className="fixed right-4 top-4 z-50">
+        <SettingsButtons />
+      </div>
 
-            {/* Animated background effects */}
-            <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none">
-                {/* Animated blobs */}
-                <div className="absolute inset-0">
-                    <div className="absolute top-0 -left-1/3 w-[80vw] h-[80vw]bg-gradient-to-r from-teal-400 to-yellow-200 rounded-full blur-3xl animate-blob" />
-                    <div className="absolute top-1/4 -right-1/3 w-[80vw] h-[80vw] bg-gradient-to-r from-amber-500/10 to-pink-500/20 rounded-full blur-2xl animate-blob animation-delay-2000" />
-                    <div className="absolute -bottom-1/4 left-1/4 w-[80vw] h-[80vw] bg-gradient-to-r from-blue-200/10 to-cyan-200/20 rounded-full blur-3xl animate-blob animation-delay-4000" />
-                </div>
-
-                {/* Grain effect overlay */}
-                <div className="absolute inset-0 opacity-10 dark:opacity-30 ] mix-blend-overlay" />
-            </div>
-
-            {/* Main content */}
-            <main className={cn(
-                "flex min-h-screen flex-col items-center p-4 sm:p-8",
-                locale === 'zh' && 'font-noto-sans-sc'
-            )}>
-                <div className="container max-w-4xl mx-auto space-y-8">
-                    <Header />
-                    <div className="space-y-6 w-full p-6">
-                        <SearchBar
-                            placeholder={t('search.placeholder')}
-                            buttonText={t('search.button')}
-                            onSearch={handleSearch}
-                        />
-                        <SearchHistory
-                            history={searchHistory}
-                            onSelect={handleHistorySelect}
-                            onClear={handleClearHistory}
-                        />
-                    </div>
-                </div>
-            </main>
+      {/* Animated Background Effects */}
+      <div className="pointer-events-none fixed inset-0 h-full w-full blur-md">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute left-[-40%] top-0 h-[70vw] w-[70vw] animate-blob rounded-full bg-gradient-to-r from-teal-700 to-yellow-600 blur-3xl" />
+          <div className="animation-delay-2000 absolute right-[-20%] top-1/3 h-[70vw] w-[70vw] animate-blob rounded-full bg-gradient-to-r from-amber-500/10 to-pink-500 blur-2xl" />
+          <div className="animation-delay-4000 absolute bottom-[-20%] left-1/4 h-[70vw] w-[70vw] animate-blob rounded-full bg-gradient-to-r from-blue-200/10 to-cyan-200/20 blur-3xl" />
         </div>
-    );
-} 
+        <div className="absolute inset-0 opacity-10 mix-blend-overlay dark:opacity-30"></div>
+      </div>
+
+      {/* Main Content */}
+      <main
+        className={cn(
+          'flex min-h-screen flex-col items-center px-4 py-8 sm:px-6 md:px-8',
+          locale === 'zh' && 'font-noto-sans-sc'
+        )}
+      >
+        <div className="container max-w-4xl space-y-8">
+          <Header />
+          <div className="w-full space-y-6 rounded-lg bg-white/70 p-4 shadow-lg dark:bg-gray-800/70 sm:p-6">
+            <SearchBar
+              placeholder={t('search.placeholder')}
+              buttonText={t('search.button')}
+              onSearch={handleSearch}
+            />
+            <SearchHistory
+              history={searchHistory}
+              onSelect={handleHistorySelect}
+              onClear={handleClearHistory}
+            />
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}

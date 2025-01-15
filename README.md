@@ -25,6 +25,7 @@ CanIEatThis? simplifies food decisions for diabetics by analyzing the nutritiona
   <img src="public/canieatthisdemo.gif" width="600" alt="Demo" />
 </p>
 
+
 ---
 
 ## Features  
@@ -123,13 +124,18 @@ git commit -m "Add your feature"
 
  4. Push your branch and open a Pull Request.
 
-License
+## 📜 License
 
 This project is licensed under the MIT License.
-See the LICENSE file for more details.
+For more details, see the LICENSE file.
 
-Acknowledgments
- • [Edamam](https://developer.edamam.com/) for their comprehensive nutrition database.
- • [Next.js](https://nextjs.org/) for providing a robust framework for building web applications.
- • [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework.
- • [Framer Motion](https://www.framer.com/motion/) for their animation library.
+## 🙏 Acknowledgments
+
+Special thanks to the following tools and platforms that made this project possible:
+- Edamam: For providing a comprehensive nutrition database and API for real-time food analysis.
+- Next.js: For offering a powerful framework to build scalable and efficient web applications.
+- Tailwind CSS: For simplifying styling with a utility-first CSS framework that supports responsive design and dark mode.
+- Framer Motion: For creating smooth and dynamic animations that enhance user experience.
+- Iconbuddy: For providing high-quality icons to make the UI visually appealing.
+
+#### Your contributions and continuous improvements to these tools make projects like CanIEatThis? possible. Thank you! 😊

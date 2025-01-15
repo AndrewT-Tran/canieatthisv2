@@ -14,9 +14,16 @@ CanIEatThis? simplifies food decisions for diabetics by analyzing the nutritiona
 
 ## Screenshots & Demo  
 
-![Chinese Version](public/canieatthiscn.png)  ![light mode spanish ](public/canieatthiseslight.png)
-![English Version](public/canieatthisen.png)  ![alt text](public/canieatthisvn.png)
-![Demo](public/canieatthisdemo.gif)  
+<p align="center">
+  <img src="public/canieatthiscn.png" width="300" alt="Chinese Version" />
+  <img src="public/canieatthiseslight.png" width="300" alt="Spanish Version" />
+</p>
+<p align="center">
+  <img src="public/canieatthisen.png" width="300" alt="English Version" />
+</p>
+<p align="center">
+  <img src="public/canieatthisdemo.gif" width="600" alt="Demo" />
+</p>
 
 ---
 

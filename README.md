@@ -25,7 +25,6 @@ CanIEatThis? simplifies food decisions for diabetics by analyzing the nutritiona
   <img src="public/canieatthisdemo.gif" width="600" alt="Demo" />
 </p>
 
-
 ---
 
 ## Features  
@@ -132,6 +131,7 @@ For more details, see the LICENSE file.
 ## 🙏 Acknowledgments
 
 Special thanks to the following tools and platforms that made this project possible:
+
 - Edamam: For providing a comprehensive nutrition database and API for real-time food analysis.
 - Next.js: For offering a powerful framework to build scalable and efficient web applications.
 - Tailwind CSS: For simplifying styling with a utility-first CSS framework that supports responsive design and dark mode.

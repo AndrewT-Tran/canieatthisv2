@@ -19,10 +19,10 @@ CanIEatThis? simplifies food decisions for diabetics by analyzing the nutritiona
   <img src="public/images/canieatthiseslight.png" width="300" alt="Spanish Version" />
 </p>
 <p align="center">
-  <img src="public/canieatthisen.png" width="300" alt="English Version" />
+  <img src="public/images/canieatthisen.png" width="300" alt="English Version" />
 </p>
 <p align="center">
-  <img src="public/canieatthisdemo.gif" width="600" alt="Demo" />
+  <img src="public/images/canieatthisdemo.gif" width="600" alt="Demo" />
 </p>
 
 ---

@@ -13,7 +13,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "axios": "^1.6.7",
-    "chart.js": "^4.4.2",
+    "chart.js": "^4.4.7",
     "chartjs-adapter-date-fns": "^3.0.0",
     "clsx": "^2.1.1",
     "daisyui": "^4.7.2",

@@ -42,6 +42,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
         env:
@@ -65,6 +74,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
       - name: Install commitlint
         run: |
           npm install --save-dev @commitlint/{cli,config-conventional}
@@ -72,3 +87,5 @@ jobs:
 
       - name: Check commit messages
         uses: wagoid/commitlint-github-action@v5
+        with:
+          configFile: commitlint.config.js

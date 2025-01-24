@@ -22,7 +22,7 @@
     "error": {
       "api": "获取营养数据失败"
     },
-    "quantityExample": "尝试搜索特定数量（例如：“1个苹果”或“100克苹果”）",
+    "quantityExample": "尝试搜索特定数量（例如：\"1个苹果\"或\"100克苹果\"）",
     "viewAsTable": "表格视图",
     "viewNutrition": "查看营养详情"
   },
@@ -119,12 +119,13 @@
       "NIA": "烟酸（B3）",
       "FOLAC": "叶酸",
       "FOLDFE": "膳食叶酸当量",
-      "FOLFD": "食物叶酸"
+      "FOLFD": "食物叶酸",
+      "CHOCDF_net": "净碳水化合物"
     },
     "noData": "无营养数据",
     "noDataDescription": "这可能是由于无效的食材名称或数据库中缺少数据。",
     "specifyQuantity": "请指定数量",
-    "quantityExample": "尝试搜索特定数量（例如：“1个苹果”或“100克苹果”）",
+    "quantityExample": "尝试搜索特定数量（例如：\"1个苹果\"或\"100克苹果\"）",
     "showMore": "显示更多详情",
     "showLess": "显示更少",
     "totalCalories": "总热量",
@@ -144,10 +145,6 @@
       "good": "适中",
       "low": "偏低",
       "neutral": "中性"
-    },
-    "recommendation": {
-      "safe": "这种食物通常对糖尿病患者安全",
-      "unsafe": "这种食物可能不适合糖尿病患者"
     }
   },
   "disclaimer": {

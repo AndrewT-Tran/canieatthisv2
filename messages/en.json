@@ -71,6 +71,45 @@
       "manganese": "Manganese",
       "selenium": "Selenium"
     },
+    "nutrients": {
+      "ENERC_KCAL": "Calories",
+      "PROCNT": "Protein",
+      "FAT": "Total Fat",
+      "FASAT": "Saturated Fat",
+      "FATRN": "Trans Fat",
+      "FAMS": "Monounsaturated Fat",
+      "FAPU": "Polyunsaturated Fat",
+      "CHOCDF": "Carbohydrates",
+      "CHOCDF_KCAL": "Calories from Carbohydrates",
+      "CHOLE": "Cholesterol",
+      "FIBTG": "Dietary Fiber",
+      "SUGAR": "Sugar",
+      "WATER": "Water",
+      "TOCPHA": "Vitamin E",
+      "CA": "Calcium",
+      "FE": "Iron",
+      "MG": "Magnesium",
+      "P": "Phosphorus",
+      "K": "Potassium",
+      "NA": "Sodium",
+      "ZN": "Zinc",
+      "CU": "Copper",
+      "MN": "Manganese",
+      "SE": "Selenium",
+      "VITA_RAE": "Vitamin A",
+      "VITC": "Vitamin C",
+      "VITD": "Vitamin D",
+      "VITB6A": "Vitamin B6",
+      "VITB12": "Vitamin B12",
+      "VITK1": "Vitamin K",
+      "THIA": "Thiamin (B1)",
+      "RIBF": "Riboflavin (B2)",
+      "NIA": "Niacin (B3)",
+      "FOLAC": "Folic Acid",
+      "FOLDFE": "Dietary Folate Equivalent",
+      "FOLFD": "Food Folate",
+      "CHOCDF_net": "Net Carbohydrates"
+    },
     "vitamins": {
       "a": "Vitamin A",
       "c": "Vitamin C",
@@ -106,10 +145,6 @@
       "good": "Good",
       "low": "Low",
       "neutral": "Neutral"
-    },
-    "recommendation": {
-      "safe": "This food is generally safe for diabetics",
-      "unsafe": "This food may not be suitable for diabetics"
     }
   },
   "disclaimer": {

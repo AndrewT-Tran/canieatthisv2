@@ -124,7 +124,7 @@ export default function NutrientTable({ nutritionData }) {
             theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'
           )}
         >
-          <table className="w-full">
+          <table className="w-3/4 table-fixed">
             <thead>
               <tr
                 className={cn(

@@ -37,8 +37,8 @@
     "netCarbs": "Carbohidratos Netos",
     "sugars": "Azúcares",
     "recommendation": {
-      "safe": "¡Sí, puedes comer esto!",
-      "unsafe": "Ten cuidado con este alimento",
+      "safe": "Este alimento es generalmente seguro para diabéticos",
+      "unsafe": "Este alimento puede no ser adecuado para diabéticos",
       "safeDescription": "Este alimento tiene niveles aceptables de carbohidratos y azúcares.",
       "unsafeDescription": "Este alimento tiene altos niveles de carbohidratos o azúcares. Considera reducir la porción o buscar alternativas."
     },
@@ -93,6 +93,7 @@
       "FAPU": "Grasa Poliinsaturada",
       "CHOCDF": "Carbohidratos",
       "CHOCDF_KCAL": "Calorías de los carbohidratos",
+      "CHOCDF_net": "Carbohidratos Netos",
       "CHOLE": "Colesterol",
       "FIBTG": "Fibra Dietética",
       "SUGAR": "Azúcar",
@@ -144,10 +145,6 @@
       "good": "Bueno",
       "low": "Bajo",
       "neutral": "Neutral"
-    },
-    "recommendation": {
-      "safe": "Este alimento es generalmente seguro para diabéticos",
-      "unsafe": "Este alimento puede no ser adecuado para diabéticos"
     }
   },
   "disclaimer": {

@@ -21,7 +21,7 @@ import DisclaimerDialog from './DisclaimerDialog';
 
 export default function NutritionAnalysisDialog({
   isOpen = false,
-  onClose = () => {},
+  onClose = () => { },
   nutritionData,
   foodName,
 }) {
@@ -55,6 +55,7 @@ export default function NutritionAnalysisDialog({
       'FAMS',
       'FAPU',
       'CHOCDF',
+      'CHOCDF_net',
       'FIBTG',
       'SUGAR',
       'PROCNT',
@@ -71,7 +72,7 @@ export default function NutritionAnalysisDialog({
       'NIA',
       'FOLAC',
     ],
-    minerals: ['CA', 'FE', 'MG', 'P', 'K', 'NA', 'ZN', 'CU', 'MN', 'SE'],
+    minerals: ['CA', 'FE', 'MG', 'P', 'K', 'NA', 'ZN', 'CU', 'MN', 'SE']
   };
 
   // Analyze carbs and sugars content
@@ -81,6 +82,15 @@ export default function NutritionAnalysisDialog({
 
   // Calculate net carbs (total carbs - fiber)
   const netCarbs = Math.max(0, carbs - fiber);
+
+  // Add net carbs to nutrients object
+  if (nutrients.CHOCDF) {
+    nutrients.CHOCDF_net = {
+      label: 'Net Carbohydrates',
+      quantity: netCarbs,
+      unit: nutrients.CHOCDF.unit
+    };
+  }
 
   // Determine if food is safe based on carbs and sugars content
   // Using general guidelines:
@@ -137,7 +147,7 @@ export default function NutritionAnalysisDialog({
         >
           {t(`sections.${sectionKey}`)}
         </h3>
-        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 mx-auto w-[90%]">
           {availableNutrients.map((nutrientKey) => {
             const nutrient = nutrients[nutrientKey];
             return (
@@ -187,7 +197,7 @@ export default function NutritionAnalysisDialog({
         >
           <Dialog.Panel
             className={cn(
-              'relative mx-auto flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl shadow-2xl',
+              'relative mx-auto flex max-h-[90vh] w-3/4 max-w-3xl flex-col overflow-hidden rounded-2xl shadow-2xl',
               theme === 'dark' ? 'bg-gray-900' : 'bg-white'
             )}
           >
@@ -552,11 +562,9 @@ export default function NutritionAnalysisDialog({
                   >
                     {t('noDataDescription')}
                   </p>
-
-                  {/* Missing Quantity Message */}
                   <p
                     className={cn(
-                      'font-medium',
+                      'mt-4 font-medium',
                       theme === 'dark' ? 'text-amber-300' : 'text-amber-700'
                     )}
                   >
@@ -570,59 +578,6 @@ export default function NutritionAnalysisDialog({
                   >
                     {t('quantityExample')}
                   </p>
-
-                  {/* Show More Button */}
-                  <span>{showDetails ? t('showLess') : t('showMore')}</span>
-
-                  {/* Recommendation Messages */}
-                  <p
-                    className={cn(
-                      'text-sm font-medium',
-                      theme === 'dark'
-                        ? isSafe
-                          ? 'text-emerald-300'
-                          : 'text-red-300'
-                        : isSafe
-                          ? 'text-emerald-700'
-                          : 'text-red-700'
-                    )}
-                  >
-                    {isSafe
-                      ? t('recommendation.safe')
-                      : t('recommendation.unsafe')}
-                  </p>
-
-                  {/* Net Carbs and Sugars Labels */}
-                  <div className="mb-1 text-sm text-gray-500">
-                    {t('netCarbs')}
-                  </div>
-                  <div className="mb-1 text-sm text-gray-500">
-                    {t('sugars')}
-                  </div>
-
-                  {/* Weight Display */}
-                  <span
-                    className={cn(
-                      'text-sm',
-                      theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
-                    )}
-                  >
-                    {Math.round(nutritionData.totalWeight || 0)}
-                    {t('units.grams')}
-                  </span>
-
-                  {/* Calories Display */}
-                  <span
-                    className={cn(
-                      'text-xl font-medium',
-                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-                    )}
-                  >
-                    {t('calories')}
-                  </span>
-                  <span className="ml-2 text-3xl font-normal text-gray-500">
-                    {t('units.kcal')}
-                  </span>
                 </motion.div>
               )}
             </div>

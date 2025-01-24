@@ -124,7 +124,8 @@
       "NIA": "Niacin (Vitamin B3)",
       "FOLAC": "Axit folic",
       "FOLDFE": "Tương đương Folate trong chế độ ăn",
-      "FOLFD": "Folate trong thực phẩm"
+      "FOLFD": "Folate trong thực phẩm",
+      "CHOCDF_net": "Carbohydrate thuần"
     },
     "minerals": {
       "title": "Khoáng chất",

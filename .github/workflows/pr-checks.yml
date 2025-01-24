@@ -58,6 +58,11 @@ jobs:
         with:
           args: --severity-threshold=medium
 
+      - name: Automatically fix vulnerabilities
+        run: snyk fix --all-projects
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
       - name: Run CodeQL Analysis
         uses: github/codeql-action/init@v2
         with:

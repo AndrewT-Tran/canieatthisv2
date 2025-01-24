@@ -47,11 +47,15 @@ export default function SearchBar({ onSearch }) {
         body: JSON.stringify({ query }),
       });
 
-      if (!response.ok) {
-        throw new Error(t('search.error.api'));
-      }
-
       const data = await response.json();
+
+      // Check for server error status codes
+      if (!response.ok) {
+        if (response.status === 500) {
+          throw new Error(t('search.error.server') || 'Internal server error occurred');
+        }
+        throw new Error(data.error || t('search.error.api'));
+      }
 
       if (data.error) {
         throw new Error(data.error);
@@ -61,7 +65,8 @@ export default function SearchBar({ onSearch }) {
       setIsDialogOpen(true);
       onSearch(query, data);
     } catch (err) {
-      setError(err.message);
+      console.error('Nutrition API Error:', err);
+      setError(err.message || t('search.error.generic'));
     } finally {
       setIsLoading(false);
     }
@@ -98,14 +103,15 @@ export default function SearchBar({ onSearch }) {
                   : 'border-gray-200/50 hover:border-gray-300/50'
               )}
             >
-              {/* Search Icon */}
-              <div
-                className={cn(
-                  'absolute left-3 sm:left-4',
-                  theme === 'dark' ? 'text-white/60' : 'text-gray-400'
-                )}
-              >
-                <IoSearch className="h-5 w-5" />
+              {/* Search Icon (Mobile Button) */}
+              <div className="absolute left-3 sm:left-4 sm:hidden">
+                <button
+                  type="submit"
+                  disabled={isLoading || !query.trim()}
+                  className="p-2"
+                >
+                  <IoSearch className="h-6 w-6" />
+                </button>
               </div>
 
               {/* Input */}
@@ -114,10 +120,10 @@ export default function SearchBar({ onSearch }) {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder={t('search.placeholder')}
+                placeholder="3 apples or 1 cup of rice"
                 className={cn(
-                  'w-full bg-transparent py-3 pl-10 pr-24 sm:py-4 sm:pl-14 sm:pr-32',
-                  'text-sm sm:text-xs',
+                  'w-full bg-transparent py-3 pl-10 pr-10 sm:py-4 sm:pl-14 sm:pr-32',
+                  'text-xs sm:text-xs',
                   'placeholder:text-gray-400 focus:outline-none focus:ring-0',
                   theme === 'dark'
                     ? 'text-white placeholder:text-white/40'
@@ -142,8 +148,8 @@ export default function SearchBar({ onSearch }) {
                 </button>
               )}
 
-              {/* Search Button */}
-              <div className="absolute right-2 sm:right-3">
+              {/* Search Button (Desktop) */}
+              <div className="absolute right-2 sm:right-3 hidden sm:block">
                 <button
                   type="submit"
                   disabled={isLoading || !query.trim()}

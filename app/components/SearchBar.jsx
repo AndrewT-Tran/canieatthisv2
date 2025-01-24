@@ -8,8 +8,9 @@ import NutritionAnalysisDialog from './NutritionAnalysisDialog';
 import Alert from './Alert';
 import { useTranslations } from 'next-intl';
 import DisclaimerDialog from './DisclaimerDialog';
+import PropTypes from 'prop-types';
 
-export default function SearchBar({ onSearch }) {
+const SearchBar = ({ onSearch, placeholder, buttonText }) => {
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -49,7 +50,6 @@ export default function SearchBar({ onSearch }) {
 
       const data = await response.json();
 
-      // Check for server error status codes
       if (!response.ok) {
         if (response.status === 500) {
           throw new Error(t('search.error.server') || 'Internal server error occurred');
@@ -120,7 +120,7 @@ export default function SearchBar({ onSearch }) {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="3 apples or 1 cup of rice"
+                placeholder={placeholder}
                 className={cn(
                   'w-full bg-transparent py-3 pl-10 pr-10 sm:py-4 sm:pl-14 sm:pr-32',
                   'text-xs sm:text-xs',
@@ -161,7 +161,7 @@ export default function SearchBar({ onSearch }) {
                       : 'bg-orange-500/20 text-gray-900 hover:bg-orange-500/30'
                   )}
                 >
-                  {isLoading ? t('search.loading') : t('search.button')}
+                  {isLoading ? t('search.loading') : buttonText}
                 </button>
               </div>
             </div>
@@ -191,4 +191,12 @@ export default function SearchBar({ onSearch }) {
       {error && <Alert error={error} />}
     </>
   );
-}
+};
+
+SearchBar.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+};
+
+export default SearchBar;

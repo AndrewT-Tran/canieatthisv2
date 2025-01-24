@@ -124,7 +124,7 @@ export default function DisclaimerDialog({ triggerIcon = false }) {
                   </h3>
                   <p
                     className={cn(
-                      'text-sm sm:text-base',
+                      'text-sm sm:text-sm',
                       theme === 'dark' ? 'text-gray-300' : 'text-gray-600',
                       locale === 'zh' && 'font-ma-shan-zheng'
                     )}
@@ -152,7 +152,7 @@ export default function DisclaimerDialog({ triggerIcon = false }) {
                   </h3>
                   <div
                     className={cn(
-                      'space-y-2 text-sm sm:text-base',
+                      'space-y-2 text-sm sm:text-sm',
                       theme === 'dark' ? 'text-amber-200' : 'text-amber-700',
                       locale === 'zh' && 'font-ma-shan-zheng'
                     )}
@@ -172,7 +172,7 @@ export default function DisclaimerDialog({ triggerIcon = false }) {
                 <button
                   onClick={handleClose}
                   className={cn(
-                    'mt-4 w-full rounded-lg px-4 py-2 font-medium transition-colors',
+                    'mt-4 w-full rounded-lg px-4 py-2 font-light transition-colors',
                     theme === 'dark'
                       ? 'bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30'
                       : 'bg-orange-web/20 text-orange-web hover:bg-orange-web/30',

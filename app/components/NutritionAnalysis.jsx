@@ -22,25 +22,25 @@ export default function NutritionAnalysis({ isOpen, onClose, nutritionData }) {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.3,
-        staggerChildren: 0.1,
+        duration: 0.2,
+        staggerChildren: 0.05,
       },
     },
     exit: {
       opacity: 0,
       y: -20,
       transition: {
-        duration: 0.2,
+        duration: 0.15,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
+    hidden: { opacity: 0, x: -10 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.3 },
+      transition: { duration: 0.2 },
     },
   };
 
@@ -59,29 +59,29 @@ export default function NutritionAnalysis({ isOpen, onClose, nutritionData }) {
         aria-hidden="true"
       />
 
-      <div className="fixed inset-0 flex items-center justify-center p-4">
+      <div className="fixed inset-0 flex items-center justify-center p-3 sm:p-4">
         <Dialog.Panel
           className={cn(
-            'max-h-[90vh] w-full max-w-2xl overflow-hidden rounded-2xl shadow-xl',
-            'flex flex-col',
+            'w-[95%] sm:w-[85%] md:w-[75%] max-w-2xl overflow-hidden rounded-xl shadow-xl',
+            'flex flex-col max-h-[85vh] sm:max-h-[90vh]',
             theme === 'dark' ? 'bg-gray-900' : 'bg-white'
           )}
         >
           {/* Header */}
           <motion.div
-            className="flex items-center justify-between border-b border-gray-200 p-6 dark:border-gray-700"
-            initial={{ opacity: 0, y: -20 }}
+            className="flex items-center justify-between border-b border-gray-200 p-4 sm:p-5 md:p-6 dark:border-gray-700"
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
           >
             <Dialog.Title
               className={cn(
-                'flex items-center gap-2 text-xl font-bold',
+                'flex items-center gap-2 text-lg sm:text-xl font-bold',
                 theme === 'dark' ? 'text-white' : 'text-gray-900'
               )}
             >
               <IoNutrition
                 className={cn(
-                  'h-6 w-6',
+                  'h-5 w-5 sm:h-6 sm:w-6',
                   theme === 'dark' ? 'text-emerald-400' : 'text-orange-web'
                 )}
               />
@@ -90,25 +90,25 @@ export default function NutritionAnalysis({ isOpen, onClose, nutritionData }) {
             <button
               onClick={onClose}
               className={cn(
-                'rounded-full p-2 transition-colors',
+                'rounded-full p-1.5 sm:p-2 transition-colors',
                 theme === 'dark'
                   ? 'text-gray-400 hover:bg-gray-800 hover:text-white'
                   : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700'
               )}
               aria-label={t('close')}
             >
-              <IoClose className="h-6 w-6" />
+              <IoClose className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
           </motion.div>
 
           {/* Content */}
-          <div className="flex-1 overflow-y-auto p-6">
+          <div className="flex-1 overflow-y-auto p-4 sm:p-5 md:p-6">
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="space-y-6"
+              className="space-y-4 sm:space-y-5 md:space-y-6"
             >
               {/* Calories */}
               <motion.div
@@ -116,57 +116,57 @@ export default function NutritionAnalysis({ isOpen, onClose, nutritionData }) {
                 className="flex items-center justify-between"
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-lg font-semibold">
+                  <span className="text-base sm:text-lg font-semibold">
                     {t('totalCalories')}:
                   </span>
                 </div>
-                <span className="text-2xl font-bold text-orange-web">
+                <span className="text-xl sm:text-2xl font-bold text-orange-web">
                   {Math.round(nutritionData.calories)} {t('units.kcal')}
                 </span>
               </motion.div>
 
               {/* Nutrients */}
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
                 {Object.entries(nutritionData.totalNutrients).map(
                   ([key, nutrient]) => (
                     <motion.div
                       key={key}
                       variants={itemVariants}
                       className={cn(
-                        'rounded-lg border p-4',
+                        'rounded-lg border p-3 sm:p-4',
                         theme === 'dark'
                           ? 'border-gray-700 bg-gray-800/50'
                           : 'border-gray-200 bg-gray-50'
                       )}
                     >
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between text-sm sm:text-base">
                         <span className="font-medium">
                           {t(`nutrients.${key}`)}
                         </span>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1.5 sm:gap-2">
                           <span>
                             {Math.round(nutrient.quantity)}
                             {t(`units.${nutrient.unit}`)}
                           </span>
                           {getNutrientStatus(nutrient) === 'high' && (
                             <IoWarning
-                              className="text-orange-web"
+                              className="h-4 w-4 sm:h-5 sm:w-5 text-orange-web"
                               title={t('status.high')}
                             />
                           )}
                           {getNutrientStatus(nutrient) === 'good' && (
                             <IoCheckmarkCircle
-                              className="text-emerald-400"
+                              className="h-4 w-4 sm:h-5 sm:w-5 text-emerald-400"
                               title={t('status.good')}
                             />
                           )}
                         </div>
                       </div>
                       <motion.div
-                        className="mt-2 h-2 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700"
+                        className="mt-2 h-1.5 sm:h-2 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700"
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
+                        transition={{ duration: 0.3, delay: 0.1 }}
                       >
                         <motion.div
                           className={cn(
@@ -181,7 +181,7 @@ export default function NutritionAnalysis({ isOpen, onClose, nutritionData }) {
                           animate={{
                             width: `${Math.min((nutrient.quantity / 100) * 100, 100)}%`,
                           }}
-                          transition={{ duration: 0.5, delay: 0.3 }}
+                          transition={{ duration: 0.3, delay: 0.2 }}
                         />
                       </motion.div>
                     </motion.div>

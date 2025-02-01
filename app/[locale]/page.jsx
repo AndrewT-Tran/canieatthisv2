@@ -12,6 +12,7 @@ export default function HomePage() {
     const t = useTranslations();
     const locale = useLocale();
     const [searchHistory, setSearchHistory] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         const savedHistory = localStorage.getItem('searchHistory');
@@ -39,10 +40,8 @@ export default function HomePage() {
         localStorage.removeItem('searchHistory');
     };
 
-    const handleHistorySelect = (item) => {
-        if (item.nutritionData) {
-            handleSearch(item.query, item.nutritionData);
-        }
+    const handleHistorySelect = (query) => {
+        setSearchQuery(query);
     };
 
     return (
@@ -71,6 +70,8 @@ export default function HomePage() {
                             placeholder={t('search.placeholder')}
                             buttonText={t('search.button')}
                             onSearch={handleSearch}
+                            value={searchQuery}
+                            onChange={setSearchQuery}
                         />
                         <SearchHistory
                             history={searchHistory}

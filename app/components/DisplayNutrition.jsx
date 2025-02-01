@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 
 export default function DisplayNutrition({
   isOpen = false,
-  onClose = () => {},
+  onClose = () => { },
   foodData,
   foodName,
 }) {
@@ -80,95 +80,64 @@ export default function DisplayNutrition({
     FOLAC: t('vitamins.folicAcid'),
   };
 
-  const renderNutrientSection = (sectionKey, items) => (
-    <div className="mb-6">
-      <h3
-        className={cn(
-          'mb-2 text-lg font-semibold',
-          theme === 'dark' ? 'text-emerald-300' : 'text-orange-web'
-        )}
-      >
-        {t(`sections.${sectionKey}`)}
-      </h3>
-      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-        {items.map((nutrientKey) => {
-          const nutrient = nutrients[nutrientKey];
-          if (!nutrient) return null;
-          return (
-            <div
-              key={nutrientKey}
-              className="flex items-center justify-between"
-            >
-              <span
-                className={cn(
-                  'font-medium',
-                  theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-                )}
-              >
-                {nutrientLabels[nutrientKey]}
-              </span>
-              <span
-                className={cn(
-                  'font-medium',
-                  theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                )}
-              >
-                {Math.round(nutrient.quantity * 10) / 10}
-                {nutrient.unit}
-              </span>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-
   return (
     <Dialog open={isOpen} onClose={onClose} className="relative z-50">
-      <div
-        className="fixed inset-0 bg-black/30 backdrop-blur-sm"
-        aria-hidden="true"
-      />
+      <div className="fixed inset-0 bg-black/30 backdrop-blur-sm" aria-hidden="true" />
 
-      <div className="fixed inset-0 flex items-center justify-center p-4">
+      <div className="fixed inset-0 flex items-center justify-center p-2 sm:p-4">
         <Dialog.Panel
           className={cn(
-            'mx-auto w-full max-w-3xl rounded-2xl p-6 shadow-xl',
+            'mx-auto w-[95%] sm:w-[85%] md:w-[75%] max-w-3xl overflow-y-auto max-h-[90vh]',
+            'rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl',
             theme === 'dark' ? 'bg-gray-900' : 'bg-white'
           )}
         >
-          <div className="mb-4 flex items-center justify-between">
+          <div className="mb-3 sm:mb-4 flex items-center justify-between">
             <Dialog.Title
               className={cn(
-                'flex items-center gap-2 text-2xl font-bold',
+                'flex items-center gap-1.5 sm:gap-2 text-xl sm:text-2xl font-bold',
                 theme === 'dark' ? 'text-white' : 'text-gray-900'
               )}
             >
-              <IoNutrition
-                className={cn(
-                  theme === 'dark' ? 'text-emerald-400' : 'text-orange-web'
-                )}
-              />
-              {foodName}
+              <IoNutrition className="h-5 w-5 sm:h-6 sm:w-6" />
+              <span className="truncate">{foodName}</span>
             </Dialog.Title>
             <button
               onClick={onClose}
-              className={cn(
-                'rounded-full p-2 transition-colors',
-                theme === 'dark'
-                  ? 'text-gray-400 hover:bg-gray-800 hover:text-white'
-                  : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700'
-              )}
-              aria-label={t('close')}
+              className="rounded-full p-1.5 sm:p-2"
             >
-              <IoClose className="h-6 w-6" />
+              <IoClose className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
           </div>
 
-          <div className="mt-4">
-            {renderNutrientSection('macronutrients', categories.macronutrients)}
-            {renderNutrientSection('vitamins', categories.vitamins)}
-            {renderNutrientSection('minerals', categories.minerals)}
+          <div className="mt-3 sm:mt-4 space-y-4 sm:space-y-6">
+            {Object.entries(categories).map(([category, nutrients]) => (
+              <div key={category} className="w-full">
+                <h3 className="mb-2 sm:mb-3 text-base sm:text-lg font-semibold">
+                  {t(`sections.${category}`)}
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                  {nutrients.map((nutrientKey) => {
+                    const nutrient = foodData.totalNutrients[nutrientKey];
+                    if (!nutrient) return null;
+                    return (
+                      <div
+                        key={nutrientKey}
+                        className="flex items-center justify-between p-2 sm:p-3 rounded-lg bg-gray-50 dark:bg-gray-800"
+                      >
+                        <span className="text-sm sm:text-base font-medium">
+                          {nutrientLabels[nutrientKey]}
+                        </span>
+                        <span className="text-sm sm:text-base">
+                          {Math.round(nutrient.quantity * 10) / 10}
+                          {nutrient.unit}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
         </Dialog.Panel>
       </div>

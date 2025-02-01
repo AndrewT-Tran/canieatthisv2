@@ -6,27 +6,6 @@ CanIEatThis? is a web application that empowers diabetics to make informed dieta
 
 ---
 
-## Overview
-
-CanIEatThis? simplifies food decisions for diabetics by analyzing the nutritional content of foods and providing personalized recommendations to help them manage their condition better.
-
----
-
-## Screenshots & Demo
-
-<p align="center">
-  <img src="public/images/canieatthiscn.png" width="300" alt="Chinese Version" />
-  <img src="public/images/canieatthiseslight.png" width="300" alt="Spanish Version" />
-</p>
-<p align="center">
-  <img src="public/images/canieatthisen.png" width="300" alt="English Version" />
-</p>
-<p align="center">
-  <img src="public/images/canieatthisdemo.gif" width="600" alt="Demo" />
-</p>
-
----
-
 ## Features
 
 - **🔍 Instant Food Analysis:**  
@@ -41,101 +20,98 @@ CanIEatThis? simplifies food decisions for diabetics by analyzing the nutritiona
 - **🎨 Modern UI:**  
   Responsive and intuitive design with **dark/light modes**, **animated transitions**, and **interactive elements**.
 
-- **🆕 Enhanced Search Functionality:**  
-  The new search bar allows users to input food items and receive detailed nutritional analysis, including error handling and loading states.
+## Technical Stack
 
----
-
-## Technical Implementation
-
-### Frontend
-
-- Built with **[Next.js 15](https://nextjs.org/)** using **React Server Components**.
-- Client-side features include:
-  - Theme toggling
-  - Internationalization (i18n)
-  - Search history management
-  - New search functionality with real-time feedback
-
-### Styling & Animations
-
-- **[Tailwind CSS](https://tailwindcss.com/)** for responsive styling, including **dark mode support**.
-- **[Framer Motion](https://www.framer.com/motion/)** for smooth animations and micro-interactions to enhance user experience.
-
-### Internationalization
-
-- Implemented using **`next-intl`** for **SEO-friendly routes** and **fallback language support**.
-
-### API Integration
-
-- Uses the **[Edamam Food Database API](https://developer.edamam.com/)** for real-time nutritional analysis and natural language parsing.
-
----
+- **Frontend:** Next.js 15 with React Server Components
+- **Styling:** Tailwind CSS with dark mode support
+- **Animations:** Framer Motion
+- **i18n:** next-intl for SEO-friendly routes
+- **API:** Edamam Food Database API
 
 ## Getting Started
 
-### Clone the Repository
+### Prerequisites
+
+- Node.js 20 or higher
+- npm or yarn
+- Docker (optional)
+
+### Standard Installation
+
+1. Clone the repository:
 
 ```bash
-git clone https://github.com/AndrewT-Tran/canieatthisv2
-cd canieatthisv2
+git clone https://github.com/AndrewT-Tran/canieatthis
+cd canieatthis
 ```
 
-Install Dependencies
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-Set Environment Variables
+3. Set up environment variables:
 
-Copy .env.example to .env and add your Edamam API credentials:
+```bash
+cp .env.example .env
+```
+
+4. Update `.env` with your [Edamam API](https://developer.edamam.com/) credentials:
 
 ```
 NEXT_PUBLIC_EDAMAM_APP_ID=your_app_id
 NEXT_PUBLIC_EDAMAM_APP_KEY=your_app_key
+NEXT_PUBLIC_NUT_ANALYSIS_APP_ID=your_nutrition_app_id
+NEXT_PUBLIC_NUT_ANALYSIS_API_KEY=your_nutrition_api_key
 ```
 
-Run the App
+5. Run the development server:
 
 ```bash
 npm run dev
 ```
 
-Contributing
+### Docker Installation
 
-We welcome contributions to improve CanIEatThis!
+1. Set up environment variables as described above.
 
-Steps to Contribute:
-
-1.  Fork the repository.
-2.  Create a feature branch:
+2. Build and run with Docker:
 
 ```bash
-git checkout -b feature/your-feature
+docker-compose up --build
 ```
 
-3. Commit your changes:
+For background mode:
 
 ```bash
-git commit -m "Add your feature"
+docker-compose up -d
 ```
 
-4.  Push your branch and open a Pull Request.
+To stop:
 
-## 📜 License
+```bash
+docker-compose down
+```
+
+The app will be available at `http://localhost:3000`.
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+## License
 
 This project is licensed under the MIT License.
-For more details, see the LICENSE file.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-Special thanks to the following tools and platforms that made this project possible:
-
-- Edamam: For providing a comprehensive nutrition database and API for real-time food analysis.
-- Next.js: For offering a powerful framework to build scalable and efficient web applications.
-- Tailwind CSS: For simplifying styling with a utility-first CSS framework that supports responsive design and dark mode.
-- Framer Motion: For creating smooth and dynamic animations that enhance user experience.
-- Iconbuddy: For providing high-quality icons to make the UI visually appealing.
-
-#### Your contributions and continuous improvements to these tools make projects like CanIEatThis? possible. Thank you! 😊
+- Edamam for nutrition data API
+- Next.js team for the framework
+- Tailwind CSS for styling
+- Framer Motion for animations
+- Iconbuddy for icons

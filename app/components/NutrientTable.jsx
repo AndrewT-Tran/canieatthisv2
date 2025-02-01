@@ -109,10 +109,10 @@ export default function NutrientTable({ nutritionData }) {
     if (availableNutrients.length === 0) return null;
 
     return (
-      <div className="mb-6">
+      <div className="mb-fluid-6">
         <h3
           className={cn(
-            'mb-3 px-4 text-lg font-semibold',
+            'mb-fluid-3 px-fluid-4 text-fluid-lg font-semibold',
             theme === 'dark' ? 'text-emerald-300' : 'text-orange-web'
           )}
         >
@@ -124,104 +124,111 @@ export default function NutrientTable({ nutritionData }) {
             theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'
           )}
         >
-          <table className="w-3/4 table-fixed">
-            <thead>
-              <tr
-                className={cn(
-                  theme === 'dark' ? 'bg-gray-700/50' : 'bg-gray-100'
-                )}
-              >
-                <th
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[500px]">
+              <thead>
+                <tr
                   className={cn(
-                    'px-4 py-2 text-left text-sm font-medium',
-                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                    'border-b',
+                    theme === 'dark'
+                      ? 'border-gray-700 bg-gray-700/50'
+                      : 'border-gray-200 bg-gray-100'
                   )}
                 >
-                  Nutrient
-                </th>
-                <th
-                  className={cn(
-                    'px-4 py-2 text-right text-sm font-medium',
-                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-                  )}
-                >
-                  Amount
-                </th>
-                <th
-                  className={cn(
-                    'px-4 py-2 text-right text-sm font-medium',
-                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-                  )}
-                >
-                  % Daily Value
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-              {availableNutrients.map((nutrientKey) => {
-                const nutrient = nutrients[nutrientKey];
-                const dailyValue = nutritionData.totalDaily[nutrientKey];
-                return (
-                  <tr
-                    key={nutrientKey}
+                  <th
                     className={cn(
-                      'transition-colors',
-                      theme === 'dark'
-                        ? 'hover:bg-gray-700/50'
-                        : 'hover:bg-gray-100'
+                      'p-fluid-3 text-left text-fluid-sm font-medium',
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
                     )}
                   >
-                    <td
+                    Nutrient
+                  </th>
+                  <th
+                    className={cn(
+                      'p-fluid-3 text-right text-fluid-sm font-medium',
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                    )}
+                  >
+                    Amount
+                  </th>
+                  <th
+                    className={cn(
+                      'p-fluid-3 text-right text-fluid-sm font-medium',
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                    )}
+                  >
+                    % Daily Value
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                {availableNutrients.map((nutrientKey) => {
+                  const nutrient = nutrients[nutrientKey];
+                  const dailyValue = nutritionData.totalDaily[nutrientKey];
+                  return (
+                    <tr
+                      key={nutrientKey}
                       className={cn(
-                        'px-4 py-2 text-sm',
-                        theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                        'transition-colors',
+                        theme === 'dark'
+                          ? 'hover:bg-gray-700/50'
+                          : 'hover:bg-gray-100'
                       )}
                     >
-                      {nutrientLabels[nutrientKey]}
-                    </td>
-                    <td
-                      className={cn(
-                        'px-4 py-2 text-right text-sm',
-                        theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-                      )}
-                    >
-                      {Math.round(nutrient.quantity * 10) / 10}
-                      {nutrient.unit}
-                    </td>
-                    <td
-                      className={cn(
-                        'px-4 py-2 text-right text-sm',
-                        theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
-                      )}
-                    >
-                      {dailyValue ? `${Math.round(dailyValue.quantity)}%` : '-'}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                      <td
+                        className={cn(
+                          'p-fluid-3 text-fluid-sm',
+                          theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                        )}
+                      >
+                        {nutrientLabels[nutrientKey]}
+                      </td>
+                      <td
+                        className={cn(
+                          'p-fluid-3 text-right text-fluid-sm',
+                          theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                        )}
+                      >
+                        {Math.round(nutrient.quantity * 10) / 10}
+                        {nutrient.unit}
+                      </td>
+                      <td
+                        className={cn(
+                          'p-fluid-3 text-right text-fluid-sm',
+                          theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
+                        )}
+                      >
+                        {dailyValue ? `${Math.round(dailyValue.quantity)}%` : '-'}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     );
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-fluid-6">
       {/* Calories Summary */}
       <div
         className={cn(
-          'mb-6 rounded-lg p-4 text-center',
+          'mb-fluid-6 rounded-lg p-fluid-base text-center',
           theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'
         )}
       >
-        <div className="mb-1 text-3xl font-bold">
-          {Math.round(nutritionData.calories)}
-          <span className="ml-1 text-lg opacity-70">{t('units.kcal')}</span>
+        <div className="mb-fluid-1">
+          <span className="text-fluid-4xl font-bold">
+            {Math.round(nutritionData.calories)}
+          </span>
+          <span className="ml-fluid-2 text-fluid-xl opacity-70">{t('units.kcal')}</span>
         </div>
         <div
           className={cn(
-            'text-sm',
+            'text-fluid-sm',
             theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
           )}
         >
@@ -230,7 +237,7 @@ export default function NutrientTable({ nutritionData }) {
       </div>
 
       {/* Nutrient Categories */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-fluid-6 md:grid-cols-2">
         {Object.entries(categories).map(([category, nutrients]) => (
           <div key={category}>{renderNutrientSection(category, nutrients)}</div>
         ))}

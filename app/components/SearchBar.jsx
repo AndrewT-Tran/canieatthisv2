@@ -10,8 +10,7 @@ import { useTranslations } from 'next-intl';
 import DisclaimerDialog from './DisclaimerDialog';
 import PropTypes from 'prop-types';
 
-const SearchBar = ({ onSearch, placeholder, buttonText }) => {
-  const [query, setQuery] = useState('');
+const SearchBar = ({ onSearch, placeholder, buttonText, value, onChange }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -19,6 +18,9 @@ const SearchBar = ({ onSearch, placeholder, buttonText }) => {
   const { theme } = useTheme();
   const inputRef = useRef(null);
   const t = useTranslations();
+
+  const query = value;
+  const setQuery = onChange;
 
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -197,6 +199,8 @@ SearchBar.propTypes = {
   onSearch: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

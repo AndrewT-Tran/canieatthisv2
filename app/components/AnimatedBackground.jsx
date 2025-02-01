@@ -50,10 +50,10 @@ export default function AnimatedBackground() {
       {/* Light theme blobs */}
       <div className="dark:hidden">
         {/* Amber to Yellow gradients */}
-        <div className="animate-float-slow absolute left-1/4 top-1/4 h-64 w-64 rounded-full bg-gradient-to-r from-amber-200/30 to-yellow-400/20 blur-3xl" />
-        <div className="animate-float-medium absolute bottom-1/3 right-1/3 h-48 w-48 rounded-full bg-gradient-to-r from-amber-500/20 to-pink-500/20 blur-2xl" />
+        <div className="animate-float-slow absolute left-1/4 top-1/4 h-64 w-64 rounded-full bg-gradient-to-r from-orange-200/30 to-yellow-400/20 blur-3xl" />
+        <div className="animate-float-medium absolute bottom-1/3 right-1/3 h-48 w-48 rounded-full bg-gradient-to-r from-amber-300/20 to-pink-500/20 blur-2xl" />
         <div className="animate-float-fast absolute left-1/3 top-2/3 h-32 w-32 rounded-full bg-gradient-to-r from-amber-200/25 to-yellow-400/15 blur-xl" />
-        <div className="top-1/5 animate-float-medium absolute right-1/3 h-44 w-44 rounded-full bg-gradient-to-r from-amber-500/15 to-pink-500/15 blur-2xl" />
+        <div className="top-1/5 animate-float-medium absolute right-1/3 h-44 w-44 rounded-full bg-gradient-to-r from-amber-400/15 to-pink-500/15 blur-2xl" />
         <div className="bottom-1/5 animate-float-fast absolute left-1/4 h-28 w-28 rounded-full bg-gradient-to-r from-amber-200/20 to-yellow-400/10 blur-xl" />
         <div className="top-2/5 right-1/6 animate-float-slow absolute h-36 w-36 rounded-full bg-gradient-to-r from-amber-500/25 to-pink-500/20 blur-3xl" />
       </div>

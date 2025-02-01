@@ -56,7 +56,11 @@ export default function SearchHistory({ history, onSelect, onClear }) {
 
   const handleItemClick = useCallback(
     (item) => {
-      onSelect(item);
+      if (item?.query) {
+        onSelect(item.query);
+      } else {
+        onSelect(getDisplayText(item));
+      }
     },
     [onSelect]
   );

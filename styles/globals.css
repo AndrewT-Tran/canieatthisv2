@@ -2,50 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Theme transition setup */
 :root {
   --theme-transition-duration: 500ms;
-}
-
-/* Theme transition classes */
-.theme-transition,
-.theme-transition *,
-.theme-transition *::before,
-.theme-transition *::after {
-  transition-property: background-color, border-color, color, fill, stroke,
-    box-shadow;
-  transition-duration: var(--theme-transition-duration);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Smooth background, text, and border transitions */
-body,
-.bg-transition {
-  transition: background-color var(--theme-transition-duration) ease-in-out;
-}
-
-.text-transition {
-  transition: color var(--theme-transition-duration) ease-in-out;
-}
-
-.border-transition {
-  transition: border-color var(--theme-transition-duration) ease-in-out;
-}
-
-/* Combined transitions */
-.theme-element {
-  @apply transition-all duration-500 ease-in-out;
-}
-
-@layer base {
-  /* Fonts and global text styles */
-  :root {
+  --theme-transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  
     --font-poppins: 'Poppins', sans-serif;
     --font-inter: 'Inter', sans-serif;
     --font-roboto: 'Roboto', sans-serif;
     --font-noto-sans-sc: 'Noto Sans SC', sans-serif;
 
-    /* Colors */
     --color-white: #fcfcfc;
     --color-gray-dark: #1e293b;
     --color-outer-space: #4a5759;
@@ -54,52 +19,48 @@ body,
     --color-asparagus: #4d9757;
   }
 
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after,
+.bg-transition,
+.text-transition,
+.border-transition,
+.theme-element {
+  transition: 
+    background-color var(--theme-transition-duration) var(--theme-transition-timing),
+    border-color var(--theme-transition-duration) var(--theme-transition-timing),
+    color var(--theme-transition-duration) var(--theme-transition-timing),
+    fill var(--theme-transition-duration) var(--theme-transition-timing),
+    stroke var(--theme-transition-duration) var(--theme-transition-timing),
+    box-shadow var(--theme-transition-duration) var(--theme-transition-timing);
+  }
+
+@layer base {
   body {
     @apply bg-white text-gray-800 antialiased dark:bg-gray-900 dark:text-white;
   }
 
-  /* Font utilities */
-  .font-poppins {
-    font-family: var(--font-poppins);
+  .font-poppins { font-family: var(--font-poppins); }
+  .font-inter { font-family: var(--font-inter); }
+  .font-roboto { font-family: var(--font-roboto); }
+  .font-noto-sans-sc { font-family: var(--font-noto-sans-sc); }
   }
-
-  .font-inter {
-    font-family: var(--font-inter);
-  }
-
-  .font-roboto {
-    font-family: var(--font-roboto);
-  }
-
-  .font-noto-sans-sc {
-    font-family: var(--font-noto-sans-sc);
-  }
-}
 
 @layer components {
-  /* Button styles */
   .btn {
     @apply rounded-md bg-gradient-to-r from-celestial-blue to-asparagus px-4 py-2 font-light text-white;
-    transition: background-position 0.4s ease-in-out;
+    transition: background-position 0.4s var(--theme-transition-timing);
     background-size: 200% auto;
+    &:hover { background-position: right center; }
   }
 
-  .btn:hover {
-    background-position: right center;
-  }
-
-  /* Loading spinner */
-  .loading {
-    @apply animate-spin;
-  }
-
-  /* Gradient text effect */
+  .loading { @apply animate-spin; }
   .text-gradient {
     @apply bg-gradient-to-r from-celestial-blue to-asparagus bg-clip-text text-transparent;
     background-size: 200% auto;
   }
 
-  /* Shimmer animation effect */
   .animate-shimmer {
     background: linear-gradient(
       90deg,
@@ -113,56 +74,23 @@ body,
 }
 
 @layer utilities {
-  /* Custom scrollbar */
-  .scrollbar-thin {
-    scrollbar-width: thin;
-  }
+  .scrollbar-thin { scrollbar-width: thin; }
+  .scrollbar-thumb-rounded::-webkit-scrollbar-thumb { border-radius: 0.25rem; }
 
-  .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
-    border-radius: 0.25rem;
-  }
-
-  /* Text clip animation */
-  .text-clip-animate {
-    animation: textClip 4s ease-in-out infinite;
-  }
-
-  /* Hover shimmer animation */
-  .hover-shimmer:hover {
-    background-image: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0.4) 50%,
-      rgba(255, 255, 255, 0.2) 100%
-    );
-    background-size: 200% auto;
-    animation: shimmer 2s linear infinite;
-  }
+  .text-clip-animate { animation: textClip 4s ease-in-out infinite; }
+  .animation-delay-2000 { animation-delay: 2s; }
+  .animation-delay-4000 { animation-delay: 4s; }
 }
 
-/* Keyframes for shimmer and text clip animations */
 @keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 @keyframes textClip {
-  0%,
-  100% {
-    background-position: 0% center;
-  }
-
-  50% {
-    background-position: 100% center;
-  }
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
 }
-
-/* Toast Customization */
 .Toastify__toast {
   @apply rounded-lg bg-white/90 font-light text-gray-800 backdrop-blur-sm dark:bg-gray-800/90 dark:text-white;
 }
@@ -173,24 +101,4 @@ body,
 
 .Toastify__progress-bar {
   @apply bg-celestial-blue/50;
-}
-
-/* Utility for animation delays */
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-@keyframes gradient {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
 }

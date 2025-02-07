@@ -5,25 +5,28 @@ import { useParams, usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { IoMenu, IoChevronUp } from 'react-icons/io5';
-import { FaGlobeAmericas, FaGlobeAsia, FaGlobeEurope } from 'react-icons/fa';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { cn } from '../utils/cn';
+import FlagForUnitedStates from './flags/FlagForUnitedStates';
+import FlagForChina from './flags/FlagForChina';
+import FlagForVietnam from './flags/FlagForVietnam';
+import FlagForSpain from './flags/FlagForSpain';
 
 // Dynamically load components
 const ThemeToggle = dynamic(() => import('./ThemeToggle'));
 
 const languages = [
-  { code: 'en', label: 'English', icon: FaGlobeAmericas },
-  { code: 'es', label: 'Español', icon: FaGlobeEurope },
+  { code: 'en', label: 'English', icon: ({ size }) => <FlagForUnitedStates size={size} /> },
+  { code: 'es', label: 'Español', icon: ({ size }) => <FlagForSpain size={size} /> },
   {
     code: 'cn',
     label: '中文',
-    icon: FaGlobeAsia,
+    icon: ({ size }) => <FlagForChina size={size} />,
     className: 'font-ma-shan-zheng',
   },
-  { code: 'vi', label: 'Tiếng Việt', icon: FaGlobeAsia },
+  { code: 'vi', label: 'Tiếng Việt', icon: ({ size }) => <FlagForVietnam size={size} /> },
 ];
 
 export default function SettingsButtons() {
@@ -99,7 +102,7 @@ export default function SettingsButtons() {
                     language.className
                   )}
                 >
-                  <language.icon className="h-5 w-5" />
+                  <language.icon size={20} />
                   {language.label}
                 </Link>
               ))}
